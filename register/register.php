@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-6">
           <h1 class="register_text">REGISTER</h1>
-          <form>
+          <form method="POST" action="processregister.php">
             <div class="form-group">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
