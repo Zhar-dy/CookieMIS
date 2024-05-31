@@ -13,8 +13,8 @@
                   <h2 class="account_text">Useful Link</h2>
                   <div class="useful_link">
                     <ul>
-                      <li><a class="nav-link" href="product.html">Cookie</a></li>
-                      <li><a class="nav-link" href="remot.html">Testimonial</a></li>
+                      <li><a class="nav-link" href="../product.html">Cookie</a></li>
+                      <li><a class="nav-link" href="../remot.html">Testimonial</a></li>
                     </ul>
                   </div>
                 </div>
@@ -28,10 +28,10 @@
       </div>
       <div class="social_icon">
         <ul>
-          <li><a href="#"><img src="images/fb-icon.png"></a></li>
-          <li><a href="#"><img src="images/twitter-icon.png"></a></li>
-          <li><a href="#"><img src="images/linkdin-icon.png"></a></li>
-          <li><a href="#"><img src="images/instagram-icon.png"></a></li>
+          <li><a href="#"><img src="../images/fb-icon.png"></a></li>
+          <li><a href="#"><img src="../images/twitter-icon.png"></a></li>
+          <li><a href="#"><img src="../images/linkdin-icon.png"></a></li>
+          <li><a href="#"><img src="../images/instagram-icon.png"></a></li>
         </ul>
       </div>
     </div>

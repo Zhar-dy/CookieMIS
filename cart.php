@@ -6,8 +6,10 @@
   <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
 <body>
+
 	<!-- Header File -->
   <?php include 'reusableCodes/header.php' ?>
+  
   <!-- cart section start -->
   <div class="cart_section layout_padding">
     <div class="container">
@@ -37,7 +39,8 @@
     </div>
   </div>
   <!-- cart section end -->
+
   <!-- Footer File -->
-<?php include 'reusableCodes/footer.php' ?>
+  <?php include 'reusableCodes/footer.php' ?>
 </body>
 </html>

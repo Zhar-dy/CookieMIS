@@ -5,9 +5,11 @@
   <!-- Header Meta File -->
   <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
+
 <body>
   <!-- Header File -->
   <?php include 'reusableCodes/header.php' ?>
+  
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container"style="margin-top: 90px">
@@ -15,12 +17,14 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
+
               <div class="col-md-6">
                 <h1 class="video_text">Cookies</h1>
                 <h1 class="controller_text">Chocolate</h1>
                 <p class="banner_text">With extra chocolate for cookie to satisfy the customers!</p>
                 <div class="shop_bt"><a href="product.html">Shop Now</a></div>
               </div>
+
               <div class="col-md-6">
                 <div class="image_1"><img src="images/cookie.png"></div>
             </div>
@@ -34,6 +38,7 @@
                 <p class="banner_text">Unique that will catch your eyes!</p>
                 <div class="shop_bt"><a href="product.php">Shop Now</a></div>
               </div>
+
               <div class="col-md-6">
                 <div class="image_1"><img src="images/jumbo.png"></div>
             </div>
@@ -50,6 +55,7 @@
     </div>
   </div>
   <!-- banner section end -->
+
   <!-- about section start -->
   <div class="about_section layout_padding">
     <div class="container">

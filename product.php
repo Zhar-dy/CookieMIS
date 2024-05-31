@@ -5,6 +5,7 @@
     <!-- Header Meta File -->
     <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
+
 <body>
 	<!-- Header File -->
     <?php include 'reusableCodes/header.php' ?>
