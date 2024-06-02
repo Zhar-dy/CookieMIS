@@ -3,7 +3,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "cookiedb";
+$dbname = "cookiemis";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 

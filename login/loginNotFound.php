@@ -17,6 +17,8 @@
       </div>
       <div class="col-md-6">
         <h1 class="sign_in_text">SIGN IN</h1>
+        <h3 class="sign_in_text">Data not found</h3>
+        <h3 class="sign_in_text">Wrong Username or Password</h3>
         <form method="POST" action="process.php">
         <div class="form-group">
             <label for="username">Username:</label>
