@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Remot</title>
+  <title>Testimonial</title>
   <!-- Header Meta File -->
-  <?php include 'reusableCodes/headerMeta.php' ?>  
+  <?php include '../reusableCodes/headerMeta1in.php' ?>
 </head>
 
 <body>
-	<!-- Header File -->
-  <?php include 'reusableCodes/header.php' ?>
-  
+  <!-- Header File -->
+  <?php include '../reusableCodes/headerUser.php' ?>
   <!-- testimonial section start -->
   <div class="testimonial_section layout_padding">
     <div class="container">
@@ -17,11 +17,11 @@
       <p class="ipsum_text">From our loyal customers</p>
       <div class="testimonial_section_2">
         <div class="box_main">
-          <div class="quote_icon"><img src="images/quote-icon.png"></div>
-          <p class="dolor_text">  I was impressed on their quality, definitely worth it! </p>
+          <div class="quote_icon"><img src="../images/quote-icon.png"></div>
+          <p class="dolor_text"> I was impressed on their quality, definitely worth it! </p>
           <div class="client_main">
             <div class="client_left">
-              <div class="images_5"><img src="images/razyn.png"></div>
+              <div class="images_5"><img src="../images/razyn.png"></div>
             </div>
             <div class="client_right">
               <h1 class="sandy_text">Razyn Hazman</h1>
@@ -38,6 +38,7 @@
   <!-- testimonial section end -->
 
   <!-- Footer File -->
-  <?php include 'reusableCodes/footer.php' ?>
+  <?php include '../reusableCodes/footer1in.php' ?>
 </body>
+
 </html>

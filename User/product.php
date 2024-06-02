@@ -4,12 +4,12 @@
 <head>
     <title>Product</title>
     <!-- Header Meta File -->
-    <?php include 'reusableCodes/headerMeta.php' ?>
+    <?php include '../reusableCodes/headerMeta1in.php' ?>
 </head>
 
 <body>
     <!-- Header File -->
-    <?php include 'reusableCodes/header.php' ?>
+    <?php include '../reusableCodes/headerUser.php' ?>
 
     <!-- Product section start -->
     <section class="product_section">
@@ -20,7 +20,7 @@
         <div class="container product_container">
             <div class="box">
                 <div class="img-box">
-                    <img src="images/jumbo.png" alt="Jumbo Cookie">
+                    <img src="../images/jumbo.png" alt="Jumbo Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Cookie of <span>Creativity</span></h6>
@@ -31,7 +31,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="images/chewy.png" alt="chewy Cookie">
+                    <img src="../images/chewy.png" alt="chewy Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Cookie of <span>Chewy</span></h6>
@@ -42,7 +42,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="images/choccookie.png" alt="Choc Cookie">
+                    <img src="../images/choccookie.png" alt="Choc Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Chocolate Chip <span>Cookie</span></h6>
@@ -53,7 +53,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="images/peanut.png" alt="Choc Cookie">
+                    <img src="../images/peanut.png" alt="Choc Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Peanut <span>Cookie</span></h6>
@@ -67,7 +67,7 @@
     <!-- Product section end -->
 
     <!-- Footer File -->
-    <?php include 'reusableCodes/footer.php' ?>
+    <?php include '../reusableCodes/footer1in.php' ?>
 </body>
 
 </html>

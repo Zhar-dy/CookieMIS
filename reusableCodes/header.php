@@ -17,7 +17,7 @@
                   <a class="nav-link" href="product.php">OUR PRODUCTS</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="remot.php">TESTIMONIAL</a>
+                  <a class="nav-link" href="testimonial.php">TESTIMONIAL</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.php">CONTACT US</a>
