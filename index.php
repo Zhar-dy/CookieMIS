@@ -7,7 +7,14 @@
 </head>
 <body>
   <!-- Header File -->
-  <?php include 'reusableCodes/header.php' ?>
+  <?php 
+  if (isset($_SESSION)){
+    include 'reusableCodes/headerUser.php';
+  }else{
+    include 'reusableCodes/header.php';
+  }
+  ?>
+  
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container"style="margin-top: 90px">

@@ -7,7 +7,13 @@
 </head>
 <body>
 	<!-- Header File -->
-  <?php include 'reusableCodes/header.php' ?>
+  <?php 
+  if (isset($_SESSION)){
+    include 'reusableCodes/headerUser.php';
+  }else{
+    include 'reusableCodes/header.php';
+  }
+  ?>
   <!-- about section start -->
   <div class="about_section layout_padding">
     <div class="container">
