@@ -23,10 +23,10 @@ if(isset($_POST['signup'])){
 	}else{
 		// Fetch and save file into a folder
 		// Handle file upload
-		$path = '..\\userPictures\\';
+		$path = '../userPictures/';
 		$tmplocation = $_FILES["file"]["tmp_name"];
 
-		$newFileName = $name; 
+		$newFileName = $user_name; 
 		$newFileExtension = ".jpg"; 
 		$imageName=$newFileName.$newFileExtension;
 		// Save new picture first

@@ -21,7 +21,7 @@
           
           <h1 class="register_text">REGISTER</h1>
           <h5>(Record already exists!)</h5>
-          <form action="db_add_user.php" method="POST" enctype="multipart/form-data">
+          <form action="process.php.php" method="POST" enctype="multipart/form-data">
             
             <div class="form-group">
               <label for="username">Username:</label>
