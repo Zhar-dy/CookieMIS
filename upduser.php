@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Product</title>
+  <title>Update User</title>
   <!-- Header Meta File -->
   <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
@@ -19,29 +19,30 @@
       <div class="row">
         <div class="col-md-6">
           <h1 class="update_text">Update Profile</h1>
-
-          <form>
+          <form method="POST" action="./reusableCodes/updateUser.php">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+              <input type="text" class="form-control" id="name" name = "name" placeholder="<?php echo $_SESSION['name']?>">
             </div>
+
 
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              <input type="email" class="form-control" id="email" name = "email" placeholder="<?php echo $_SESSION["email"]?>">
             </div>
 
             <div class="form-group">
               <label for="password">Password:</label>
-              <input type="password" class="form-control" id="password" placeholder="Enter your password">
+              <input type="password" class="form-control" id="password" name = "password" placeholder="Enter your password">
             </div>
 
             <div class="form-group">
               <label for="phone">Phone:</label>
-              <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+              <input type="tel" class="form-control" id="phone" name = "phone" placeholder="<?php echo $_SESSION["phone_Num"]?>">
             </div>
 
-            <button type="submit" class="btn btn-primary">Update Profile</button>
+            <p>Note: You will need to log in again after updating your account</p>
+            <button type="submit" class="btn btn-primary" name="update">Update Profile</button>
           </form>
 
         </div>

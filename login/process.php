@@ -29,7 +29,7 @@ if(isset($_POST['login'])){
 			alert("Cookies are set!")
 		</script>
 		<?php
-		// Set cookies for the user
+		// Set Session for the user
 		$_SESSION["user_ID"] = $d[0];
 		$_SESSION["username"] = $d[1];
 		$_SESSION["name"] = $d[2];
