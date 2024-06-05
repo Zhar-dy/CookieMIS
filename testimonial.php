@@ -6,17 +6,12 @@
 <head>
   <title>Testimonial</title>
   <!-- Header Meta File -->
-  <?php include 'reusableCodes/headerMeta.php' ?>  
+  <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
 <body>
 	<!-- Header File -->
-  <?php 
-  if (isset($_SESSION['username'])) {
-    include 'reusableCodes/headerUser.php';
-  }else{
-    include 'reusableCodes/header.php';
-  }
-  ?>
+  <?php include 'reusableCodes/header.php' ?>
+  
   <!-- testimonial section start -->
   <div class="testimonial_section layout_padding">
     <div class="container">

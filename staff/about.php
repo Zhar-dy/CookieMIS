@@ -1,25 +1,23 @@
 <?php
-session_start();
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>About</title>
+  <title>CookieMIS</title>
   <!-- Header Meta File -->
-  <?php include 'reusableCodes/headerMeta.php' ?>
+  <?php include '../reusableCodes/headerMeta1in.php' ?>
 </head>
-
 <body>
   <!-- Header File -->
-  <?php include 'reusableCodes/header.php' ?>
-
+  <?php include '../reusableCodes/headerStaff.php' ?>
+  
   <!-- about section start -->
   <div class="about_section layout_padding">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="image_2"><img src="images/cookiebg.jpeg"></div>
+          <div class="image_2"><img src="../images/cookiebg.jpeg"></div>
         </div>
         <div class="col-md-6">
           <h1 class="about_text">ABOUT</h1>
@@ -31,7 +29,6 @@ session_start();
   </div>
   <!-- about section end -->
   <!-- Footer File -->
-  <?php include 'reusableCodes/footer.php' ?>
+  <?php include '../reusableCodes/footer1in.php' ?>
 </body>
-
 </html>

@@ -51,7 +51,7 @@ if(isset($_POST['login'])){
 		if($level==1) { 
 			$_SESSION['username'] = $r['username'];
 			// Jump to secured page
-			header('Location: ../staff/update_product.php');
+			header('Location: ../staff/index.php');
 			//echo("You are an Admin");
 			//echo("<br> data fetched is".$d[5]);
 		} 

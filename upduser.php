@@ -3,22 +3,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Update User</title>
+  <title>Product</title>
   <!-- Header Meta File -->
-  <?php include '../reusableCodes/headerMeta1in.php' ?>
+  <?php include 'reusableCodes/headerMeta.php' ?>
 </head>
-
 <body>
-  <!-- Header File -->
-  <?php 
-  if (isset($_SESSION['username'])) {
-    include 'reusableCodes/headerUser.php';
-  }else{
-    header('index.php');
-  }
-  ?>
+	<!-- Header File -->
+  <?php include 'reusableCodes/header.php' ?>
+
   <!-- upd profile section start -->
   <!-- Note: Might want to fetch user's details and update them here-->
   <div class="update_profile_section layout_padding">
@@ -57,7 +50,7 @@
   </div>
   <!-- upd profile section end -->
   <!-- Footer File -->
-  <?php include '../reusableCodes/footer1in.php' ?>
+  <?php include 'reusableCodes/footer.php' ?>
 </body>
 
 </html>
