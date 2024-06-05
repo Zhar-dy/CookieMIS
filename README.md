@@ -16,6 +16,9 @@ CookieMIS is a web and mobile application designed to manage cookie sales, cooki
 2. **RAZYN HAZMAN BIN RUDY ERUWAN (2022450426)** - [ROLE]
 3. **MUHAMAD NOR ADAM BIN SHAMSUL ANUAR (2022841328)** - [ROLE]
 
+## Website template used: 
+[Gamepad Template](https://www.free-css.com/free-css-templates/page291/gamepad)
+
 ## Project Preview
 ### Homepage
 ![Homepage](https://github.com/Zhar-dy/CookieMIS/assets/170181767/12f22036-f934-4c98-87f9-f63ebde7be21)
