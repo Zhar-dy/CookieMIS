@@ -1,6 +1,8 @@
 <?php
   session_start();
+  
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,11 @@
 </head>
 <body>
 	<!-- Header File -->
-  <?php include 'reusableCodes/header.php' ?>
+  <?php include 'reusableCodes/header.php';
+  if (!isset($_SESSION['name'])) {
+    header('Location: index.php');
+  }
+  ?>
 
   <!-- upd profile section start -->
   <!-- Note: Might want to fetch user's details and update them here-->
