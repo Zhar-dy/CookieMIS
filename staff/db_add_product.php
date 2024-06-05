@@ -9,7 +9,7 @@ foreach ( $_POST as $sForm => $value )
     $valuearr[$i] = $postedValue; 
 $i++;
 }
-$path = '\xampp\htdocs\CookieMIS\images/';
+$path = '../images/';
 $pic = $_FILES["file"]["name"];
 $tmplocation = $_FILES["file"]["tmp_name"];
 
