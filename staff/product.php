@@ -21,7 +21,7 @@
         <div class="container product_container">
             <div class="box">
                 <div class="img-box">
-                    <img src="../images/jumbo.png" alt="Jumbo Cookie">
+                    <img src="../images/cookies/jumbo.png" alt="Jumbo Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Cookie of <span>Creativity</span></h6>
@@ -32,7 +32,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="../images/chewy.png" alt="chewy Cookie">
+                    <img src="../images/cookies/chewy.png" alt="chewy Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Cookie of <span>Chewy</span></h6>
@@ -43,7 +43,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="../images/choccookie.png" alt="Choc Cookie">
+                    <img src="../images/cookies/choccookie.png" alt="Choc Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Chocolate Chip <span>Cookie</span></h6>
@@ -54,7 +54,7 @@
             </div>
             <div class="box">
                 <div class="img-box">
-                    <img src="../images/peanut.png" alt="Choc Cookie">
+                    <img src="../images/cookies/peanut.png" alt="Choc Cookie">
                 </div>
                 <div class="detail-box">
                     <h6>Peanut <span>Cookie</span></h6>

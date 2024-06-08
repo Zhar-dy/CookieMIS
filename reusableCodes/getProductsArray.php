@@ -81,7 +81,7 @@
 		for($i=0; $i<$totalRows; $i++){
 			echo"<div class=\"box\">
                 <div class=\"img-box\">
-				<img src=\"images/cookies/".$arrayOfArrays[$i][7]."\">
+				<img src=\"../images/cookies/".$arrayOfArrays[$i][7]."\">
                 </div>
                 <div class=\"detail-box\">
                     <h6>".$arrayOfArrays[$i][1]." <span>".$arrayOfArrays[$i][3]."</span></h6>
