@@ -14,6 +14,10 @@
   
   <!-- view section -->
 
+  <?php include '../reusableCodes/getProductsArray.php';
+  updateProduct() ?>
+
+
   <!-- view end -->>
 
     <!-- Footer File -->
