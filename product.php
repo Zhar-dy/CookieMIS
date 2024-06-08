@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +10,11 @@ session_start();
 <body>
     <!-- Header File -->
     <?php include 'reusableCodes/header.php' ?>
-
+    <!-- Phps to fetch products Starts-->
+    <!-- Phps to fetch products Ends-->
+     <?php
+     include 'reusableCodes/getProductsArray.php';
+     ?>
     <!-- Product section start -->
     <section class="product_section">
         <div class="container">
@@ -21,50 +22,10 @@ session_start();
             <p class="long_text">Cookie that will satisfy your desire</p>
         </div>
         <div class="container product_container">
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/jumbo.png" alt="Jumbo Cookie">
-                </div>
-                <div class="detail-box">
-                    <h6>Cookie of <span>Creativity</span></h6>
-                    <p class="long_text">Only cookie created with passions</p>
-                    <h5>RM5.0</h5>
-                    <a href="#">BUY NOW</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/chewy.png" alt="chewy Cookie">
-                </div>
-                <div class="detail-box">
-                    <h6>Cookie of <span>Chewy</span></h6>
-                    <p class="long_text">Only cookie created with passions</p>
-                    <h5>RM8.0</h5>
-                    <a href="#">BUY NOW</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/choccookie.png" alt="Choc Cookie">
-                </div>
-                <div class="detail-box">
-                    <h6>Chocolate Chip <span>Cookie</span></h6>
-                    <p class="long_text">Sweetness that is unbeatable</p>
-                    <h5>RM7.0</h5>
-                    <a href="#">BUY NOW</a>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/peanut.png" alt="Choc Cookie">
-                </div>
-                <div class="detail-box">
-                    <h6>Peanut <span>Cookie</span></h6>
-                    <p class="long_text">peanut cookie!</p>
-                    <h5>RM3.0</h5>
-                    <a href="#">BUY NOW</a>
-                </div>
-            </div>
+        <?php
+        // This will get the product from the database
+        getProducts();
+        ?>
         </div>
     </section>
     <!-- Product section end -->
