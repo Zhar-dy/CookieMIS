@@ -23,18 +23,28 @@ CREATE TABLE users(
     ON UPDATE CASCADE
 );
 INSERT INTO users (username, name, password, gender, address, email, phone_Num, picture, level_ID) 
-VALUES('a','MUHAMMAD ZHARFAN JUNAIDY BIN JESFFRI', 'wda', 1, '84, JALAN BAKTI 25/15', 'DUDEPOMDEV@GMAIL.COM', 103094691, 'uitm.png', 1),
+VALUES('a','MUHAMMAD ZHARFAN JUNAIDY BIN JESFFRI', '123', 1, '84, JALAN BAKTI 25/15', 'DUDEPOMDEV@GMAIL.COM', 103094691, 'uitm.png', 1),
 ('rexy','RAZYN HAZMAN', '123', 1, 'No.& Jalan BP11/5', 'rexyranger@gmail.com', 01121208397, 'uitm.png', 2);
 
 CREATE TABLE Product (
   product_ID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   product_Name VARCHAR(20) NOT NULL,
   product_Description VARCHAR(100) NOT NULL,
+  product_Highlight VARCHAR(100) NOT NULL,
   product_Status VARCHAR(20) NOT NULL,
   product_Stock INT(3) NOT NULL,
   product_Price DECIMAL(10,2) NOT NULL,
   picture VARCHAR(100) NOT NULL
 );
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Cookie of', 'Only cookie created with passion','Creativity' , 'Available', '1', '5.00', 'jumbo.png');
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Cookie of', 'Only cookie created with passion', 'Chocolate' , 'Available', '1', '8.00', 'chewy.png');
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Chocolate Chip', 'Sweetness that is unbeatable', 'Cookie' , 'Available', '1', '7.00', 'choccookie.png');
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Peanut', 'Peanut Cookie!', 'Cookie' , 'Available', '1', '3.00', 'peanut.png');
+
 CREATE TABLE Orders(
     order_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     order_Date VARCHAR(100),
@@ -60,6 +70,7 @@ CREATE TABLE OrderDetails(
 CREATE TABLE Delivery(
     delivery_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     delivery_Status TEXT(100),
+    delivery_Type VARCHAR(100),
     delivery_Estimated_Time INT(200),
     order_ID INT(100),
     FOREIGN KEY(order_ID) REFERENCES Orders(order_ID)
