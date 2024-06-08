@@ -44,6 +44,11 @@ INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `pro
  VALUES (NULL, 'Chocolate Chip', 'Sweetness that is unbeatable', 'Cookie' , 'Available', '1', '7.00', 'choccookie.png');
 INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
  VALUES (NULL, 'Peanut', 'Peanut Cookie!', 'Cookie' , 'Available', '1', '3.00', 'peanut.png');
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Vanilla', 'Pure Vanilla from Cameron Highland!', 'Cookie' , 'Not Available', '0', '12.00', 'chip.jpg');
+INSERT INTO `product` (`product_ID`, `product_Name`, `product_Description`, `product_Highlight`, `product_Status`, `product_Stock`, `product_Price`, `picture`)
+ VALUES (NULL, 'Out Of Stock', 'A Cookie that is out of stock!', 'Cookie' , 'Not Available', '0', '1.00', 'peanut.png');
+
 
 CREATE TABLE Orders(
     order_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
