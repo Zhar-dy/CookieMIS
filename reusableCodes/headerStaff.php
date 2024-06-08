@@ -24,7 +24,7 @@
           <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stock</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../staff/addProduct.php">Create</a>
-            <a class="dropdown-item" href="#">View</a>
+            <a class="dropdown-item" href="../staff/view_Product.php">View</a>
             <a class="dropdown-item" href="#">Update</a>
           </div>
         </li>
