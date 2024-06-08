@@ -12,6 +12,7 @@
   <!-- Header File -->
   <?php include '../reusableCodes/headerStaff.php' ?>
 <!--testing-->
+<p>
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container"style="margin-top: 90px">
