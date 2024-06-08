@@ -6,6 +6,12 @@
     <!-- Header Meta File -->
     <?php include '../reusableCodes/headerMeta1in.php' ?>
     <link rel="stylesheet" href="style.css">
+    <style>
+    .fonts{font-size: 20px;
+    font-weight: bold;
+    color: #191919;
+    margin-bottom: 10px;}
+    </style>
 </head>
 
 <body>
@@ -23,8 +29,10 @@
                 <div class="form-group">
                     <label for="product_Name">Product Highlight:</label>
                     <input type="text" id="product_Highlight" name="product_Highlight" class="form-control" required>
-                    <b>Note: </b>Might need to add preview for this to work
+                    <div>Example:</div>
+                    <b id="productPreview" class="product_text"></b>
                 </div>
+                <button type="button" id="previewButton" class="btn btn-secondary">Preview</button>
 
                 <div class="form-group">
                     <label for="product_Description">Product Description:</label>
@@ -63,6 +71,20 @@
 
     <!-- Footer File -->
     <?php include '../reusableCodes/footer1in.php' ?>
+
+    <script>
+        document.getElementById('previewButton').addEventListener('click', function() {
+        const productName = document.getElementById('product_Name').value;
+        const productHighlight = document.getElementById('product_Highlight').value;
+        const previewDiv = document.getElementById('productPreview');
+        
+        if (productName && productHighlight) {
+            previewDiv.innerHTML = `<p class= 'fonts'>${productName} <span style="color: #5ca0e9;">${productHighlight}</span></p>`;
+        } else {
+            previewDiv.innerHTML = 'Please enter both Product Name and Product Highlight.';
+        }
+    });
+    </script>
 </body>
 
-</html>
+</html>   
