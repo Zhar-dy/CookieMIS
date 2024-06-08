@@ -15,7 +15,7 @@
 
         <div class="container">
 
-            <p class="long_text">Update product details</p>
+            <p class="long_text" style="font-size: 50px; margin-bottom: 75px; font-weight: bold">Update Product Details</p>
         </div>
         <div class="container product_container">
         <?php
