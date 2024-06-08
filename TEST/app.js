@@ -48,7 +48,7 @@ function initApp(){
         newDiv.classList.add('box');
         newDiv.innerHTML = `
             <div class="img-box">
-                <img src="../images/${value.image}" alt="${value.name}">
+                <img src="../images/cookies/${value.image}" alt="${value.name}">
             </div>
             <div class="detail-box">
                 <h6>${value.name} <span></span></h6>
@@ -80,7 +80,7 @@ function reloadCard(){
             count += value.quantity;
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
-                <div><img src="../images/${value.image}"/></div>
+                <div><img src="../images/cookies/${value.image}"/></div>
                 <div>${value.name}</div>
                 <div>${(value.price * value.quantity).toLocaleString()}</div>
                 <div>
