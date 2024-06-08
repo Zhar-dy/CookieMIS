@@ -1,6 +1,6 @@
 -- simply copy paste this SQL after creating a database with the name 'cookiemis' (just copy everything and paste)
 -- 
--- Version 4(Removed unnecessary things)
+-- Version 5(Disjoint table)
 CREATE TABLE level (
   id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   access VARCHAR(10) NOT NULL
@@ -60,6 +60,7 @@ CREATE TABLE Orders(
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
 CREATE TABLE OrderDetails(
     detail_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     order_ID INT(20),
@@ -79,6 +80,21 @@ CREATE TABLE Delivery(
     delivery_Estimated_Time INT(200),
     order_ID INT(100),
     FOREIGN KEY(order_ID) REFERENCES Orders(order_ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+CREATE TABLE Pickup(
+    delivery_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pickup_Date VARCHAR(100),
+    FOREIGN KEY(delivery_ID) REFERENCES Delivery(delivery_ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+
+);
+CREATE TABLE Deliver(
+    delivery_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    delivery_Date VARCHAR(100),
+    FOREIGN KEY(delivery_ID) REFERENCES Delivery(delivery_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
