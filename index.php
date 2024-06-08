@@ -80,7 +80,7 @@ session_start();
       <div class="container product_container">
         <div class="box">
           <div class="img-box">
-            <img src="images/jumbo.png" alt="Jumbo Cookie">
+            <img src="images/cookies/jumbo.png" alt="Jumbo Cookie">
           </div>
           <div class="detail-box">
             <h6>Cookie of <span>Creativity</span></h6>
