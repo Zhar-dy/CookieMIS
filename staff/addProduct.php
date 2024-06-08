@@ -20,6 +20,11 @@
                     <label for="product_Name">Product Name:</label>
                     <input type="text" id="product_Name" name="product_Name" class="form-control" required>
                 </div>
+                <div class="form-group">
+                    <label for="product_Name">Product Highlight:</label>
+                    <input type="text" id="product_Highlight" name="product_Highlight" class="form-control" required>
+                    <b>Note: </b>Might need to add preview for this to work
+                </div>
 
                 <div class="form-group">
                     <label for="product_Description">Product Description:</label>
@@ -40,15 +45,15 @@
                 <div class="form-group">
                     <label for="product_Status">Product Status:</label>
                     <select id="product_Status" name="product_Status" class="form-control">
-                        <option value="1">Available</option>
-                        <option value="0">Not Available</option>
+                        <option value="Available">Available</option>
+                        <option value="Not Available">Not Available</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="product_image">Product Image:</label>
                     <input type="file" id="file" name="file" class="form-control" required>
-                    <input type="hidden" name="pic" value="<?php echo $row['picture']; ?>" />
+                    <!--<input type="hidden" name="pic" value="<?php //echo $row['picture']; ?>" />-->
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add Product</button>
