@@ -53,7 +53,7 @@
                 <div class=\"detail-box\">
                     <h6>".$arrayOfArrays[$i][1]." <span>".$arrayOfArrays[$i][3]."</span></h6>
                     <p class=\"long_text\">".$arrayOfArrays[$i][2]."</p>
-                    <h5>RM".$arrayOfArrays[$i][6]."</h5>";
+                    <h5>RM ".$arrayOfArrays[$i][6]."</h5>";
 			if ($arrayOfArrays[$i][4]==="Available" && $arrayOfArrays[$i][5] >= 1){
 				echo "<a href=\"#\">BUY NOW</a>
                 	</div>
@@ -86,7 +86,7 @@
                 <div class=\"detail-box\">
                     <h6>".$arrayOfArrays[$i][1]." <span>".$arrayOfArrays[$i][3]."</span></h6>
                     <p class=\"long_text\">".$arrayOfArrays[$i][2]."</p>
-                    <h5>RM".$arrayOfArrays[$i][6]."</h5>";
+                    <h5>RM ".$arrayOfArrays[$i][6]."</h5>";
 			if ($arrayOfArrays[$i][4]==="Available" && $arrayOfArrays[$i][5] >= 1){
 				echo "<a href=\"#\">Update Stock</a>
                 	</div>
