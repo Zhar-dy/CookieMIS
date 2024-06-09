@@ -11,7 +11,7 @@
   
   <!-- view section -->
   <section class="product_section">
-  <?php include '../reusableCodes/getProductsArray.php'?>
+  <?php include '../reusableCodes/Functions.php'?>
 
         <div class="container">
 
