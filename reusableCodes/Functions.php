@@ -99,43 +99,31 @@
 		}
 	}
 
-
-/*
-Data Available:
-1)product_ID
-2)product_Name
-3)product_Description
-4)product_Highlight
-5)product_Status
-6)product_Stock
-7)product_Price
-8)picture
-*/
-
-
-/*
-echo "<br>";
-for($i=0; $i<$totalRows; $i++){
-	print_r($arrayOfArrays[$i]);
-	echo "<br>";
+// Sanitize the god damn inputs
+function sanitize($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = cleanInput($data);
+    return $data;
 }
-*/
-	
-/*
-	//$password= $r['password'];
-	$level= $r['level_id'];
+function cleanInput($data) {
+    $search = array(
+        '/&/i',  // ampersand
+        '/</i',  // less than
+        '/>/i',  // greater than
+        '/"/i',  // quote
+        '/\'/i'  // apostrophe
+    );
 
-?>
-<script type="text/javascript">
-	alert("An error occured!");
-</script>
-<?php
-	header('Location: ../login/login.php');
-	
-	
-	//echo("Level doesnt make sense");
-	//echo("<br> data fetched is".$d[5]);
-	
-	mysqli_close($conn);
-	?>
-*/
+    $replace = array(
+        '',
+        '',
+        '',
+        '',
+        ''
+    );
+
+    $data = preg_replace($search, $replace, $data);
+
+    return $data;
+}

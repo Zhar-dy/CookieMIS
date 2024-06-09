@@ -13,7 +13,7 @@
     <!-- Phps to fetch products Starts-->
     <!-- Phps to fetch products Ends-->
      <?php
-     include 'reusableCodes/getProductsArray.php';
+     include 'reusableCodes/Functions.php';
      ?>
     <!-- Product section start -->
     <section class="product_section">
