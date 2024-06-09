@@ -21,6 +21,13 @@
           <a class="nav-link" href="#"><img src="../images/search-icon.png"></a>
         </li>
         <li class="nav-item dropdown active">
+          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../staff/viewUser.php">View</a>
+            <a class="dropdown-item" href="#">Update</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown active">
           <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stock</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../staff/addProduct.php">Create</a>

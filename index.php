@@ -41,7 +41,7 @@ session_start();
                 <div class="shop_bt"><a href="product.php">Shop Now</a></div>
               </div>
               <div class="col-md-6">
-                <div class="image_1"><img src="images/jumbo.png"></div>
+                <div class="image_1"><img src="images/cookies/jumbo.png"></div>
               </div>
             </div>
           </div>

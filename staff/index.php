@@ -38,7 +38,7 @@
                 <div class="shop_bt"><a href="product.php">Shop Now</a></div>
               </div>
               <div class="col-md-6">
-                <div class="image_1"><img src="../images/jumbo.png"></div>
+                <div class="image_1"><img src="../images/cookies/jumbo.png"></div>
             </div>
           </div>
           </div>
@@ -77,7 +77,7 @@
       <div class="container product_container">
       <div class="box">
         <div class="img-box">
-            <img src="../images/jumbo.png" alt="Jumbo Cookie">
+            <img src="../images/cookies/jumbo.png" alt="Jumbo Cookie">
         </div>
         <div class="detail-box">
             <h6>Cookie of <span>Creativity</span></h6>
