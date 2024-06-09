@@ -4,6 +4,48 @@
   <title>CookieMIS</title>
   <!-- Header Meta File -->
   <?php include '../reusableCodes/headerMeta1in.php' ?>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <style>
+        /* Basic styling for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        /* Style the status dropdown */
+        .status-select {
+            width: 100px;
+            background-color: DodgerBlue;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        /* Style the "Update" button */
+        button {
+            background-color: DodgerBlue;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: RoyalBlue;
+        }
+    </style>
+</head>
 </head>
 <body>
   <!-- Header File -->
@@ -39,7 +81,7 @@
     </style>
 </head>
 <body>
-    <h1>Customer Orders</h1>
+<h1>Customer Orders</h1>
     <table>
         <thead>
             <tr>
@@ -58,7 +100,8 @@
                 <td>
                     <select class="status-select">
                         <option value="pending">Pending</option>
-                        <option value="processing">Processing</option>
+                        <option value="ready">Ready</option>
+                        <option value="received">Received</option>
                         <option value="shipped">Shipped</option>
                         <option value="delivered">Delivered</option>
                     </select>
@@ -68,11 +111,6 @@
             <!-- Add more rows for other orders -->
         </tbody>
     </table>
-        </div>
-    </section>
-  
-
-
   <!-- view end -->>
 
 </body>
