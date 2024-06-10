@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>CookieMIS</title>
+  <title>Customer Order </title>
+  
   <!-- Header Meta File -->
   <?php include '../reusableCodes/headerMeta1in.php' ?>
-  <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management</title>
+
+ <!-- Header File -->
+    <?php include '../reusableCodes/headerStaff.php' ?>
+        <section class="product_section">
+        <div class="container">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         /* Basic styling for the table */
         table {
@@ -46,41 +55,9 @@
         }
     </style>
 </head>
-</head>
-<body>
-  <!-- Header File -->
-  <?php include '../reusableCodes/headerStaff.php' ?>
-  
-  <!-- view section -->
-  <section class="product_section">
 
-        <div class="container">
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Management</title>
-    <style>
-        /* Basic styling for the table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        /* Style the status dropdown */
-        .status-select {
-            width: 100px;
-        }
-    </style>
-</head>
 <body>
+<!-- view section -->
 <h1>Customer Orders</h1>
     <table>
         <thead>
