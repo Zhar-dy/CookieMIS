@@ -14,7 +14,7 @@ session_start();
 <body>
   <!-- Header File -->
   <?php include '../reusableCodes/header1in.php' ?>
-  <?php include 'fetchData.php' ?>
+
   <!-- cart section start -->
 
         <div class="container">
