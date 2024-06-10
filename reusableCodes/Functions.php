@@ -63,8 +63,60 @@
                 	</div>
            			</div>";
 			}
-		}
+		}/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
 	}
+	function getProductsWithoutHTML() {
+		// Include database connection settings
+		include('connectdb.php');
+
+		$sql= "SELECT * FROM product";
+		$query = mysqli_query($conn, $sql);
+		// Get total rows of the data
+		$totalRows = mysqli_num_rows($query);
+		$arrayOfArrays = array();
+		// Store the arrays into an array
+		while($row = mysqli_fetch_array($query)){
+			$arrayOfArrays[] = $row;
+		}
+		// First initialization fix
+		$i=0;
+		$dataToPost = "";
+		$dataToPost =$arrayOfArrays[$i][1]."|".$arrayOfArrays[$i][3]."|".$arrayOfArrays[$i][2]."|"
+				.$arrayOfArrays[$i][4]."|".$arrayOfArrays[$i][5]."|".$arrayOfArrays[$i][6]."|"
+				.$arrayOfArrays[$i][7]."";
+		// Set the rest of the data
+		for($i=1; $i<$totalRows; $i++){
+			$dataToPost = $dataToPost."+".$arrayOfArrays[$i][1]."|".$arrayOfArrays[$i][3]."|".$arrayOfArrays[$i][2]."|"
+				.$arrayOfArrays[$i][4]."|".$arrayOfArrays[$i][5]."|".$arrayOfArrays[$i][6]."|"
+				.$arrayOfArrays[$i][7]."";
+		}
+		return $dataToPost;
+	}
+	function getProductsinJSON() {
+		// Include database connection settings
+		include('connectdb.php');
+
+		$sql= "SELECT * FROM product";
+		$query = mysqli_query($conn, $sql);
+		// Get total rows of the data
+		$totalRows = mysqli_num_rows($query);
+		$arrayOfArrays = array();
+		// Store the arrays into an array
+		while($row = mysqli_fetch_array($query)){
+			$arrayOfArrays[] = $row;
+		}
+		return $arrayOfArrays;
+	}
+
 	function updateProduct() {
 		// Include database connection settings
 		include('connectdb.php');
