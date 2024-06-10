@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Customer Order </title>
-  
-  <!-- Header Meta File -->
-  <?php include '../reusableCodes/headerMeta1in.php' ?>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order </title>
+  
+    <!-- Header Meta File -->
+    <?php include '../reusableCodes/headerMeta1in.php' ?>
 
- <!-- Header File -->
+    <!-- Header File -->
     <?php include '../reusableCodes/headerStaff.php' ?>
-        <section class="product_section">
-        <div class="container">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <section class="product_section">
+    <div class="container">
 
     <style>
         /* Basic styling for the table */
