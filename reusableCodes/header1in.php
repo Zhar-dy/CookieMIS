@@ -13,9 +13,21 @@
                 <li class="nav-item">
                   <a class="nav-link" href="../about.php">ABOUT</a>
                 </li>
+                <?php
+                if (isset($_SESSION['username'])) {
+                ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="../cart.php">OUR PRODUCTS</a>
+                </li>
+                <?php
+                } else {
+                ?>
                 <li class="nav-item">
                   <a class="nav-link" href="../product.php">OUR PRODUCTS</a>
                 </li>
+                <?php
+                }
+                ?>
                 <li class="nav-item">
                   <a class="nav-link" href="../testimonial.php">TESTIMONIAL</a>
                 </li>

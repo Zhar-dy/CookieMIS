@@ -1,5 +1,8 @@
-<div?php
+<?php
 session_start();
+if (!isset($_SESSION['username'])) {
+  header('Location:login/login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,13 +10,13 @@ session_start();
 <head>
   <title>Cart</title>
   <!-- Header Meta File -->
-  <?php include '../reusableCodes/headerMeta1in.php' ?>
+  <?php include './reusableCodes/headerMeta.php' ?>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!-- Header File -->
-  <?php include '../reusableCodes/header1in.php' ?>
+  <?php include 'reusableCodes/header.php' ?>
 
   <!-- cart section start -->
 
@@ -21,7 +24,7 @@ session_start();
         <header>
             <h1>Your Shopping Cart</h1>
             <div class="shopping">
-                <img src="../images/shopcart.svg">
+                <img src="images/shopcart.svg">
                 <span class="quantity">0</span>
             </div>
         </header>
@@ -43,8 +46,8 @@ session_start();
   <!-- cart section end -->
 
   <!-- Footer File -->
-  <?php include '../reusableCodes/footer1in.php' ?>
-  <script src="app.js"></script>
+  <?php include 'reusableCodes/footer.php' ?>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

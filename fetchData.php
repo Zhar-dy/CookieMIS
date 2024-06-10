@@ -1,5 +1,5 @@
 <?php
-     include '../reusableCodes/Functions.php';
+     include 'reusableCodes/Functions.php';
      $array = getProductsWithoutHTML();
      $array2 = getProductsInJSON();
 // Convert data to JSON format

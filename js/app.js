@@ -15,6 +15,7 @@ closeShopping.addEventListener('click', ()=>{
 });
 
 // This is for fetching data from php file
+
 function fetchData() {
     return new Promise((resolve, reject) => {
         $.ajax({
@@ -123,7 +124,7 @@ function initApp(products){
         if(value.stock < 1){
             newDiv.innerHTML = `
             <div class="img-box">
-                <img src="../images/cookies/${value.image}" alt="${value.name}">
+                <img src="images/cookies/${value.image}" alt="${value.name}">
             </div>
             <div class="detail-box">
                 <h6>${value.name} <span>${value.highlight}</span></h6>
@@ -134,7 +135,7 @@ function initApp(products){
         }else{
             newDiv.innerHTML = `
             <div class="img-box">
-                <img src="../images/cookies/${value.image}" alt="${value.name}">
+                <img src="images/cookies/${value.image}" alt="${value.name}">
             </div>
             <div class="detail-box">
                 <h6>${value.name} <span>${value.highlight}</span></h6>
@@ -149,6 +150,7 @@ function initApp(products){
 }
 let product = "";
 fetchData().then(products => {
+    console.log("Preparing Data...");
     initApp(products);  // Now 'products' is available here
     product = products;
 }).catch(error => {
@@ -157,12 +159,16 @@ fetchData().then(products => {
 
 function addToCard(key){
     if(listCards[key] == null){
-        // copy product form list to list card
+        // copy product from list to list card
         listCards[key] = JSON.parse(JSON.stringify(product[key])); // Error. product is not defined
         listCards[key].quantity = 1;
+
+        // Ensure price is an integer
+        listCards[key].price = parseInt(listCards[key].price);
     }
     reloadCard();
 }
+
 
 function reloadCard(){
     listCard.innerHTML = '';
@@ -177,9 +183,9 @@ function reloadCard(){
             count += value.quantity;
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
-                <div><img src="../images/cookies/${value.image}"/></div>
+                <div><img src="images/cookies/${value.image}"/></div>
                 <div>${value.name}</div>
-                <div>${(value.price).toLocaleString()}</div>
+                <div>${value.price}</div>
                 <div>
                     <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class="count">${value.quantity}</div>
@@ -188,7 +194,8 @@ function reloadCard(){
             listCard.appendChild(newDiv);
         }
     });
-    total.innerText = totalPrice.toLocaleString();
+    total.innerText = totalPrice;
+    console.log("First input is: ", totalPrice);
     quantity.innerText = count;
 }
 
