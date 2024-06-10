@@ -1,6 +1,6 @@
 <?php
 	// Inialize session
-	session_start();
+	//session_start();
 	
 	// Include database connection settings
 	include('connectdb.php');
