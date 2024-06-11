@@ -24,7 +24,7 @@ if(isset($_POST['login'])){
 	header('Location: loginNotFound.php'); 
 	}else{
 		$r = mysqli_fetch_assoc($query);
-		$sql= "SELECT * FROM users WHERE username= '$username' AND password= '$password'";
+		$sql= "SELECT * FROM users WHERE username= '$username' AND password= '$hashed'";
 		$query = mysqli_query($conn, $sql);
 		$d = mysqli_fetch_array($query);
 		$username= $r['username'];
@@ -59,13 +59,14 @@ if(isset($_POST['login'])){
 			// Jump to secured page
 			header('Location: ../staff/index.php');
 			//echo("You are an Admin");
+			//echo("<br> data fetched is".$_SESSIOn['name']);
 			//echo("<br> data fetched is".$d[5]);
 		} 
 		elseif($level==2) {
 			$_SESSION['username'] = $r['username'];
 				header('Location: ../index.php');
 				//echo("You are a user");
-				//echo("<br> data fetched is".$_COOKIE['username']);
+				//echo("<br> data fetched is".$_SESSION['name']);
 		}
 		else {
 			header('Location: login.php');
