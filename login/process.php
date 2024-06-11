@@ -16,7 +16,7 @@ if(isset($_POST['login'])){
 	$hashed = md5($password);
 	$hashed = md5($hashed);
 	
-	$sql= "SELECT username, password, level_id FROM users WHERE username= '$username' AND password= '$password'";
+	$sql= "SELECT username, password, level_id FROM users WHERE username= '$username' AND password= '$hashed'";
 	$query = mysqli_query($conn, $sql);
 	$row = mysqli_num_rows($query);
 	if($row == 0){
