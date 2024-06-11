@@ -184,7 +184,7 @@ function reloadCard(){
             let newDiv = document.createElement('li');
             newDiv.innerHTML = `
                 <div><img src="images/cookies/${value.image}"/></div>
-                <div>${value.name}</div>
+                <div>${value.name} ${value.highlight}</div>
                 <div>${value.price}</div>
                 <div>
                     <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
