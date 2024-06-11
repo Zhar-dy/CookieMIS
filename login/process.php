@@ -12,6 +12,9 @@ if(isset($_POST['login'])){
 	/* capture values from HTML form */
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	// Double encryption
+	$hashed = md5($password);
+	$hashed = md5($hashed);
 	
 	$sql= "SELECT username, password, level_id FROM users WHERE username= '$username' AND password= '$password'";
 	$query = mysqli_query($conn, $sql);
