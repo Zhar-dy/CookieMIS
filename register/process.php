@@ -12,6 +12,9 @@ if(isset($_POST['signup'])){
 	$password = $_POST['password'];
 	$gender = $_POST['gender'];
 	$level_id = 2;
+	// Double encryption
+	$hashed = md5($password);
+	$hashed = md5($hashed);
 	// check if username already exists
 	$sql0 = "SELECT username FROM users WHERE username = '$user_name'";
 	$query0 = mysqli_query($conn, $sql0) or die ("Error: " . mysqli_error($conn));
@@ -38,7 +41,7 @@ if(isset($_POST['signup'])){
 
 		/* execute SQL INSERT command */
 		$sql2 = "INSERT INTO users (username, name,password,gender,address,email,phone_Num,picture,level_id)
-		VALUES ('" . $user_name . "', '" . $name . "', '" . $password . "', '" . $gender . "', '" . $address . "', '" . $email . "', '" . $phoneno . "', '" . $imageName . "', '" . $level_id . "')";
+		VALUES ('" . $user_name . "', '" . $name . "', '" . $hashed . "', '" . $gender . "', '" . $address . "', '" . $email . "', '" . $phoneno . "', '" . $imageName . "', '" . $level_id . "')";
 		
 		mysqli_query($conn, $sql2) or die ("Error: " . mysqli_error($conn));
 		/* rediredt to respective page */

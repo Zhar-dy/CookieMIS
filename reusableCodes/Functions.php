@@ -156,6 +156,7 @@ function sanitize($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = cleanInput($data);
+	echo "Data is: ".$data;
     return $data;
 }
 function cleanInput($data) {
