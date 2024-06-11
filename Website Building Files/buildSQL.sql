@@ -23,8 +23,9 @@ CREATE TABLE users(
     ON UPDATE CASCADE
 );
 INSERT INTO users (username, name, password, gender, address, email, phone_Num, picture, level_ID) 
-VALUES('a','MUHAMMAD ZHARFAN JUNAIDY BIN JESFFRI', '123', 1, '84, JALAN BAKTI 25/15', 'DUDEPOMDEV@GMAIL.COM', 103094691, 'uitm.png', 1),
-('rexy','RAZYN HAZMAN', '123', 1, 'No.& Jalan BP11/5', 'rexyranger@gmail.com', 01121208397, 'uitm.png', 2);
+VALUES('a','MUHAMMAD ZHARFAN JUNAIDY BIN JESFFRI', 'd9b1d7db4cd6e70935368a1efb10e377', 1, '84, JALAN BAKTI 25/15', 'DUDEPOMDEV@GMAIL.COM', 103094691, 'uitm.png', 1),
+('rexy','RAZYN HAZMAN', 'd9b1d7db4cd6e70935368a1efb10e377', 1, 'No.& Jalan BP11/5', 'rexyranger@gmail.com', 01121208397, 'uitm.png', 2),
+('adam','Adam', 'd9b1d7db4cd6e70935368a1efb10e377', 1, 'Mars', 'adam@gmail.com', 0123456789, 'uitm.png', 1);;
 
 CREATE TABLE Product (
   product_ID INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
