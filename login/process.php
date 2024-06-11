@@ -1,7 +1,10 @@
 <?php
 // Inialize session
 session_start();
-
+$_SESSION["attempt"] = $_SESSION["attempt"] + 1;
+if ($_SESSION["attempt"] > 4){
+	header("Location: maxLoginAttempt");
+};
 // Include database connection settings
 include('../reusableCodes/connectdb.php');
 
