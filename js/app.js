@@ -5,6 +5,7 @@ let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
 let total = document.querySelector('.total');
+let totaldiv = document.querySelector('total');
 let quantity = document.querySelector('.quantity');
 
 openShopping.addEventListener('click', ()=>{
@@ -13,6 +14,11 @@ openShopping.addEventListener('click', ()=>{
 closeShopping.addEventListener('click', ()=>{
     body.classList.remove('active');
 });
+// totaldiv.addEventListener('click', ()=>{
+//     // Go to this location
+//     alert(" Your Order has been placed! ");
+//     window.location("index.php");
+// });
 
 // This is for fetching data from php file
 

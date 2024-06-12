@@ -32,6 +32,142 @@
 		echo ")<br>";
 	}
 	*/
+	function getOrderDetailsStaff() {
+		// Include database connection settings
+		include('connectdb.php');
+
+		$sql= "SELECT * FROM orders";
+		$query = mysqli_query($conn, $sql);
+		// Get total rows of the data
+		$totalRows = mysqli_num_rows($query);
+		$arrayOfArrays = array();
+		// Store the arrays into an array
+		while($row = mysqli_fetch_array($query)){
+			$arrayOfArrays[] = $row;
+		}
+
+		
+		/*
+		0 Order id
+		1 Date
+		2 Details
+		3 Status
+		4 User ID		
+		*/
+		for($i=0; $i<$totalRows; $i++){
+		echo"<tbody>
+				<tr>
+					<td>".$arrayOfArrays[$i][0]."</td>";
+			$sql2= "SELECT * FROM users WHERE user_ID ='".$arrayOfArrays[$i][4]."'";
+			$query = mysqli_query($conn, $sql2);
+			$userArray = mysqli_fetch_array($query);
+				
+		echo "		<td>".$userArray[2]."</td>
+					<td>".$arrayOfArrays[$i][1]."</td>
+					<td>".$arrayOfArrays[$i][2]."</td>
+					<td>";
+					switch ($arrayOfArrays[$i][3]) {
+						case 1:
+							echo"
+						<select class=\"status-select\">
+							<option value=\"pending\" selected>Pending</option>
+							<option value=\"ready\">Ready</option>
+							<option value=\"received\">Received</option>
+							<option value=\"shipped\">Shipped</option>
+							<option value=\"delivered\">Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+						
+						case 2:
+							echo"
+						<select class=\"status-select\">
+							<option value=\"pending\">Pending</option>
+							<option value=\"ready\" selected>Ready</option>
+							<option value=\"received\">Received</option>
+							<option value=\"shipped\">Shipped</option>
+							<option value=\"delivered\">Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+						
+						case 3:
+							echo"
+						<select class=\"status-select\">
+							<option value=\"pending\">Pending</option>
+							<option value=\"ready\">Ready</option>
+							<option value=\"received\" selected>Received</option>
+							<option value=\"shipped\">Shipped</option>
+							<option value=\"delivered\">Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+						
+						case 4:
+							echo"
+						<select class=\"status-select\">
+							<option value=\"pending\">Pending</option>
+							<option value=\"ready\">Ready</option>
+							<option value=\"received\">Received</option>
+							<option value=\"shipped\" selected>Shipped</option>
+							<option value=\"delivered\">Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+						case 5:
+							echo"
+						<select class=\"status-select\">
+							<option value=\"pending\">Pending</option>
+							<option value=\"ready\">Ready</option>
+							<option value=\"received\">Received</option>
+							<option value=\"shipped\">Shipped</option>
+							<option value=\"delivered\" selected>Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+						default:
+						echo"
+						<select class=\"status-select\">
+							<option value=\"Select\" disabled>Pending</option>
+							<option value=\"pending\">Pending</option>
+							<option value=\"ready\">Ready</option>
+							<option value=\"received\">Received</option>
+							<option value=\"shipped\">Shipped</option>
+							<option value=\"delivered\">Delivered</option>
+						</select>
+					</td>
+					<td><button>Update</button></td>
+				</tr>
+			</tbody>";
+							break;
+					} //This is switch case bracket
+		
+		}/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+	}
 	function getProducts() {
 		// Include database connection settings
 		include('connectdb.php');

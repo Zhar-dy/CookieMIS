@@ -9,7 +9,8 @@
     <?php include '../reusableCodes/headerMeta1in.php' ?>
 
     <!-- Header File -->
-    <?php include '../reusableCodes/headerStaff.php' ?>
+    <?php include '../reusableCodes/headerStaff.php';
+    include '../reusableCodes/Functions.php' ?>
 
     <section class="product_section">
     <div class="container">
@@ -63,15 +64,17 @@
                 <th>Order ID</th>
                 <th>Customer Name</th>
                 <th>Order Date</th>
+                <th>Order Details</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
         </thead>
-        <tbody>
+        <!-- <tbody>
             <tr>
                 <td>1</td>
                 <td>John Doe</td>
                 <td>2024-06-08</td>
+                <td>put order details here</td>
                 <td>
                     <select class="status-select">
                         <option value="pending">Pending</option>
@@ -83,8 +86,8 @@
                 </td>
                 <td><button>Update</button></td>
             </tr>
-            <!-- Add more rows for other orders -->
-        </tbody>
+        </tbody> -->
+        <?php getOrderDetailsStaff(); ?>
     </table>
   <!-- view end -->>
 

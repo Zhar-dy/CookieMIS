@@ -61,6 +61,12 @@ CREATE TABLE Orders(
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
+ VALUES (NULL, '1-1-2024', 'big cookies plsssss', 1 , 1);
+INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
+ VALUES (NULL, '2-1-2024', 'extra chocolate (leave it at the porch)', 1 , 1);
+INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
+ VALUES (NULL, '5-1-2024', 'No almond', 1 , 1);
 
 CREATE TABLE OrderDetails(
     detail_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -96,6 +102,17 @@ CREATE TABLE Deliver(
     delivery_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     delivery_Date VARCHAR(100),
     FOREIGN KEY(delivery_ID) REFERENCES Delivery(delivery_ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE Testimonials(
+    testimony_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_ID INT(100),
+    rating INT(2),
+    feedback VARCHAR(200),
+    occcupation VARCHAR(200),
+    FOREIGN KEY(user_ID) REFERENCES users(user_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
