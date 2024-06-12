@@ -176,7 +176,7 @@ img {
 .btn-primary {
     background-color: #1a73e8;
     border-color: #1a73e8;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .btn-primary:hover {
@@ -187,7 +187,7 @@ img {
 .btn-secondary {
     background-color: #db5858;
     border-color: #db5858;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .btn-secondary:hover {
     background-color: #e81a1a ;

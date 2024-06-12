@@ -88,7 +88,7 @@ session_start();
           <div class="cell">
             Phone Number
           </div>
-          <div class="cell" align="center">
+          <div class="cell" align="center" >
             Action
           </div>
         </div>
