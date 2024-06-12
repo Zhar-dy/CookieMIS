@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
   <title>Cart</title>
   <!-- Header Meta File -->
   <?php include './reusableCodes/headerMeta.php' ?>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cartStyle.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['username'])) {
 
         <div class="container">
         <header>
-            <h1>Your Shopping Cart</h1>
+        <p class="long_text" style="font-size: 35px; font-weight: bold">Our Product</p>
             <div class="shopping">
                 <img src="images/shopcart.svg">
                 <span class="quantity">0</span>

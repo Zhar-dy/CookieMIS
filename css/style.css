@@ -35,7 +35,7 @@ src: url("../fonts/Lato-Regular.ttf");
 *::after,
 *::before {
     box-sizing: border-box !important;
-    transition: ease all 0.5s;
+    
 }
 
 html {
@@ -430,7 +430,7 @@ button {
 
 /* PRODUCT SECTION */
 .product_section {
-    padding-top: 90px;
+    padding-top: 10px;
     padding-bottom: 90px;
 }
 
