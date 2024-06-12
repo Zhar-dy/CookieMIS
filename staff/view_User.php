@@ -16,6 +16,7 @@ session_start();
 <body>
   <!-- Header File -->
   <?php include '../reusableCodes/headerStaff.php';
+  include '../reusableCodes/Functions.php';
   ?>
   <!--,,-->
   <div class="banner_section layout_padding">
@@ -51,29 +52,8 @@ session_start();
         </div>
 
         <!--REPEAT THIS BELOW with php magic-->
-        <div class="trow">
-          <div class="cell">
-            Batman
-          </div>
-          <div class="cell">
-            Duke Arkham
-          </div>
-          <div class="cell">
-            passIsSecure
-          </div>
-          <div class="cell">
-            if 1 then male
-          </div>
-          <div class="cell">
-            Klang, Selangor(klang need batman)
-          </div>
-          <div class="cell">
-            Justice@gmail.com
-          </div>
-          <div class="cell">
-            991
-          </div>
-        </div>
+        
+          <?php printUsers() ?>
       </div>
 
 
@@ -108,29 +88,7 @@ session_start();
         </div>
 
         <!--REPEAT THIS BELOW FOR customer with php magic-->
-        <div class="trow">
-          <div class="cell">
-            Batman
-          </div>
-          <div class="cell">
-            Duke Arkham
-          </div>
-          <div class="cell">
-            passIsSecure
-          </div>
-          <div class="cell">
-            if 1 then male
-          </div>
-          <div class="cell">
-            Klang, Selangor(klang need batman)
-          </div>
-          <div class="cell">
-            Justice@gmail.com
-          </div>
-          <div class="cell">
-            991
-          </div>
-        </div>
+        <?php printStaff() ?>
       </div>
     
     </div>

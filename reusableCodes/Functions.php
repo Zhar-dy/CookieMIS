@@ -74,6 +74,148 @@
 		7 image
 		*/
 	}
+	function printUsers() {
+		// Include database connection settings
+		include('connectdb.php');
+
+		$sql= "SELECT * FROM users WHERE level_ID = 1";
+		$query = mysqli_query($conn, $sql);
+		// Get total rows of the data
+		$totalRows = mysqli_num_rows($query);
+		$arrayOfArrays = array();
+		// Store the arrays into an array
+		while($row = mysqli_fetch_array($query)){
+			$arrayOfArrays[] = $row;
+		}
+		/*
+		0 id
+		1 username
+		2 name
+		3 password
+		4 gender  make if 1, then gender is male
+		5 address
+		6 email
+		7 phone
+		8 picture
+		9 level ID
+		*/
+		for($i=0; $i<$totalRows; $i++){
+		echo"<div class=\"trow\">
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][1]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][2]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][3]."
+				</div>";
+			if ($arrayOfArrays[$i][4]== 1){
+				echo"<div class=\"cell\">
+					Male  
+				</div>";
+			}else if ($arrayOfArrays[$i][4] == 2){
+				echo"<div class=\"cell\">
+					Female
+				</div>";
+			}else{
+				echo"<div class=\"cell\">
+					Non Binary  
+				</div>";
+			}
+			echo"<div class=\"cell\">
+					".$arrayOfArrays[$i][5]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][6]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][7]."
+				</div>
+			</div>";
+			
+		}/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+	}
+	function printStaff() {
+		// Include database connection settings
+		include('connectdb.php');
+
+		$sql= "SELECT * FROM users WHERE level_ID = 2";
+		$query = mysqli_query($conn, $sql);
+		// Get total rows of the data
+		$totalRows = mysqli_num_rows($query);
+		$arrayOfArrays = array();
+		// Store the arrays into an array
+		while($row = mysqli_fetch_array($query)){
+			$arrayOfArrays[] = $row;
+		}
+		/*
+		0 id
+		1 username
+		2 name
+		3 password
+		4 gender  make if 1, then gender is male
+		5 address
+		6 email
+		7 phone
+		8 picture
+		9 level ID
+		*/
+		for($i=0; $i<$totalRows; $i++){
+		echo"<div class=\"trow\">
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][1]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][2]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][3]."
+				</div>";
+			if ($arrayOfArrays[$i][4]== 1){
+				echo"<div class=\"cell\">
+					Male  
+				</div>";
+			}else if ($arrayOfArrays[$i][4] == 2){
+				echo"<div class=\"cell\">
+					Female
+				</div>";
+			}else{
+				echo"<div class=\"cell\">
+					Non Binary  
+				</div>";
+			}
+			echo"<div class=\"cell\">
+					".$arrayOfArrays[$i][5]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][6]."
+				</div>
+				<div class=\"cell\">
+					".$arrayOfArrays[$i][7]."
+				</div>
+			</div>";
+			
+		}/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+	}
 	function getProductsWithoutHTML() {
 		// Include database connection settings
 		include('connectdb.php');
