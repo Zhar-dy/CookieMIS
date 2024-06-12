@@ -16,21 +16,21 @@
         </li>
         <?php
         if (isset($_SESSION['username'])) {
-        ?>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php">OUR PRODUCTS</a>
-        </li>
-        <?php
+          ?>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.php">OUR PRODUCTS</a>
+          </li>
+          <?php
         } else {
-        ?>
-        <li class="nav-item">
-          <a class="nav-link" href="product.php">OUR PRODUCTS</a>
-        </li>
-        <?php
+          ?>
+          <li class="nav-item">
+            <a class="nav-link" href="product.php">OUR PRODUCTS</a>
+          </li>
+          <?php
         }
         //echo ("Username Session: `".$_SESSION['username']." `");
         ?>
-        
+
         <li class="nav-item">
           <a class="nav-link" href="testimonial.php">TESTIMONIAL</a>
         </li>
@@ -42,7 +42,7 @@
         </li>
         <?php
         if (isset($_SESSION['username'])) {
-          ifLogin(); 
+          ifLogin();
         } else {
           withoutLogin();
         }
@@ -66,11 +66,11 @@ function ifLogin()
       <a class="dropdown-item" href="view_User.php">View</a>
       <a class="dropdown-item" href="upduser.php">Update</a>
     </div>
-  </li>
+    </li>
   <li class="nav-item dropdown active">
     <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ORDER</a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="cart.php">Update</a>
+      <a class="dropdown-item" href="cart.php">Update</a>
       <a class="dropdown-item" href="#">View</a>
     </div>
   </li>

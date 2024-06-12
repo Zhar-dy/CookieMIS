@@ -14,7 +14,7 @@ CookieMIS is a web and mobile application designed to manage cookie sales, cooki
 ## Team Members and Roles
 1. **MUHAMMAD ZHARFAN JUNAIDY BIN JESFFRI (2022659048)** - Front-end Developer, Project manager
 2. **RAZYN HAZMAN BIN RUDY ERUWAN (2022450426)** - Back-end Developer, Database designer
-3. **MUHAMAD NOR ADAM BIN SHAMSUL ANUAR (2022841328)** - [ROLE]
+3. **MUHAMAD NOR ADAM BIN SHAMSUL ANUAR (2022841328)** - Front-end Developer, Documenter
 
 ## Website template used: 
 [Gamepad Template](https://www.free-css.com/free-css-templates/page291/gamepad)

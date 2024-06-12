@@ -180,10 +180,19 @@ img {
 }
 
 .btn-primary:hover {
-    background-color: #1a73e8;
-    border-color: #1a73e8;
+    background-color: #70aaf6;
+    border-color: #6989b5;
 }
 
+.btn-secondary {
+    background-color: #db5858;
+    border-color: #db5858;
+    margin-bottom: 30px;
+}
+.btn-secondary:hover {
+    background-color: #e81a1a ;
+    border-color: #e81a1a ;
+}
 .lead {
     font-size: 18px;
     line-height: 30px;

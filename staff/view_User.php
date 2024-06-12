@@ -19,12 +19,12 @@ session_start();
   include '../reusableCodes/Functions.php';
   ?>
   <!--,,-->
-  <div class="banner_section layout_padding">
+  <div class="product_section layout_padding">
     <div class="container">
-    <h1 class="video_text" style="margin-bottom: 20px;">View User Info</h1>
+    <h1 class="about_text" style="text-align:center">View User Info</h1>
 
       <!--                 table start here            -->
-      <h1 class="label">Staff: </h1>
+      <h1 class="label" style="color:lightcoral">Staff: </h1>
       <div class="table">
         <!--no need to chang tbh-->
         <div class="trow header">
@@ -35,7 +35,7 @@ session_start();
             Name
           </div>
           <div class="cell">
-            password
+          <button type="submit" class="btn btn-primary" name="update" style="margin-bottom: 0px;">[Reveal Password]</button>
           </div>
           <div class="cell">
             gender
@@ -49,18 +49,21 @@ session_start();
           <div class="cell">
             Phone Number
           </div>
+          <div class="cell">
+            Update
+          </div>
         </div>
 
         <!--REPEAT THIS BELOW with php magic-->
         
-          <?php printUsers() ?>
+          <?php printStaff() ?>
       </div>
 
 
 
 
       <!-- NEW TABLE -->
-      <h1 class="label">User: </h1>
+      <h1 class="label" style="color:blueviolet">User: </h1>
       <div class="table">
         <!--no need to chang tbh-->
         <div class="trow blue header">
@@ -71,7 +74,7 @@ session_start();
             Name
           </div>
           <div class="cell">
-            password
+          <button type="submit" class="btn btn-secondary" name="update" style="margin-bottom: 0px;">[Reveal Password]</button>
           </div>
           <div class="cell">
             gender
@@ -85,10 +88,13 @@ session_start();
           <div class="cell">
             Phone Number
           </div>
+          <div class="cell">
+            Update
+          </div>
         </div>
 
         <!--REPEAT THIS BELOW FOR customer with php magic-->
-        <?php printStaff() ?>
+        <?php printUsers() ?>
       </div>
     
     </div>
