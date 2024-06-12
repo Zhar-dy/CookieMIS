@@ -3,12 +3,17 @@
 ---------------------------------------------------------------------*/
 
 .nice-select {
+  /* Remove float: left; to prevent inline display */
+  float: none;
+  /* Change display to block to make it a block-level element */
+  display: block;
+  /* Add margin-bottom to create space between this and the next element */
+  margin-bottom: 10px; /* Adjust as needed */
+  /* Other styles remain the same */
   background-color: #f6f6f6;
   border-radius: 0;
   box-sizing: border-box;
   clear: both;
-  display: block;
-  float: left;
   height: auto;
   outline: none;
   padding-left: 20px;
