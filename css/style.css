@@ -43,7 +43,7 @@ html {
 }
 
 body {
-    color: #666666;
+    color: #000000;
     font-size: 14px;
     font-family: Poppins, sans-serif;
     line-height: 1.80857;
@@ -52,7 +52,7 @@ body {
 }
 
 a {
-    color: #222222;
+    color: #0a0101;
     text-decoration: none !important;
     outline: none !important;
     -webkit-transition: all .3s ease-in-out;
@@ -1013,3 +1013,58 @@ button {
     display: table-cell;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title_text{
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+
+  .profile .card{
+	border-radius:10px;
+}
+
+.profile .card .card-header .profile_img {
+	
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	margin: 10px auto;
+	border: 8px solid #5aa8d9;
+	border-radius: 50%;
+}
+
+.profile .card h3 {
+	font-size: 20px;
+	font-weight: 70px;
+}
+
+.profile .card p{
+	font-size: 16px;
+	color: #000;
+}
+
+.profile .table th,
+.profile .table td {
+	font-size: 14px;
+	padding: 5px 10px;
+	color: #000;
+}

@@ -18,6 +18,7 @@ session_start();
   <div class="about_section layout_padding">
     <div class="container">
       <div class="row">
+        
         <div class="col-md-6">
           <div class="image_2"><img src="images/cookiebg.jpeg"></div>
         </div>
