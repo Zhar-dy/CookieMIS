@@ -35,9 +35,6 @@ session_start();
             Name
           </div>
           <div class="cell">
-          <button type="submit" class="btn btn-primary" name="update" style="margin-bottom: 0px;">[Reveal Password]</button>
-          </div>
-          <div class="cell">
             gender
           </div>
           <div class="cell">
@@ -72,9 +69,6 @@ session_start();
           </div>
           <div class="cell">
             Name
-          </div>
-          <div class="cell">
-          <button type="submit" class="btn btn-secondary" name="update" style="margin-bottom: 0px;">[Reveal Password]</button>
           </div>
           <div class="cell">
             gender

@@ -14,10 +14,6 @@
           <a class="nav-link" href="about.php">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="product.php">OUR PRODUCTS</a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link" href="#"><img src="../images/search-icon.png"></a>
         </li>
         <li class="nav-item dropdown active">
