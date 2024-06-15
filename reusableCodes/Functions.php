@@ -247,7 +247,7 @@ function printStaff()
 					" . $arrayOfArrays[$i][2] . "
 				</div>
 				<div class=\"cell\">
-					######
+					<button type=\"submit\" class=\"btn btn-secondary\" name=\"reveal\">[Reveal Password]</button>
 				</div>";
 		if ($arrayOfArrays[$i][4] == 1) {
 			echo "<div class=\"cell\">
@@ -276,7 +276,7 @@ function printStaff()
 	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
 	  if ($current_page == "view_User") {
-		  echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\">View Profile</button>";
+		echo "<a href=\"view_Detail_User.php?user=". $arrayOfArrays[$i][0] . "\"><button type=\"submit\" class=\"btn btn-secondary\" name=\"view\">View Profile</button></a>";
 	  } elseif ($current_page == "upd_User") {
 		  echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>";
 		  echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
@@ -329,7 +329,7 @@ function printUsers()
 					" . $arrayOfArrays[$i][2] . "
 				</div>
 				<div class=\"cell\">
-					 ######	
+					 <button type=\"submit\" class=\"btn btn-primary\" name=\"reveal\">[Reveal Password]</button>
 				</div>";
 		if ($arrayOfArrays[$i][4] == 1) {
 			echo "<div class=\"cell\">
@@ -358,7 +358,7 @@ function printUsers()
 	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
 	  if ($current_page == "view_User") {
-		  echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"view\">View Profile</button>";
+		echo "<a href=\"view_Detail_User.php?user=". $arrayOfArrays[$i][0] . "\"><button type=\"submit\" class=\"btn btn-secondary\" name=\"view\">View Profile</button></a>";
 	  } elseif ($current_page == "upd_User") {
 		  echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"update\">Update Profile</button>";
 		  echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"delete\">Delete</button>";
