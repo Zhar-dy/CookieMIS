@@ -245,9 +245,6 @@ function printStaff()
 				</div>
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][2] . "
-				</div>
-				<div class=\"cell\">
-					<button type=\"submit\" class=\"btn btn-secondary\" name=\"reveal\">[Reveal Password]</button>
 				</div>";
 		if ($arrayOfArrays[$i][4] == 1) {
 			echo "<div class=\"cell\">
@@ -327,9 +324,6 @@ function printUsers()
 				</div>
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][2] . "
-				</div>
-				<div class=\"cell\">
-					 <button type=\"submit\" class=\"btn btn-primary\" name=\"reveal\">[Reveal Password]</button>
 				</div>";
 		if ($arrayOfArrays[$i][4] == 1) {
 			echo "<div class=\"cell\">

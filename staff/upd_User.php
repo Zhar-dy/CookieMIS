@@ -35,9 +35,6 @@ session_start();
             Name
           </div>
           <div class="cell">
-            Password
-          </div>
-          <div class="cell">
             gender
           </div>
           <div class="cell">
@@ -72,9 +69,6 @@ session_start();
           </div>
           <div class="cell">
             Name
-          </div>
-          <div class="cell">
-            Password
           </div>
           <div class="cell">
             gender
