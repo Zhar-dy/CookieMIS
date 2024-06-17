@@ -15,6 +15,7 @@ $_SESSION["attempt"] = 0;
   <!-- Header File -->
   <?php include 'reusableCodes/header.php' ?>
 
+  <div id="back-to-top"><img src="images/arrow_upward.svg"></div>
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container" style="margin-top: 90px">

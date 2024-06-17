@@ -1062,19 +1062,15 @@ button {
     color: #000;
 }
 
-/* Style for the back-to-top button */
 #back-to-top {
-    display: block;
-    /* Always display */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 100;
-    background-color: #000000;
-    opacity: 50%;
-    color: #555;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  background-color: #000000;
+  opacity: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
