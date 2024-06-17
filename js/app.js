@@ -147,7 +147,7 @@ function initApp(products){
                 <h6>${value.name} <span>${value.highlight}</span></h6>
                 <p class="long_text">${value.description}</p>
                 <h5>RM${value.price}</h5>
-                <a href="#" onclick="addToCard(${key})">BUY NOW</a>
+                <a style=\"cursor: pointer;\" onclick="addToCard(${key})">BUY NOW</a>
             </div>`;
         }
         
