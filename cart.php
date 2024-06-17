@@ -11,7 +11,6 @@ if (!isset($_SESSION['username'])) {
   <title>Cart</title>
   <!-- Header Meta File -->
   <?php include './reusableCodes/headerMeta.php' ?>
-  <link rel="stylesheet" href="cartStyle.css">
 </head>
 
 <body>
@@ -20,7 +19,7 @@ if (!isset($_SESSION['username'])) {
 
   <!-- cart section start -->
 
-        <div class="container">
+        
         <header>
         <p class="long_text" style="font-size: 35px; font-weight: bold">Our Product</p>
             <div class="shopping">
@@ -33,7 +32,7 @@ if (!isset($_SESSION['username'])) {
         <!-- Product boxes will be appended here by JavaScript -->
     </div>
         <div class="list"></div>
-    </div>
+    
   </section>
   <div class="card">
             <h1>Card</h1>

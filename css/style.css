@@ -841,6 +841,7 @@ button {
     float: left;
     font-size: 16px;
     color: #ffffff;
+    position: relative;
     margin-left: 0px;
     margin-top: 0px;
 }
@@ -1064,14 +1065,178 @@ button {
 }
 
 #back-to-top {
-  display: block;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 100;
-  background-color: #000000;
-  opacity: 50%;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #000000;
+    opacity: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Cart css */
+header {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    margin-top: 50px;
+    align-items: center;
+    padding: 0 10px;
+    /* Optional: Adds some padding to the header for spacing */
+}
+
+header .shopping {
+    position: relative;
+    text-align: right;
+}
+
+header .shopping img {
+    width: 40px;
+}
+
+header .shopping span {
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    /* Positions the span to the top-right corner of the image */
+    width: 20px;
+    /* Sets a fixed width for the notification circle */
+    height: 20px;
+    /* Sets a fixed height for the notification circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+
+.list .item {
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+
+.list .item img {
+    width: 90%;
+    height: 430px;
+    object-fit: cover;
+}
+
+.list .item .title {
+    font-weight: 600;
+}
+
+.list .item button {
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.card {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 80%;
+    background-color: #453E3B;
+    height: 100%;
+    transition: 0.5s;
+    padding-bottom: 80px;
+    /* Add padding to the bottom of the card */
+    z-index: 10;
+    /* Higher z-index to ensure it's in front */
+
+}
+
+.active .card {
+    left: calc(100% - 80%);
+}
+
+
+.card h1 {
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card .checkOut {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card .checkOut div {
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2) {
+    background-color: #1C1F25;
+    color: #fff;
+}
+
+.listCard {
+    padding-bottom: 20px;
+    /* Add padding to create space below listCard items */
+}
+
+.listCard li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+    border-bottom: 1px solid #fff;
+    /* Optional: Add bottom border to each item for better separation */
+    padding: 10px 0;
+    /* Optional: Add padding for better spacing */
+}
+
+.listCard li div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listCard li img {
+    width: 90%;
+}
+
+.listCard li button {
+    background-color: #fff5;
+    border: none;
+}
+
+.listCard .count {
+    margin: 0 10px;
 }
