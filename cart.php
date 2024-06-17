@@ -34,9 +34,9 @@ if (!isset($_SESSION['username'])) {
         <div class="list"></div>
     
   </section>
-  <div class="card">
-            <h1>Card</h1>
-            <ul class="listCard"></ul>
+  <div class="cart">
+            <h1 style="font-weight: bold;">Cart</h1>
+            <ul class="listCart"></ul>
             <div class="checkOut">
                 <div class="total">0</div>
                 <div class="closeShopping">Close</div>
