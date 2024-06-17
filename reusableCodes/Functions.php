@@ -193,9 +193,16 @@ function getProducts()
                     <p class=\"long_text\">" . $arrayOfArrays[$i][2] . "</p>
                     <h5>RM " . $arrayOfArrays[$i][6] . "</h5>";
 		if ($arrayOfArrays[$i][4] === "Available" && $arrayOfArrays[$i][5] >= 1) {
-			echo "<a href=\"#\">BUY NOW</a>
-                	</div>
-           			</div>";
+			if (isset($_SESSION['username'])) {
+				echo "<a href=\"cart.php\">BUY NOW</a>
+				</div>
+				   </div>";
+			}
+			else{
+				echo "<a href=\"login/login.php\">BUY NOW</a>
+				</div>
+				   </div>";
+			}
 		} else {
 			echo "<a href=\"#\" style=\"background-color:red\">Out of Stock!</a>
                 	</div>

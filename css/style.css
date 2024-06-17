@@ -454,7 +454,7 @@ button {
 
 /* PRODUCT SECTION */
 .product_section {
-    padding-top: 10px;
+    padding-top: 40px;
     padding-bottom: 90px;
 }
 
@@ -628,6 +628,7 @@ button {
     background-image: url(../images/video-bg.png);
     height: auto;
     margin-top: 50px;
+    padding-bottom: 30px;
 }
 
 .video_text_2 {

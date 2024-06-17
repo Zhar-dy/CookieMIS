@@ -29,9 +29,6 @@
                 }
                 ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="../testimonial.php">TESTIMONIAL</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="../contact.php">CONTACT US</a>
                 </li>
                 <li class="nav-item">

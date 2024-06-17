@@ -11,7 +11,7 @@
 <body>
   <!-- Header File -->
   <?php include '../reusableCodes/headerStaff.php' ?>
-  <div id="back-to-top"><img src="images/arrow_upward.svg"></div>
+  <div id="back-to-top"><img src="../images/arrow_upward.svg"></div>
   <!-- banner section start -->
   <div class="banner_section layout_padding">
     <div class="container"style="margin-top: 90px">
@@ -23,7 +23,6 @@
                 <h1 class="video_text">Cookies</h1>
                 <h1 class="controller_text">Chocolate</h1>
                 <p class="banner_text">With extra chocolate for cookie to satisfy the customers!</p>
-                <div class="shop_bt"><a href="product.php">Shop Now</a></div>
               </div>
               <div class="col-md-6">
                 <div class="image_1"><img src="../images/cookie.png"></div>
@@ -36,7 +35,6 @@
                 <h1 class="video_text">Cookies</h1>
                 <h1 class="controller_text">Creativity</h1>
                 <p class="banner_text">Unique that will catch your eyes!</p>
-                <div class="shop_bt"><a href="product.php">Shop Now</a></div>
               </div>
               <div class="col-md-6">
                 <div class="image_1"><img src="../images/cookies/jumbo.png"></div>
@@ -64,7 +62,6 @@
         <div class="col-md-6">
           <h1 class="about_text">ABOUT</h1>
           <p class="lorem_text">Every cookies that we made are about our passions and customers needs</p>
-          <div class="shop_bt_2"><a href="product.php">Shop Now</a></div>
         </div>
       </div>
     </div>
@@ -87,9 +84,6 @@
         </div>
     </div>
   </div>
-  <div class="see_main">
-    <div class="see_bt"><a href="product.php">See More</a></div>
-  </div>
   </div>
   <!-- product section end -->
   <!-- video section start -->
@@ -100,7 +94,6 @@
           <h1 class="video_text_2">Cookies</h1>
           <h1 class="controller_text_2">are not just a snack</h1>
           <p class="banner_text_2">They are also a joy, fostering cherished moments of connection and celebration. </p>
-          <div class="shop_bt"><a href="#">Shop Now</a></div>
         </div>
         <div class="col-md-6">
           <div class="image_4"><img src="../images/family.jpg"></div>
@@ -109,29 +102,6 @@
     </div>
   </div>
   <!-- video section end -->
-  <!-- testimonial section start -->
-  <div class="testimonial_section layout_padding">
-    <div class="container">
-      <h1 class="testimonial_text">Testimonial</h1>
-      <p class="ipsum_text">From our loyal customers</p>
-      <div class="testimonial_section_2">
-        <div class="box_main">
-          <div class="quote_icon"><img src="../images/quote-icon.png"></div>
-          <p class="dolor_text">  I was impressed on their quality, definitely worth it! </p>
-          <div class="client_main">
-            <div class="client_left">
-              <div class="images_5"><img src="../images/razyn.png"></div>
-            </div>
-            <div class="client_right">
-              <h1 class="sandy_text">Razyn Hazman</h1>
-              <p class="sandy_text_1">Game Developer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- testimonial section end -->
 
   <!-- Footer File -->
   <?php include '../reusableCodes/footer1in.php' ?>

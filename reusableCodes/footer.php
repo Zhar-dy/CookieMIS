@@ -8,15 +8,6 @@
           <p class="ipsum_text_2">Group of computer science students tries to sell a cookie that is baked/cook with shared passion for excellence, our mission is to delight customers with every bite.</< /p>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-3">
-          <h2 class="account_text">Useful Link</h2>
-          <div class="useful_link">
-            <ul>
-              <li><a class="nav-link" href="product.php">Cookie</a></li>
-              <li><a class="nav-link" href="testimonial.php">Testimonial</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
           <h2 class="account_text">Developer</h2>
           <p class="ipsum_text_2">@Razyn </p>
           <p class="ipsum_text_2">@Zharfan </p>

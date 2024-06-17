@@ -104,7 +104,7 @@ $_SESSION["attempt"] = 0;
             <h1 class="video_text_2">Cookies</h1>
             <h1 class="controller_text_2">are not just a snack</h1>
             <p class="banner_text_2">They are also a joy, fostering cherished moments of connection and celebration. </p>
-            <div class="shop_bt"><a href="#">Shop Now</a></div>
+            <div class="shop_bt"><a href="product.php">Shop Now</a></div>
           </div>
           <div class="col-md-6">
             <div class="image_4"><img src="images/family.jpg"></div>
@@ -113,29 +113,6 @@ $_SESSION["attempt"] = 0;
       </div>
     </div>
     <!-- video section end -->
-    <!-- testimonial section start -->
-    <div class="testimonial_section layout_padding">
-      <div class="container">
-        <h1 class="testimonial_text">Testimonial</h1>
-        <p class="ipsum_text">From our loyal customers</p>
-        <div class="testimonial_section_2">
-          <div class="box_main">
-            <div class="quote_icon"><img src="images/quote-icon.png"></div>
-            <p class="dolor_text"> I was impressed on their quality, definitely worth it! </p>
-            <div class="client_main">
-              <div class="client_left">
-                <div class="images_5"><img src="images/razyn.png"></div>
-              </div>
-              <div class="client_right">
-                <h1 class="sandy_text">Razyn Hazman</h1>
-                <p class="sandy_text_1">Game Developer</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- testimonial section end -->
 
     <!-- Footer File -->
     <?php include 'reusableCodes/footer.php' ?>
