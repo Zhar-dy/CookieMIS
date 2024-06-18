@@ -2,7 +2,7 @@
 let openShopping = document.querySelector('.shopping');
 let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
-let listCard = document.querySelector('.listCard');
+let listCart = document.querySelector('.listCart');
 let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let totaldiv = document.querySelector('total');
@@ -111,7 +111,7 @@ let products = [
 
 
 
-let listCards  = [];
+let listCarts  = [];
 
 function initApp(products){
     let productHTML = products.map(product => {
@@ -147,7 +147,7 @@ function initApp(products){
                 <h6>${value.name} <span>${value.highlight}</span></h6>
                 <p class="long_text">${value.description}</p>
                 <h5>RM${value.price}</h5>
-                <a style=\"cursor: pointer;\" onclick="addToCard(${key})">BUY NOW</a>
+                <a href="#" onclick="addToCart(${key})">BUY NOW</a>
             </div>`;
         }
         
@@ -163,24 +163,24 @@ fetchData().then(products => {
     console.error(error);  // Log any errors
 });
 
-function addToCard(key){
-    if(listCards[key] == null){
-        // copy product from list to list card
-        listCards[key] = JSON.parse(JSON.stringify(product[key])); // Error. product is not defined
-        listCards[key].quantity = 1;
+function addToCart(key){
+    if(listCarts[key] == null){
+        // copy product from list to list cart
+        listCarts[key] = JSON.parse(JSON.stringify(product[key])); // Error. product is not defined
+        listCarts[key].quantity = 1;
 
         // Ensure price is an integer
-        listCards[key].price = parseInt(listCards[key].price);
+        listCarts[key].price = parseInt(listCarts[key].price);
     }
-    reloadCard();
+    reloadCart();
 }
 
 
-function reloadCard(){
-    listCard.innerHTML = '';
+function reloadCart(){
+    listCart.innerHTML = '';
     let count = 0;
     let totalPrice = 0;
-    listCards.forEach((value, key)=>{
+    listCarts.forEach((value, key)=>{
         if(value != null){
             console.log("start price:",value.price);
             totalPrice = totalPrice + (value.price);
@@ -197,7 +197,7 @@ function reloadCard(){
                     <div class="count">${value.quantity}</div>
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
                 </div>`;
-            listCard.appendChild(newDiv);
+            listCart.appendChild(newDiv);
         }
     });
     total.innerText = totalPrice;
@@ -207,14 +207,14 @@ function reloadCard(){
 
 function changeQuantity(key, quantity){
     if(quantity == 0){
-        delete listCards[key];
+        delete listCarts[key];
     }else{
-        console.log("Old Quantity is:",listCards[key].quantity);
-        listCards[key].quantity = quantity;
+        console.log("Old Quantity is:",listCarts[key].quantity);
+        listCarts[key].quantity = quantity;
         console.log("New Quantity is:",quantity);
-        listCards[key].price = product[key].price * quantity;
-        console.log("Price is:",listCards[key].price);
-        console.log("Total Price is:",listCards[key].price);
+        listCarts[key].price = product[key].price * quantity;
+        console.log("Price is:",listCarts[key].price);
+        console.log("Total Price is:",listCarts[key].price);
     }
-    reloadCard();
+    reloadCart();
 }
