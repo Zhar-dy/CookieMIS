@@ -4,9 +4,9 @@
 
 // Include database connection settings
 include('connectdb.php');
+echo "connected to DB.";
 
-
-$sql = "SELECT * FROM product";
+$sql = "SELECT * FROM users";
 $query = mysqli_query($conn, $sql);
 // Get total rows of the data
 $totalRows = mysqli_num_rows($query);
@@ -17,6 +17,17 @@ while ($row = mysqli_fetch_array($query)) {
 	$arrayOfArrays[] = $row;
 }
 /*
+0) ID
+1) username
+2) name
+3) password
+4) gender
+5) address
+6) email
+7) phone_Num
+8) picture
+9) level_ID
+/* 
 	echo "<br>Data:<br>";
 
 	// Get every data from the arrays
@@ -56,107 +67,112 @@ function getOrderDetailsStaff()
 		4 User ID		
 		*/
 	for ($i = 0; $i < $totalRows; $i++) {
-		echo "<tbody>
+		if($arrayOfArrays[$i][3] != 5){
+			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
+			<tbody>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
-		$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
-		$query = mysqli_query($conn, $sql2);
-		$userArray = mysqli_fetch_array($query);
+			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
+			$query = mysqli_query($conn, $sql2);
+			$userArray = mysqli_fetch_array($query);
 
-		echo "		<td>" . $userArray[2] . "</td>
-					<td>" . $arrayOfArrays[$i][1] . "</td>
-					<td>" . $arrayOfArrays[$i][2] . "</td>
-					<td>";
-		switch ($arrayOfArrays[$i][3]) {
-			case 1:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"pending\" selected>Pending</option>
-							<option value=\"ready\">Ready</option>
-							<option value=\"received\">Received</option>
-							<option value=\"shipped\">Shipped</option>
-							<option value=\"delivered\">Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
+			echo "		<td>" . $userArray[2] . "</td>
+						<td>" . $arrayOfArrays[$i][1] . "</td>
+						<td>" . $arrayOfArrays[$i][2] . "</td>
+						<td>";
+			switch ($arrayOfArrays[$i][3]) {
+				case 1:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"pending\" selected>Pending</option>
+								<option value=\"ready\">Ready</option>
+								<option value=\"received\">Received</option>
+								<option value=\"shipped\">Shipped</option>
+								<option value=\"delivered\">Delivered</option>
+							</select>
+						</td>
+						<td><button>Update</button></td>
+					</tr>
+				</tbody>";
+					break;
 
-			case 2:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"pending\">Pending</option>
-							<option value=\"ready\" selected>Ready</option>
-							<option value=\"received\">Received</option>
-							<option value=\"shipped\">Shipped</option>
-							<option value=\"delivered\">Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
+				case 2:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"pending\">Pending</option>
+								<option value=\"ready\" selected>Ready</option>
+								<option value=\"received\">Received</option>
+								<option value=\"shipped\">Shipped</option>
+								<option value=\"delivered\">Delivered</option>
+							</select>
+						</td>
+						<td><button>Update</button></td>
+					</tr>
+				</tbody>";
+					break;
 
-			case 3:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"pending\">Pending</option>
-							<option value=\"ready\">Ready</option>
-							<option value=\"received\" selected>Received</option>
-							<option value=\"shipped\">Shipped</option>
-							<option value=\"delivered\">Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
+				case 3:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"pending\">Pending</option>
+								<option value=\"ready\">Ready</option>
+								<option value=\"received\" selected>Received</option>
+								<option value=\"shipped\">Shipped</option>
+								<option value=\"delivered\">Delivered</option>
+							</select>
+						</td>
+						<td><button>Update</button></td>
+					</tr>
+				</tbody>";
+					break;
 
-			case 4:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"pending\">Pending</option>
-							<option value=\"ready\">Ready</option>
-							<option value=\"received\">Received</option>
-							<option value=\"shipped\" selected>Shipped</option>
-							<option value=\"delivered\">Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
-			case 5:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"pending\">Pending</option>
-							<option value=\"ready\">Ready</option>
-							<option value=\"received\">Received</option>
-							<option value=\"shipped\">Shipped</option>
-							<option value=\"delivered\" selected>Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
-			default:
-				echo "
-						<select class=\"status-select\">
-							<option value=\"Select\" disabled>Pending</option>
-							<option value=\"pending\">Pending</option>
-							<option value=\"ready\">Ready</option>
-							<option value=\"received\">Received</option>
-							<option value=\"shipped\">Shipped</option>
-							<option value=\"delivered\">Delivered</option>
-						</select>
-					</td>
-					<td><button>Update</button></td>
-				</tr>
-			</tbody>";
-				break;
-		} //This is switch case bracket
+				case 4:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"pending\">Pending</option>
+								<option value=\"ready\">Ready</option>
+								<option value=\"received\">Received</option>
+								<option value=\"shipped\" selected>Shipped</option>
+								<option value=\"delivered\">Delivered</option>
+							</select>
+						</td>
+						<td><button>Update</button></td>
+					</tr>
+				</tbody>";
+					break;
+				case 5:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"pending\">Pending</option>
+								<option value=\"ready\">Ready</option>
+								<option value=\"received\">Received</option>
+								<option value=\"shipped\">Shipped</option>
+								<option value=\"delivered\" selected>Delivered</option>
+							</select>
+						</td>
+						<td><button>Update</button></td>
+					</tr>
+				</tbody>";
+					break;
+				default:
+					echo "
+							<select class=\"status-select\" name='status[]' id ='status[]'>
+								<option value=\"Select\" disabled>Pending</option>
+								<option value=\"pending\">Pending</option>
+								<option value=\"ready\">Ready</option>
+								<option value=\"received\">Received</option>
+								<option value=\"shipped\">Shipped</option>
+								<option value=\"delivered\">Delivered</option>
+							</select>
+						</td>
+						<td><button type='send'>Update</button></td>
+					</tr>
+				</tbody>
+				</form>";
+					break;
+			}
+		}
+		 //This is switch case bracket
 
 	}/*
 		0 id

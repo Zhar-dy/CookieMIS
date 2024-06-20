@@ -18,6 +18,34 @@ session_start();
     if (!isset($_SESSION['name'])) {
         header('Location: index.php');
     }
+    // Include database connection settings
+    include('../reusableCodes/connectdb.php');
+
+
+    $sql = "SELECT * FROM users WHERE username='".$_SESSION['username']."';";
+    //echo $sql;
+    $query = mysqli_query($conn, $sql);
+    // Get total rows of the data
+    $totalRows = mysqli_num_rows($query);
+    //echo "Total Array: ".$totalRows;
+    $arrayOfArrays = array();
+    // Store the arrays into an array
+    while ($row = mysqli_fetch_array($query)) {
+        $arrayOfArrays[] = $row;
+        //echo $row[1];
+    }
+    /*
+0) ID
+1) username
+2) name
+3) password
+4) gender
+5) address
+6) email
+7) phone_Num
+8) picture
+9) level_ID
+*/
     ?>
     <!--view user-->
 
@@ -30,9 +58,9 @@ session_start();
                         <div style="height: 70px"></div>
                         <div class="card shadow-sm">
                             <div class="card-header bg-transparent text-center">
-                                <img class="profile_img" src="../images/batman.png">
-                                <h5 class="title_text">Batman</h5>
-                                <h7>Bruce Wayne</h7>
+                                <img class='profile_img' <?php echo"src='../userPictures/".$arrayOfArrays[0][8]."'"?>>
+                                <h5 class="title_text"><?php echo $arrayOfArrays[0][1] ?></h5>
+                                <h7><?php echo $arrayOfArrays[0][2] ?></h7>
                             </div>
                         </div>
                     </div>
@@ -48,22 +76,28 @@ session_start();
                                 <table class="table table-bordered">
                                 <tr>
                                     <th width="30%">Gender :</th>
-                                    <td width="50%">if 1 then male</td>
+                                    <td width="50%"><?php
+                                            if ($arrayOfArrays[0][4] == 1){
+                                                echo "Male";
+                                            } else{
+                                                echo "Female";
+                                            }
+                                            ?></td>
                                 </tr>
 
                                 <tr>
                                     <th width="30%">Address :</th>
-                                    <td width="50%">Klang, Selangor (klang need batman)</td>
+                                    <td width="50%"><?php echo $arrayOfArrays[0][5] ?></td>
                                 </tr>
 
                                 <tr>
                                     <th width="30%">Phone No. :</th>
-                                    <td width="50%">991</td>
+                                    <td width="50%"><?php echo $arrayOfArrays[0][7] ?></td>
                                 </tr>
 
                                 <tr>
                                     <th width="30%">Email :</th>
-                                    <td width="50%">batman@gmail.com</td>
+                                    <td width="50%"><?php echo $arrayOfArrays[0][6] ?></td>
                                 </tr>
 
                                 </table>
