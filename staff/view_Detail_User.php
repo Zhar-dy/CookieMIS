@@ -45,21 +45,7 @@ session_start();
                                     Personal Information</h3><br>
                             </div>
                             <div class="card-body pt-0">
-                            <form method="post">
                                 <table class="table table-bordered">
-                                    <tr>
-                                        <th width="30%">Password :</th>
-                                        <td width="50%">
-                                            <?php
-                                            if (isset($_POST['reveal'])) {
-                                                echo "######"; // change to real pass with php magic
-                                            } else {
-                                                echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"reveal\">Reveal Password</button>";
-                                            }
-                                            ?>
-                                        </td>
-                                    </tr>
-                                        </form>
                                 <tr>
                                     <th width="30%">Gender :</th>
                                     <td width="50%">if 1 then male</td>

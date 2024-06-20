@@ -22,7 +22,6 @@
         <div class="col-md-6">
           <h1 class="about_text">ABOUT</h1>
           <p class="lorem_text">Every cookies that we made are about our passions and customers needs</p>
-          <div class="shop_bt_2"><a href="product.php">Shop Now</a></div>
         </div>
       </div>
     </div>
