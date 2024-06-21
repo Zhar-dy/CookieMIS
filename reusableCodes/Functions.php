@@ -296,7 +296,8 @@ function printStaff()
 	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
 	  if ($current_page == "view_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\">View Profile</button>"; // goes view_Detail_User.php
+		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$i."\">View Profile</button>
+		"; // goes view_Detail_User.php
 	  } elseif ($current_page == "upd_User") {
 		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
 		echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
@@ -372,17 +373,20 @@ function printUsers()
 				</div>
       <div class=\"cell\">";
 
-	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
-	
-	  if ($current_page == "view_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\">View Profile</button>"; // goes view_Detail_User.php
-	  } elseif ($current_page == "upd_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
-		echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
-	  }
-
-echo "</div></div>";
-	}/*
+		$current_page = basename($_SERVER['PHP_SELF'], ".php");
+		
+		if ($current_page == "view_User") {
+			
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$i."\">View Profile</button>
+			<button type=\"Hidden\" class=\"btn btn-secondary\" name=\"type\" value=\"admin\" hidden></button>"; // goes view_Detail_User.php
+		} elseif ($current_page == "upd_User") {
+			
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
+			echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
+		}
+		echo "</div></div>";
+	}
+	/*
 		0 id
 		1 name
 		2 desc
