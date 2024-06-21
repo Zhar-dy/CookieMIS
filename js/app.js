@@ -23,8 +23,11 @@ closeShopping.addEventListener('click', ()=>{
 // This is for fetching data from php file
 
 function fetchData() {
+    console.log("App started...")
     return new Promise((resolve, reject) => {
+        console.log("Trying to fetch data...")
         $.ajax({
+            
             url: 'fetchData.php',  // The PHP file that runs the SQL query
             dataType: 'json',  // Expect a JSON response
             success: function(response) {
@@ -50,7 +53,7 @@ function fetchData() {
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 // This function runs if the request fails
-                console.error('Error: ' + textStatus + ', ' + errorThrown);
+                console.error('Error: ' + errorThrown);
                 
             }
         });

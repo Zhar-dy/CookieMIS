@@ -4,7 +4,7 @@
 
 // Include database connection settings
 include('connectdb.php');
-echo "connected to DB.";
+//echo "connected to DB.";
 
 $sql = "SELECT * FROM users";
 $query = mysqli_query($conn, $sql);
@@ -404,12 +404,14 @@ function getProductsWithoutHTML()
 
 	$sql = "SELECT * FROM product";
 	$query = mysqli_query($conn, $sql);
+	
 	// Get total rows of the data
 	$totalRows = mysqli_num_rows($query);
 	$arrayOfArrays = array();
 	// Store the arrays into an array
 	while ($row = mysqli_fetch_array($query)) {
 		$arrayOfArrays[] = $row;
+		//echo $row[4]."<br>";
 	}
 	// First initialization fix
 	$i = 0;
@@ -423,6 +425,7 @@ function getProductsWithoutHTML()
 			. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
 			. $arrayOfArrays[$i][7] . "";
 	}
+	//echo $dataToPost;
 	return $dataToPost;
 }
 function getProductsinJSON()

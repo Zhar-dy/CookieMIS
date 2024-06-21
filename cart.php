@@ -21,18 +21,24 @@ if (!isset($_SESSION['username'])) {
 
         
         <header>
-        <p class="long_text" style="font-size: 35px; font-weight: bold">Our Product</p>
-            <div class="shopping">
-                <img src="images/shopcart.svg">
-                <span class="quantity">0</span>
-            </div>
+          <p class="long_text" style="font-size: 35px; font-weight: bold">Our Product</p>
+          <div class="shopping">
+            <img src="images/shopcart.svg">
+            <span class="quantity">0</span>
+          </div>
         </header>
-  <section class="product_section">
-    <div class="container product_container" id="productContainer">
-        <!-- Product boxes will be appended here by JavaScript -->
-    </div>
-        <div class="list"></div>
-    
+        <section class="product_section">
+          <div class="container product_container" id="productContainer">
+            <!-- Product boxes will be appended here by JavaScript -->
+          </div>
+          <div class="list"></div>
+
+          <!-- For debugging purposes -->
+          <?php //include 'reusableCodes/Functions.php';
+          //$sata = getProductsWithoutHTML();
+          //echo $sata;
+          ?>
+          <!-- <p>Test</p> -->
   </section>
   <div class="cart">
             <h1 style="font-weight: bold;">Cart</h1>
