@@ -3,10 +3,14 @@
 
 /*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
     
     .header-search {
         padding: 15px 0px;
+    }
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
     }
 }
 
@@ -80,11 +84,15 @@
     #collapseFilter.d-md-block {
         padding: 30px 0px;
     }
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+    }
 }
 
 
 /*------------------------------------------------------------------- 599px x 280px ---------------------------------------------------------------------*/
-
+/* Small devices (phones, 599px and down) */
 @media only screen and (min-width: 280px) and (max-width: 599px) {
     .cart-content-right {
         padding-bottom: 5px;
@@ -127,12 +135,34 @@
         top: 0;
     }
 
-
+    .table {
+        display: block;
+        width: 100%;
+    }
+    .trow {
+        display: block;
+        width: 100%;
+    }
+    .trow.header {
+        display: none;
+    }
+    .cell {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .cell:before {
+        content: attr(data-label);
+        display: block;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 
 
 
 }
 
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
     
     .titlepage h2::after {width: 58%;}
@@ -170,12 +200,26 @@ width: 30%;
     font-size: 14px;
 }
 
-
+.table {
+    display: table;
+}
+.trow {
+    display: table-row;
+}
+.trow.header {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+.cell:before {
+    content: none;
+}
 
 
 
 }
-
+/* Medium devices (tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
     .main-menu ul > li a {padding: 7px 6px ; }
     .main-menu ul>li a { font-size: 14px;}
@@ -243,6 +287,21 @@ width: 30%;
 .social_icon ul { display: inline-flex; }
 .section_footer { margin-top: 0px; }
 
+.table {
+    display: table;
+}
+.trow {
+    display: table-row;
+}
+.trow.header {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+.cell:before {
+    content: none;
+}
 
 
 }
