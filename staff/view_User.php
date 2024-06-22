@@ -30,7 +30,7 @@ session_start();
       <!-- More importantly, is the viewUser and view_Detailed_User the same thing? if it is, then copy paste...? -->
       <!--                 table start here            -->
       <h1 class="label" style="color:lightcoral">Staff: </h1>
-      <form action="test.php" method="GET">
+      <form action="view_Detail_User.php" method="POST">
         <input type="Hidden" class="btn btn-secondary" name="type" value="admin">
         <div class="table-container">
           <div class="table">
@@ -61,7 +61,7 @@ session_start();
 
             <!--REPEAT THIS BELOW with php magic-->
 
-            <?php printStaff() ?>
+            <?php $staffArray = printStaff() ?>
           </div>
         </div>
       </form>
@@ -71,7 +71,7 @@ session_start();
 
       <!-- NEW TABLE -->
       <h1 class="label" style="color:blueviolet">User: </h1>
-      <form action="test.php" method="GET">
+      <form action="view_Detail_User.php" method="POST">
         <input type="Hidden" class="btn btn-secondary" name="type" value="user">
         <div class="table-container">
           <div class="table">
@@ -101,7 +101,7 @@ session_start();
             </div>
 
             <!--REPEAT THIS BELOW FOR customer with php magic-->
-            <?php printUsers() ?>
+            <?php $userArray = printUsers() ?>
           </div>
         </div>
       </form>

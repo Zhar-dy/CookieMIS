@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$userView = $_POST['view'];//This is the user ID
+$userType = $_POST['type'];
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ session_start();
     include('../reusableCodes/connectdb.php');
 
 
-    $sql = "SELECT * FROM users WHERE username='".$_SESSION['username']."';";
+    $sql = "SELECT * FROM users WHERE user_ID = $userView";
     //echo $sql;
     $query = mysqli_query($conn, $sql);
     // Get total rows of the data
@@ -50,7 +51,8 @@ session_start();
     <!--view user-->
 
     <section class="view_product_section">
-
+    <!-- For debugging purpose -->
+    <?php //print_r($arrayOfArrays)?>
         <div class="profile py-4">
             <div class="container">
                 <div class="row">

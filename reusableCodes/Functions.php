@@ -12,6 +12,10 @@ $query = mysqli_query($conn, $sql);
 $totalRows = mysqli_num_rows($query);
 //echo "Total Array: ".$totalRows;
 $arrayOfArrays = array();
+$staffArray = array();
+global $staffArray;
+$userArray = array();
+global $userArray;
 // Store the arrays into an array
 while ($row = mysqli_fetch_array($query)) {
 	$arrayOfArrays[] = $row;
@@ -262,6 +266,10 @@ function printStaff()
 		9 level ID
 		*/
 	for ($i = 0; $i < $totalRows; $i++) {
+		global $staffArray;
+		array_push($staffArray, $arrayOfArrays[$i][0]); // Add 'apple' and 'raspberry'
+		// Result: ['orange', 'banana', 'apple', 'raspberry']
+
 		echo "<div class=\"trow\">
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][1] . "
@@ -296,7 +304,7 @@ function printStaff()
 	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
 
 	  if ($current_page == "view_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$i."\">View Profile</button>
+		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>
 		"; // goes view_Detail_User.php
 	  } elseif ($current_page == "upd_User") {
 		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
@@ -314,6 +322,8 @@ echo "</div></div>";
 		6 price
 		7 image
 		*/
+		var_dump($staffArray);
+		return ($staffArray);
 }
 function printUsers()
 {
@@ -342,6 +352,8 @@ function printUsers()
 		9 level ID
 		*/
 	for ($i = 0; $i < $totalRows; $i++) {
+		global $userArray;
+		array_push($userArray, $arrayOfArrays[$i][0]);
 		echo "<div class=\"trow\">
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][1] . "
@@ -377,7 +389,7 @@ function printUsers()
 		
 		if ($current_page == "view_User") {
 			
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$i."\">View Profile</button>
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>
 			<button type=\"Hidden\" class=\"btn btn-secondary\" name=\"type\" value=\"admin\" hidden></button>"; // goes view_Detail_User.php
 		} elseif ($current_page == "upd_User") {
 			
@@ -386,6 +398,7 @@ function printUsers()
 		}
 		echo "</div></div>";
 	}
+	var_dump($userArray);
 	/*
 		0 id
 		1 name
@@ -396,6 +409,7 @@ function printUsers()
 		6 price
 		7 image
 		*/
+		return ($userArray);
 }
 function getProductsWithoutHTML()
 {
@@ -444,7 +458,6 @@ function getProductsinJSON()
 	}
 	return $arrayOfArrays;
 }
-
 function updateProduct()
 {
 	// Include database connection settings
