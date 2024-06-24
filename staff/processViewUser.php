@@ -1,8 +1,3 @@
-
-
-
-
-
 <?php
     session_start();
 	$userView = $_POST['view'];//This is the user ID

@@ -25,6 +25,7 @@ session_start();
 
       <!--                 table start here            -->
       <h1 class="label" style="color:lightcoral">Staff: </h1>
+      <form action='updateUser.php' method='GET'>
       <div class="table-container">
         <div class="table">
           <!--no need to chang tbh-->
@@ -57,11 +58,13 @@ session_start();
           <?php printStaff() ?>
         </div>
       </div>
+      </form>
 
 
 
       <!-- NEW TABLE -->
       <h1 class="label" style="color:blueviolet">User: </h1>
+      <form action='updateUser.php' method='GET'>
       <div class="table-container">
         <div class="table">
           <!--no need to chang tbh-->
@@ -93,6 +96,7 @@ session_start();
           <?php printUsers() ?>
         </div>
       </div>
+      </form>
     </div>
     <!-- Footer File -->
     <?php include '../reusableCodes/footer1in.php' ?>

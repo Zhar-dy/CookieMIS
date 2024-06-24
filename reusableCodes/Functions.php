@@ -253,6 +253,7 @@ function printStaff()
 	while ($row = mysqli_fetch_array($query)) {
 		$arrayOfArrays[] = $row;
 	}
+	//print_r($arrayOfArrays);
 	/*
 		0 id
 		1 username
@@ -290,7 +291,7 @@ function printStaff()
 					Non Binary  
 				</div>";
 		}
-		echo "<div class=\"cell\">
+		echo "	<div class=\"cell\">
 					" . $arrayOfArrays[$i][5] . "
 				</div>
 				<div class=\"cell\">
@@ -299,16 +300,24 @@ function printStaff()
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][7] . "
 				</div>
-      <div class=\"cell\">";
+      			<div class=\"cell\">";
 
 	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
+	  //echo $arrayOfArrays[$i][0];
 
 	  if ($current_page == "view_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>
+		echo "<button type='submit' class='btn btn-secondary' name='view' value='".$arrayOfArrays[$i][0]."'>
+				View Profile
+			  </button>
+			  
 		"; // goes view_Detail_User.php
 	  } elseif ($current_page == "upd_User") {
-		echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
-		echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
+		echo "<button type='submit' class='btn btn-secondary' name='update' value='1'".$arrayOfArrays[$i][0]."'>
+				Update Profile
+			  </button>"; // goes "updateUser.php"
+		echo "<button type='submit' class='btn btn-primary' name='delete' value='1'".$arrayOfArrays[$i][0]."'>
+				Delete
+			  </button>";
 	  }
 
 echo "</div></div>";
@@ -354,7 +363,7 @@ function printUsers()
 	for ($i = 0; $i < $totalRows; $i++) {
 		global $userArray;
 		array_push($userArray, $arrayOfArrays[$i][0]);
-		echo "<div class=\"trow\">
+		echo "<form action='updateUser.php' method='GET'><div class=\"trow\">
 				<div class=\"cell\">
 					" . $arrayOfArrays[$i][1] . "
 				</div>
@@ -389,12 +398,11 @@ function printUsers()
 		
 		if ($current_page == "view_User") {
 			
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>
-			<button type=\"Hidden\" class=\"btn btn-secondary\" name=\"type\" value=\"admin\" hidden></button>"; // goes view_Detail_User.php
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>"; // goes view_Detail_User.php
 		} elseif ($current_page == "upd_User") {
 			
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\">Update Profile</button>"; // goes "updateUser.php"
-			echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\">Delete</button>";
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='1'>Update Profile</button>"; // goes "updateUser.php"
+			echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='1'>Delete</button>";
 		}
 		echo "</div></div>";
 	}
