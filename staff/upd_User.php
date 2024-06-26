@@ -99,7 +99,7 @@ session_start();
       </form>
     </div>
     <!-- Footer File -->
-    <?php include '../reusableCodes/footer1in.php' ?>
+
 </body>
 
 </html>

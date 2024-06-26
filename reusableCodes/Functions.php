@@ -461,7 +461,7 @@ echo "</div></div>";
 		6 price
 		7 image
 		*/
-		var_dump($staffArray);
+		//var_dump($staffArray);
 		return ($staffArray);
 }
 function printUsers()
@@ -536,7 +536,7 @@ function printUsers()
 		}
 		echo "</div></div>";
 	}
-	var_dump($userArray);
+	//var_dump($userArray);
 	/*
 		0 id
 		1 name

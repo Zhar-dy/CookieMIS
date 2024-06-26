@@ -12,6 +12,9 @@
   <!-- view section -->
   <section class="product_section">
   <?php include '../reusableCodes/Functions.php'?>
+<br>
+<br>
+<br>
 
         <div class="container">
 
@@ -30,6 +33,6 @@
   <!-- view end -->>
 
     <!-- Footer File -->
-    <?php include '../reusableCodes/footer1in.php' ?>
+
 </body>
 </html>

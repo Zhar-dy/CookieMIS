@@ -72,7 +72,7 @@
     </section>
 
     <!-- Footer File -->
-    <?php include '../reusableCodes/footer1in.php' ?>
+
 
     <script>
         document.getElementById('previewButton').addEventListener('click', function () {

@@ -27,7 +27,6 @@
     </div>
   </div>
   <!-- about section end -->
-  <!-- Footer File -->
-  <?php include '../reusableCodes/footer1in.php' ?>
+
 </body>
 </html>
