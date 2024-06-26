@@ -235,6 +235,8 @@ blockquote {
 
 button {
     border: 0;
+    height: 35px;
+    width: 30px;
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -1165,7 +1167,7 @@ header .shopping span {
     top: 0;
     left: 100%;
     width: 80%;
-    background-color: #453E3B;
+    background-color: #333a44;
     height: 100%;
     transition: 0.5s;
     padding-bottom: 80px;
