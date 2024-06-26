@@ -58,6 +58,7 @@
 <body>
 <!-- view section -->
 <h1>Customer Orders</h1>
+
     <table>
         <thead>
             <tr>

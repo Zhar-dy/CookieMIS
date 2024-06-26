@@ -70,13 +70,16 @@ function getOrderDetailsStaff()
 		3 Status
 		4 User ID		
 		*/
+	echo "";
 	for ($i = 0; $i < $totalRows; $i++) {
 		if($arrayOfArrays[$i][3] != 5){
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
 			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
+			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
+					//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
@@ -96,7 +99,7 @@ function getOrderDetailsStaff()
 								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
-						<td><button>Update</button></td>
+						<td><button type='send'>Update</button></td>
 					</tr>
 				</tbody>";
 					break;
@@ -111,7 +114,7 @@ function getOrderDetailsStaff()
 								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
-						<td><button>Update</button></td>
+						<td><button type='send'>Update</button></td>
 					</tr>
 				</tbody>";
 					break;
@@ -126,7 +129,7 @@ function getOrderDetailsStaff()
 								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
-						<td><button>Update</button></td>
+						<td><button type='send'>Update</button></td>
 					</tr>
 				</tbody>";
 					break;
@@ -141,7 +144,7 @@ function getOrderDetailsStaff()
 								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
-						<td><button>Update</button></td>
+						<td><button type='send'>Update</button></td>
 					</tr>
 				</tbody>";
 					break;
@@ -155,7 +158,7 @@ function getOrderDetailsStaff()
 								<option value=\"5\" selected>Delivered</option>
 							</select>
 						</td>
-						<td><button>Update</button></td>
+						<td><button type='send'>Update</button></td>
 					</tr>
 				</tbody>";
 					break;
@@ -172,14 +175,15 @@ function getOrderDetailsStaff()
 						</td>
 						<td><button type='send'>Update</button></td>
 					</tr>
-				</tbody>
-				</form>";
+				</tbody>";
 					break;
-			} //This is switch case bracket
+			}
+			echo "</form>"; //This is switch case bracket
 
 		}
 		
-	}/*
+	}
+/*
 		0 id
 		1 name
 		2 desc
