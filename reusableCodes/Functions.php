@@ -74,6 +74,7 @@ function getOrderDetailsStaff()
 		if($arrayOfArrays[$i][3] != 5){
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
+			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
@@ -88,11 +89,11 @@ function getOrderDetailsStaff()
 				case 1:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"pending\" selected>Pending</option>
-								<option value=\"ready\">Ready</option>
-								<option value=\"received\">Received</option>
-								<option value=\"shipped\">Shipped</option>
-								<option value=\"delivered\">Delivered</option>
+								<option value=\"1\" selected>Pending</option>
+								<option value=\"2\">Ready</option>
+								<option value=\"3\">Received</option>
+								<option value=\"4\">Shipped</option>
+								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
 						<td><button>Update</button></td>
@@ -103,11 +104,11 @@ function getOrderDetailsStaff()
 				case 2:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"pending\">Pending</option>
-								<option value=\"ready\" selected>Ready</option>
-								<option value=\"received\">Received</option>
-								<option value=\"shipped\">Shipped</option>
-								<option value=\"delivered\">Delivered</option>
+								<option value=\"1\">Pending</option>
+								<option value=\"2\" selected>Ready</option>
+								<option value=\"3\">Received</option>
+								<option value=\"4\">Shipped</option>
+								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
 						<td><button>Update</button></td>
@@ -118,11 +119,11 @@ function getOrderDetailsStaff()
 				case 3:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"pending\">Pending</option>
-								<option value=\"ready\">Ready</option>
-								<option value=\"received\" selected>Received</option>
-								<option value=\"shipped\">Shipped</option>
-								<option value=\"delivered\">Delivered</option>
+								<option value=\"1\">Pending</option>
+								<option value=\"2\">Ready</option>
+								<option value=\"3\" selected>Received</option>
+								<option value=\"4\">Shipped</option>
+								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
 						<td><button>Update</button></td>
@@ -133,11 +134,11 @@ function getOrderDetailsStaff()
 				case 4:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"pending\">Pending</option>
-								<option value=\"ready\">Ready</option>
-								<option value=\"received\">Received</option>
-								<option value=\"shipped\" selected>Shipped</option>
-								<option value=\"delivered\">Delivered</option>
+								<option value=\"1\">Pending</option>
+								<option value=\"2\">Ready</option>
+								<option value=\"3\">Received</option>
+								<option value=\"4\" selected>Shipped</option>
+								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
 						<td><button>Update</button></td>
@@ -147,11 +148,11 @@ function getOrderDetailsStaff()
 				case 5:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"pending\">Pending</option>
-								<option value=\"ready\">Ready</option>
-								<option value=\"received\">Received</option>
-								<option value=\"shipped\">Shipped</option>
-								<option value=\"delivered\" selected>Delivered</option>
+								<option value=\"1\">Pending</option>
+								<option value=\"2\">Ready</option>
+								<option value=\"3\">Received</option>
+								<option value=\"4\">Shipped</option>
+								<option value=\"5\" selected>Delivered</option>
 							</select>
 						</td>
 						<td><button>Update</button></td>
@@ -161,12 +162,12 @@ function getOrderDetailsStaff()
 				default:
 					echo "
 							<select class=\"status-select\" name='status[]' id ='status[]'>
-								<option value=\"Select\" disabled>Pending</option>
-								<option value=\"pending\">Pending</option>
-								<option value=\"ready\">Ready</option>
-								<option value=\"received\">Received</option>
-								<option value=\"shipped\">Shipped</option>
-								<option value=\"delivered\">Delivered</option>
+								<option value=\"0\" disabled>Pending</option>
+								<option value=\"2\">Pending</option>
+								<option value=\"3\">Ready</option>
+								<option value=\"4\">Received</option>
+								<option value=\"5\">Shipped</option>
+								<option value=\"5\">Delivered</option>
 							</select>
 						</td>
 						<td><button type='send'>Update</button></td>
@@ -174,10 +175,10 @@ function getOrderDetailsStaff()
 				</tbody>
 				</form>";
 					break;
-			}
-		}
-		 //This is switch case bracket
+			} //This is switch case bracket
 
+		}
+		
 	}/*
 		0 id
 		1 name
