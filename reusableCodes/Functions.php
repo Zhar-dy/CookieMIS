@@ -71,8 +71,10 @@ function getOrderDetailsStaff()
 		4 User ID		
 		*/
 	echo "";
+	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if($arrayOfArrays[$i][3] != 5){
+		if($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3){
+			$count++;
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
 			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
@@ -183,6 +185,129 @@ function getOrderDetailsStaff()
 		}
 		
 	}
+	if ($count <1){
+		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
+		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
+	}
+
+/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+}
+
+function getOrderHistoryStaff()
+{
+	// Include database connection settings
+	include('connectdb.php');
+
+	$sql = "SELECT * FROM orders";
+	$query = mysqli_query($conn, $sql);
+	// Get total rows of the data
+	$totalRows = mysqli_num_rows($query);
+	$arrayOfArrays = array();
+	// Store the arrays into an array
+	while ($row = mysqli_fetch_array($query)) {
+		$arrayOfArrays[] = $row;
+	}
+
+
+	/*
+		0 Order id
+		1 Date
+		2 Details
+		3 Status
+		4 User ID		
+		*/
+	echo "";
+	$count = 0;
+	for ($i = 0; $i < $totalRows; $i++) {
+		if($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3){
+			$count++;
+			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
+			<tbody>
+			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
+			<input type='hidden' name='location' value='$i'>
+				<tr>
+					<td>" . $arrayOfArrays[$i][0] . "</td>";
+					//echo $arrayOfArrays[$i][0];
+			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
+			$query = mysqli_query($conn, $sql2);
+			$userArray = mysqli_fetch_array($query);
+
+			echo "		<td>" . $userArray[2] . "</td>
+						<td>" . $arrayOfArrays[$i][1] . "</td>
+						<td>" . $arrayOfArrays[$i][2] . "</td>
+						<td>";
+			switch ($arrayOfArrays[$i][3]) {
+				case 1:
+					echo "
+							Pending
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+
+				case 2:
+					echo "
+							Ready
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+
+				case 3:
+					echo "
+							Received
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+
+				case 4:
+					echo "
+							Shipped
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+				case 5:
+					echo "
+							Delivered
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+				default:
+					echo "
+							Pending
+						</td>
+						
+					</tr>
+				</tbody>";
+					break;
+			}
+			echo "</form>"; //This is switch case bracket
+
+		}
+		
+	}
+	if ($count <1){
+		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
+		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
+	}
+
 /*
 		0 id
 		1 name

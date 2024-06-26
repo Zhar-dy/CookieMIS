@@ -67,7 +67,7 @@
                 <th>Order Date</th>
                 <th>Order Details</th>
                 <th>Status</th>
-                <th>Action</th>
+
             </tr>
         </thead>
         <!-- <tbody>
@@ -88,7 +88,7 @@
                 <td><button>Update</button></td>
             </tr>
         </tbody> -->
-        <?php getOrderDetailsStaff(); ?>
+        <?php getOrderHistoryStaff(); ?>
     </table>
   <!-- view end -->
 
