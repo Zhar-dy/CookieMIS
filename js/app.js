@@ -196,9 +196,9 @@ function reloadCart(){
                 <div>${value.name} ${value.highlight}</div>
                 <div>${value.price}</div>
                 <div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <button class="buttonC" onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
                     <div class="count">${value.quantity}</div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                    <button class="buttonC" onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
                 </div>`;
             listCart.appendChild(newDiv);
         }

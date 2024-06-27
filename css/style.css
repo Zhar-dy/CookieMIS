@@ -240,6 +240,15 @@ button {
     cursor: pointer;
 }
 
+.buttonC {
+    width: 35px;
+    height: 30px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
 .full {
     float: left;
     width: 100%;
@@ -258,7 +267,8 @@ button {
     width: 18%;
     float: left;
 }
-.iconLogo{
+
+.iconLogo {
     width: 8%;
     float: left;
 }
@@ -866,13 +876,15 @@ button {
     font-weight: bold;
     padding: 25px 0px;
 }
-.caller{
+
+.caller {
     float: left;
     font-size: 50px;
     color: rgb(18, 8, 8);
     font-weight: bold;
 
 }
+
 .email_text {
     width: 100%;
     float: left;
@@ -1103,17 +1115,17 @@ header {
 }
 
 header .shopping {
-        display: block;
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 100;
-        background-color: #000000;
-        opacity: 78%;
-        padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-    
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #000000;
+    opacity: 78%;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+
 }
 
 header .shopping img {
@@ -1188,7 +1200,8 @@ header .shopping span {
 .active .cart {
     left: calc(100% - 80%);
 }
-.active .shopping{
+
+.active .shopping {
     display: none;
 }
 
@@ -1259,4 +1272,70 @@ header .shopping span {
 
 .listCart .count {
     margin: 0 10px;
+}
+
+.order_container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-details {
+  display: flex;
+  align-items: center;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+.headers, .order_section {
+    margin-bottom: 20px;
+}
+
+.order-total {
+    font-size: 20px;
+    color: #555;
+    margin-right: 20px;
+  }
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+.headers .order-total {
+    font-size: 20px;
+    color: #555;
+}
+
+.headers .place-order-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.order_section {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.order_section h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.order_section .edit {
+    float: right;
+    color: #4CAF50;
+    cursor: pointer;
 }

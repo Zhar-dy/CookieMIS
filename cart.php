@@ -29,7 +29,7 @@ if (!isset($_SESSION['username'])) {
         </header>
         <section class="product_section">
           <div class="container product_container" id="productContainer">
-            <!-- Product boxes will be appended here by JavaScript -->
+            <!-- Product boxes will be appended here by JavaScript, find at app.js -->
           </div>
           <div class="list"></div>
 
