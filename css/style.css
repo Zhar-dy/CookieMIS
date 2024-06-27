@@ -235,8 +235,6 @@ blockquote {
 
 button {
     border: 0;
-    height: 35px;
-    width: 30px;
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -258,6 +256,10 @@ button {
 
 .logo {
     width: 18%;
+    float: left;
+}
+.iconLogo{
+    width: 8%;
     float: left;
 }
 
@@ -864,7 +866,13 @@ button {
     font-weight: bold;
     padding: 25px 0px;
 }
+.caller{
+    float: left;
+    font-size: 50px;
+    color: rgb(18, 8, 8);
+    font-weight: bold;
 
+}
 .email_text {
     width: 100%;
     float: left;
