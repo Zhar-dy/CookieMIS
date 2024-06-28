@@ -36,7 +36,14 @@ if (!isset($_SESSION['username'])) {
       <?php
       echo '<h2>' . $_SESSION["address"] . '</h2>';
       ?>
-    </div>
+      <div class="order-details">
+      <div class="order-total">Pickup Date</div>
+        <input type="date" name="datep" size="50" />
+      </div>
+      <div class="order-details">
+      <div class="order-total">Pickup Time</div>
+        <input type="time" name="timep" size="50" />
+    </div></div>
 
     <div class="order_section">
       <h2>Order Items</h2>

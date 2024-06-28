@@ -41,14 +41,12 @@ session_start();
 
                 <div class="form-group">
                     <label for="product_Description">Product Description:</label>
-                    <textarea id="product_Description" name="product_Description" class="form-control"
-                        required></textarea>
+                    <textarea id="product_Description" name="product_Description" class="form-control" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="product_Price">Product Price:</label>
-                    <input type="number" id="product_Price" name="product_Price" min="0" step="0.01"
-                        class="form-control" required>
+                    <input type="number" id="product_Price" name="product_Price" min="0" step="0.01" class="form-control" required>
                 </div>
 
                 <div class="form-group">
@@ -57,8 +55,8 @@ session_start();
                 </div>
                 <div class="form-group">
                     <h6 for="product_Status">Product Status:</h6>
-                    <select id="product_Status" name="product_Status" class="form-control">
-                        <option value="Available">Available</option>
+                    <select class="status-select" name='product_Status' id='product_Status'>
+                        <option value="Available" selected>Available</option>
                         <option value="Not Available">Not Available</option>
                     </select>
                 </div>
@@ -66,7 +64,7 @@ session_start();
                     <label for="product_image">Product Image:</label>
                     <input type="file" id="file" name="file" class="form-control" required>
                     <!--<input type="hidden" name="pic" value="<?php //echo $row['picture']; 
-                    ?>" />-->
+                                                                ?>" />-->
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add Product</button>
@@ -78,7 +76,7 @@ session_start();
 
 
     <script>
-        document.getElementById('previewButton').addEventListener('click', function () {
+        document.getElementById('previewButton').addEventListener('click', function() {
             const productName = document.getElementById('product_Name').value;
             const productHighlight = document.getElementById('product_Highlight').value;
             const previewDiv = document.getElementById('productPreview');
