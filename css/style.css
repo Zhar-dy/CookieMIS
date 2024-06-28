@@ -879,7 +879,7 @@ button {
 
 .caller {
     float: left;
-    font-size: 50px;
+    font-size: 30px;
     color: rgb(18, 8, 8);
     font-weight: bold;
 
@@ -997,6 +997,7 @@ button {
 
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+    margin-top: -5px; 
 }
 
 
