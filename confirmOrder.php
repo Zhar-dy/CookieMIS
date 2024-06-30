@@ -79,7 +79,7 @@
       </div>
       <div class="order_section info-box">
       <h2>Additional Instruction</h2>
-      <input type="moreInstruct" id="moreInstruct" name="moreInstruct" placeholder="Insert Additional Instruction">
+      <textarea id="moreInstruct" name="moreInstruct" class="form-control" placeholder="Insert Additional Instruction"></textarea>
       </div>
       <div class="order_section" id="divToAddHiddenData">
         <h2>Order Items</h2>
