@@ -111,6 +111,7 @@ function initApp(products){
                 <p class="long_text">${value.description}</p>
                 <h5>RM${value.price}</h5>
                 <a href="#" onclick="addToCart(${key})">BUY NOW</a>
+                <input type="hidden" name="cookieID" value="${value.id}">
             </div>`;
         }
         
@@ -135,6 +136,7 @@ function addToCart(key){
         // Ensure price is an integer
         listCarts[key].price = parseInt(listCarts[key].price);
     }
+    console.log(listCarts);
     reloadCart();
 }
 
