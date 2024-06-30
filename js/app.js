@@ -198,7 +198,8 @@ function help() {
         console.log(result);
 
         // Redirect to another page (after processing the response)
-        window.location.href = 'confirmOrder.php?data='+cartListString;
+        //window.location.href = 'confirmOrder.php?data='+cartListString;
+        window.location.href = 'confirmOrder.php';
     })
     .catch(error => {
         console.error('Error:', error);
