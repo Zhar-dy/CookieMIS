@@ -69,9 +69,25 @@ if (!isset($_SESSION['username'])) {
       <div id="TestingText"></div>
       <script>
         const paragraph = document.getElementById('TestingText');
-                const cell = document.createElement('p');
-                paragraph.textContent = savedValue;
-                row.appendChild(cell);
+        const myArray = JSON.parse(savedValue);
+        // Put values in the P and append it in the div
+        
+        for (let j = 0; j < myArray.length; j++) {
+          const cell = document.createElement('p');
+          cell.textContent = myArray[j]+" "+j;
+          paragraph.appendChild(cell);
+          console.log(myArray[j]);
+          const splittedArray = myArray[j];
+          const size = Object.entries(splittedArray).length;
+          // From here on, it's an object with it's respective properties
+          for (const key in splittedArray) {
+            const cell2 = document.createElement('p');
+            cell2.textContent = splittedArray[key];
+            paragraph.appendChild(cell2);
+            console.log(splittedArray[key]);
+          }    
+        }
+        
       </script>
       <table class="item-list" id="daTable">
         <tr>
@@ -113,7 +129,7 @@ if (!isset($_SESSION['username'])) {
 
   <!-- Footer File -->
   <?php include 'reusableCodes/footer.php' ?>
-  <script src="js/app.js"></script>
+  <!-- <script src="js/app.js"></script> -->
 </body>
 
 </html>
