@@ -38,6 +38,7 @@ function fetchData() {
                 let products = [];  // Initialize 'products' as an array
                 for(i=0;i<arrayOfArray.length;i++){
                     let array = arrayOfArray[i].split("|");
+                    console.log(array);
                     let product = {
                         name: array[0],
                         highlight: array[1],
@@ -45,7 +46,8 @@ function fetchData() {
                         available: array[3],
                         stock: array[4],
                         image: array[6],
-                        price: array[5]
+                        price: array[5],
+                        cookieID: array[7]
                     };
                     products.push(product);
                 }
@@ -78,7 +80,8 @@ function fetchData() {
 
 function initApp(products){
     let productHTML = products.map(product => {
-        return `<p>Name: ${product.name}</p>
+        return `<p>ID: ${product.id}</p>
+                <p>Name: ${product.name}</p>
                 <p>Highlight: ${product.highlight}</p>
                 <p>Description: ${product.description}</p>
                 <p>Available: ${product.available}</p>

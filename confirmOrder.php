@@ -77,7 +77,7 @@
         ?>
         <input type="hidden" name="name" value="<?php echo $_SESSION["address"] ?>">
 
-      <div class="order_section">
+      <div class="order_section" id="divToAddHiddenData">
         <h2>Order Items</h2>
         <div id="TestingText"></div>
         <script>
@@ -116,44 +116,15 @@
             // Put values in the P and append it in the div
                         
             // Put the data in here through javascript
-
-              const tableBody = document.getElementById('daTable');
-
-              for (let j = 0; j < myArray.length; j++) {
-                const row = document.createElement('tr');
-                const splittedArray = myArray[j];
-                console.log(myArray[j]);
-                const cell = document.createElement('td');
-                const cell2 = document.createElement('td');
-                const cell3 = document.createElement('td');
-                const cell4 = document.createElement('td');
-                const cell5 = document.createElement('td');
-                const cell6 = document.createElement('td');
-                row.style.margin = '10px';
-                cell.style.textAlign = 'center';
-                cell2.style.textAlign = 'center';
-                cell3.style.textAlign = 'center';
-                cell4.style.textAlign = 'center';
-                cell5.style.textAlign = 'center';
-                // cell.textContent = `Row ${i + 1}, Column ${j + 1}`;
-                cell.textContent = splittedArray['name'] + " " + splittedArray['highlight'];
-                cell2.textContent = splittedArray['price'] / splittedArray['quantity']; // Note that price is the final Price
-                cell3.textContent = splittedArray['quantity'];
-                cell4.textContent = "5MYR";
-                cell5.textContent = splittedArray['price'];
-                row.appendChild(cell);
-                row.appendChild(cell2);
-                row.appendChild(cell3);
-                row.appendChild(cell4);
-                row.appendChild(cell5);
-                tableBody.appendChild(row);
-              }
-              // Backup
               // Put the data in here through javascript
               // const numRows = 5; // Number of rows
               // const numCols = 6; // Number of columns
             const tableBody = document.getElementById('daTable');
+            const divHidden = document.getElementById('divToAddHiddenData');
             let totalPrice = 0;
+            const CookieData = [];
+            const dataArray = document.createElement('input');
+            
             for (let j = 0; j < myArray.length; j++) {
               const row = document.createElement('tr');
               const splittedArray = myArray[j];
@@ -164,6 +135,10 @@
               const cell4 = document.createElement('td');
               const cell5 = document.createElement('td');
               const cell6 = document.createElement('td');
+              
+              dataArray.type = 'hidden';
+              dataArray.name = 'arrayOrder';
+              
               row.style.margin = '10px';
               cell.style.textAlign = 'center';
               cell2.style.textAlign = 'center';
@@ -183,7 +158,14 @@
               row.appendChild(cell4);
               row.appendChild(cell5);
               tableBody.appendChild(row);
+              // Add a new element to the end of the array
+              CookieData.push(splittedArray['cookieID']);
+              CookieData.push(splittedArray['price']);
             }
+            dataArray.value =CookieData;
+            divHidden.appendChild(dataArray);
+            console.log("Cookie Array is: ");
+            console.log(CookieData);
             const OrderTotal = document.getElementById('totalOrder');
             OrderTotal.textContent = "Order Total: $" + totalPrice; 
             // Backup

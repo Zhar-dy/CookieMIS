@@ -570,12 +570,12 @@ function getProductsWithoutHTML()
 	$dataToPost = "";
 	$dataToPost = $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
 		. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
-		. $arrayOfArrays[$i][7] . "";
+		. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
 	// Set the rest of the data
 	for ($i = 1; $i < $totalRows; $i++) {
 		$dataToPost = $dataToPost . "+" . $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
 			. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
-			. $arrayOfArrays[$i][7] . "";
+			. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
 	}
 	//echo $dataToPost;
 	return $dataToPost;
