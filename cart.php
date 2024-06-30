@@ -11,6 +11,10 @@ if (!isset($_SESSION['username'])) {
   <title>Cart</title>
   <!-- Header Meta File -->
   <?php include './reusableCodes/headerMeta.php' ?>
+  <script>
+    let listCarts  = [];
+
+  </script>
 </head>
 
 <body>
@@ -44,15 +48,16 @@ if (!isset($_SESSION['username'])) {
             <h1 style="font-weight: bold;">Cart</h1>
             <ul class="listCart"></ul>
             <div class="checkOut">
-                <div class="total">0</div>
-                <div class="closeShopping">Close</div>
+              <div class="total" onclick="help()">0</div>
+              <div class="closeShopping">Close</div>
             </div>
-        </div>
-  <!-- cart section end -->
-
-  <!-- Footer File -->
-  <?php include 'reusableCodes/footer.php' ?>
-  <script src="js/app.js"></script>
+          </div>
+          <!-- cart section end -->
+          
+          <!-- Footer File -->
+          <?php include 'reusableCodes/footer.php' ?>
+          <script src="js/app.js">
+          </script>
 </body>
 
 </html>

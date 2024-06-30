@@ -73,48 +73,8 @@ function fetchData() {
 7) picture
 */
 
-/*
-// This is to arrange data
-function test(){
-    fetchData(function(products) {
-        print (products);  // Now you can access 'products' outside of the AJAX call
-    });
-}
-test();
-*/
-
-/*
-let products = [
-    {
-        id: 1,
-        name: 'Cookie of Creativity',
-        image: 'jumbo.png',
-        price: 5
-    },
-    {
-        id: 2,
-        name: 'Cookie of Chewy',
-        image: 'chewy.png',
-        price: 8
-    },
-    {
-        id: 3,
-        name: 'Chocolate Chip Cookie',
-        image: 'choccookie.png',
-        price: 7
-    },
-    {
-        id: 4,
-        name: 'Peanut Cookie',
-        image: 'peanut.png',
-        price: 3
-    }
-];
-*/
 
 
-
-let listCarts  = [];
 
 function initApp(products){
     let productHTML = products.map(product => {
@@ -221,3 +181,52 @@ function changeQuantity(key, quantity){
     }
     reloadCart();
 }
+function help() {
+    // Convert the object to a JSON string
+    const cartListString = JSON.stringify(listCarts);
+
+    // Save the string in sessionStorage
+    sessionStorage.setItem('cartList', cartListString);
+    
+    fetch('ReusableCodes/processOrders.php', {
+        method: 'POST',
+        body: JSON.stringify({ data: listCarts }),
+    })
+    .then(response => response.text())
+    .then(result => {
+        // Handle the response from PHP (if needed)
+        console.log(result);
+
+        // Redirect to another page (after processing the response)
+        window.location.href = 'confirmOrder.php?data='+cartListString;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    // Redirect to another page
+    //window.location.href = 'confirmOrder.php';
+}
+
+// function help() {
+//     const cartListString = JSON.stringify(listCarts);
+
+//     // Save the string in sessionStorage
+//     sessionStorage.setItem('cartList', cartListString);
+
+//     fetch('confirmOrder.php', {
+//         method: 'POST',
+//         body: JSON.stringify({ data: cartListString }),
+//     })
+//     .then(response => response.text())
+//     .then(result => {
+//         // Handle the response from PHP (if needed)
+//         console.log(result);
+
+//         // Redirect to another page (after processing the response)
+//         window.location.href = 'confirmOrder.php';
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// }
