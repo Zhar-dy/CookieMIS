@@ -76,7 +76,11 @@
         echo '<h2>' . $_SESSION["address"] . '</h2>';
         ?>
         <input type="hidden" name="name" value="<?php echo $_SESSION["address"] ?>">
-
+      </div>
+      <div class="order_section info-box">
+      <h2>Additional Instruction</h2>
+      <input type="moreInstruct" id="moreInstruct" name="moreInstruct" placeholder="Insert Additional Instruction">
+      </div>
       <div class="order_section" id="divToAddHiddenData">
         <h2>Order Items</h2>
         <div id="TestingText"></div>
