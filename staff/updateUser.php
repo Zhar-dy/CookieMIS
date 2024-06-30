@@ -106,7 +106,7 @@ if(isset($_GET['delete'])){
           <div class="form-group">
             <label for="picture">Picture:</label>
             <input type="file" name="file" id="file">
-            <img src="userPictures/<?php echo $_SESSION['picture']; ?>" width="130" height="130">
+            <img src="../userPictures/<?php echo $_SESSION['picture']; ?>" width="130" height="130">
           </div>
           </form>
           <div class="form-group">
