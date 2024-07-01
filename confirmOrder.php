@@ -44,7 +44,7 @@
       <div class="headers">
         <h1>Order Confirmation</h1>
           <div class="order-details">
-          <div class="order-total" id="totalOrder">Order Total: $3137.85</div>
+          <div class="order-total" id="totalOrder">Order Total: RM3137.85</div>
           <button class="place-order-btn" type="send">Place Order</button>
         </div>
       </div>
@@ -56,7 +56,7 @@
         <input type="hidden" name="name" value="<?php echo $_SESSION['username'] ?>">
       </div>
       <div class="order_section info-box">
-        <h2>Delivery Options:</h2>
+        <h2>Delivery Options:   (NOTE: RM 5 will be added in total for delivery option)</h2>
         <select class="nice-select status-select" name='DeliOptions' id='DeliOptions'>
           <option value="Pickup" selected>Pickup</option>
           <option value="Delivery">Delivery</option>
@@ -108,10 +108,10 @@
         </script>
         <table class="item-list" id="daTable" style="border:1px;border: double;width: -webkit-fill-available;">
           <tr>
+           <th style="text-align:center">Image</th>
             <th style="text-align:center">Cookie Type</th>
             <th style="text-align:center">Price per Cookie</th>
             <th style="text-align:center">Quantity</th>
-            <th style="text-align:center">Shipping Fee</th>
             <th style="text-align:center">Total Price</th>
           </tr>
           <script>
@@ -150,17 +150,16 @@
               cell4.style.textAlign = 'center';
               cell5.style.textAlign = 'center';
               // cell.textContent = `Row ${i + 1}, Column ${j + 1}`;
-              cell.textContent = splittedArray['name']+" "+ splittedArray['highlight'];
-              cell2.textContent = splittedArray['price']/splittedArray['quantity']; // Note that price is the final Price
-              cell3.textContent = splittedArray['quantity'];
-              cell4.textContent = "5MYR";
+              cell4.textContent = "Image here";
+              cell2.textContent = splittedArray['name']+" "+ splittedArray['highlight'];
+              cell3.textContent = splittedArray['price']/splittedArray['quantity']; // Note that price is the final Price
+              cell4.textContent = splittedArray['quantity'];
               cell5.textContent = splittedArray['price'];
               totalPrice = totalPrice + splittedArray['price'] + 5;
               row.appendChild(cell);
               row.appendChild(cell2);
               row.appendChild(cell3);
               row.appendChild(cell4);
-              row.appendChild(cell5);
               tableBody.appendChild(row);
               // Add a new element to the end of the array
               CookieData.push(splittedArray['cookieID']);
@@ -171,7 +170,7 @@
             console.log("Cookie Array is: ");
             console.log(CookieData);
             const OrderTotal = document.getElementById('totalOrder');
-            OrderTotal.textContent = "Order Total: $" + totalPrice; 
+            OrderTotal.textContent = "Order Total: RM" + totalPrice; 
             // Backup
             // Put the data in here through javascript
             // const numRows = 5; // Number of rows
