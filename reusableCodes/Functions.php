@@ -248,7 +248,7 @@ function getOrderHistoryStaff()
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
 					echo "
-							Pending
+							<div class=\"status\"><span class=\"pending\">Pending</span></div>
 						</td>
 						
 					</tr>
@@ -257,7 +257,7 @@ function getOrderHistoryStaff()
 
 				case 2:
 					echo "
-							Ready
+							<div class=\"status\"><span class=\"ready\">Ready</span></div>
 						</td>
 						
 					</tr>
@@ -266,7 +266,7 @@ function getOrderHistoryStaff()
 
 				case 3:
 					echo "
-							Received
+							<div class=\"status\"><span class=\"received\">Received</span></div>
 						</td>
 						
 					</tr>
@@ -275,7 +275,7 @@ function getOrderHistoryStaff()
 
 				case 4:
 					echo "
-							Shipped
+							<div class=\"status\"><span class=\"shipped\">Shipped</span></div>
 						</td>
 						
 					</tr>
@@ -283,7 +283,7 @@ function getOrderHistoryStaff()
 					break;
 				case 5:
 					echo "
-							Delivered
+							<div class=\"status\"><span class=\"delivered\">Delivered</span></div>
 						</td>
 						
 					</tr>
@@ -291,7 +291,7 @@ function getOrderHistoryStaff()
 					break;
 				default:
 					echo "
-							Pending
+							<div class=\"status\"><span class=\"pending\">Pending</span></div>
 						</td>
 						
 					</tr>
