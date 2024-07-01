@@ -59,11 +59,11 @@ session_start();
             <input type="file" name="file" id="file">
             <img src="userPictures/<?php echo $_SESSION['picture']; ?>" width="130" height="130">
           </div>
-          </form>
           <div class="form-group">
             <label for="address">Address:</label>
-            <textarea type="text" id="address" name="address" class="form-control" placeholder="Enter your address" required></textarea>
+            <textarea type="text" id="address" name="address" class="form-control" placeholder="<?php echo $_SESSION['address']; ?>" required></textarea>
           </div>
+        </form>
         </div>
       </div>
     </div>

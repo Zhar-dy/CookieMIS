@@ -11,7 +11,7 @@ if(isset($_POST['update'])){
 	$tempemail = $_POST['email'];
 	$tempphoneNum = $_POST['phone'];
 	$temppassword = $_POST['password'];
-	$temppassword = $_POST['password'];
+	$tempaddress = $_POST['address'];
 	if(!empty($tempusername)){
 		$username = $tempusername;
 	}else{
@@ -34,7 +34,13 @@ if(isset($_POST['update'])){
 	}else{
 		$password=$_SESSION['password'];
 	}
-
+	if(!empty($tempaddress)){
+		$address= $tempaddress;
+	}else{
+		$address=$_SESSION['address'];
+	}
+	
+	
 	$sql= "SELECT * FROM users WHERE username= '".$_SESSION['username']."' AND password= '".$_SESSION['password']."'";
 	$query = mysqli_query($conn, $sql);
 	$tempArray = mysqli_fetch_array($query);
@@ -64,8 +70,13 @@ if(isset($_POST['update'])){
 			}
 		}
 	}
-	
-	$sql = "UPDATE users SET name = '".$username."', password = '".$password."', email = '".$email."', phone_Num = '".$phone."', picture = '".$fileName."' WHERE user_ID = '".$tempArray[0]."';";
+	if(!empty($fileName)){
+		$pic= $fileName;
+	}else{
+		$pic=$_SESSION['picture'];
+	}
+	$sql = "UPDATE users SET name = '".$username."', password = '".$password."', email = '".$email."', phone_Num = '".$phone."', picture = '".$pic."', address = '".$address."' WHERE user_ID = '".$tempArray[0]."';";
+	echo $sql;
 	$query = mysqli_query($conn, $sql);
 	if($query){
 		$sql= "SELECT * FROM users WHERE username= '$username' AND password= '$password'";
@@ -92,18 +103,20 @@ if(isset($_POST['update'])){
 			alert("Account is updated successfully!")
 		</script>
 		<?php
+		header('Location: ../login/login.php');
+		mysqli_close($conn);
 	}else{
 		?>
 		<script type="text/javascript">
 			alert("An error occured!");
 		</script>
 		<?php
-		
+		mysqli_close($conn);
 	}
 	
-	header('Location: ../login/login.php');
+
 	//echo("Level doesnt make sense");
 	//echo("<br> data fetched is".$d[5]);
 }
-mysqli_close($conn);
+
 ?>
