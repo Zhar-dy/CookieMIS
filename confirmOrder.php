@@ -85,100 +85,93 @@
       <div class="order_section" id="divToAddHiddenData">
         <h2>Order Items</h2>
         <div id="TestingText"></div>
-        <script>
-          // const paragraph = document.getElementById('TestingText');
-          // const myArray = JSON.parse(savedValue);
-          // // Put values in the P and append it in the div
 
-          // for (let j = 0; j < myArray.length; j++) {
-          //   const cell = document.createElement('p');
-          //   cell.textContent = myArray[j]+" "+j;
-          //   paragraph.appendChild(cell);
-          //   console.log(myArray[j]);
-          //   const splittedArray = myArray[j];
-          //   const size = Object.entries(splittedArray).length;
-          //   // From here on, it's an object with it's respective properties
-          //   for (const key in splittedArray) {
-          //     const cell2 = document.createElement('p');
-          //     cell2.textContent = splittedArray[key];
-          //     paragraph.appendChild(cell2);
-          //     console.log(splittedArray[key]);
-          //   }    
-          // }
-        </script>
-        <table class="table" id="daTable">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" style="text-align:center">Image</th>
-              <th scope="col" style="text-align:center">Cookie Type</th>
-              <th scope="col" style="text-align:center">Price per Cookie</th>
-              <th scope="col" style="text-align:center">Quantity</th>
-              <th scope="col" style="text-align:center">Total Price</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <!-- data will be inserted here -->
-          </tbody>
-        </table>
+        <table class="item-list" id="daTable" style="border:1px;border: double;width: -webkit-fill-available;">
+          <tr>
+            <th style="text-align:center">Cookie Type</th>
+            <th style="text-align:center">Price per Cookie</th>
+            <th style="text-align:center">Quantity</th>
+            <th style="text-align:center">Shipping Fee</th>
+            <th style="text-align:center">Total Price</th>
+          </tr>
+          <script>
+            const paragraph = document.getElementById('TestingText');
+            const myArray = JSON.parse(savedValue);
+            // Put values in the P and append it in the div
+                        
+            // Put the data in here through javascript
+              // Put the data in here through javascript
+              // const numRows = 5; // Number of rows
+              // const numCols = 6; // Number of columns
+            const tableBody = document.getElementById('daTable');
+            const divHidden = document.getElementById('divToAddHiddenData');
+            let totalPrice = 0;
+            const CookieData = [];
+            const dataArray = document.createElement('input');
+            
+            for (let j = 0; j < myArray.length; j++) {
+              const row = document.createElement('tr');
+              const splittedArray = myArray[j];
+              console.log(myArray[j]);
+              const cell = document.createElement('td');
+              const cell2 = document.createElement('td');
+              const cell3 = document.createElement('td');
+              const cell4 = document.createElement('td');
+              const cell5 = document.createElement('td');
+              const cell6 = document.createElement('td');
+              
+              dataArray.type = 'hidden';
+              dataArray.name = 'arrayOrder';
+              
+              row.style.margin = '10px';
+              cell.style.textAlign = 'center';
+              cell2.style.textAlign = 'center';
+              cell3.style.textAlign = 'center';
+              cell4.style.textAlign = 'center';
+              cell5.style.textAlign = 'center';
+              // cell.textContent = `Row ${i + 1}, Column ${j + 1}`;
+              cell.textContent = splittedArray['name']+" "+ splittedArray['highlight'];
+              cell2.textContent = splittedArray['price']/splittedArray['quantity']; // Note that price is the final Price
+              cell3.textContent = splittedArray['quantity'];
+              cell4.textContent = "5MYR";
+              cell5.textContent = splittedArray['price'];
+              totalPrice = totalPrice + splittedArray['price'] + 5;
+              row.appendChild(cell);
+              row.appendChild(cell2);
+              row.appendChild(cell3);
+              row.appendChild(cell4);
+              row.appendChild(cell5);
+              tableBody.appendChild(row);
+              // Add a new element to the end of the array
+              CookieData.push(splittedArray['cookieID']);
+              CookieData.push(splittedArray['quantity']);
+            }
+            dataArray.value =CookieData;
+            divHidden.appendChild(dataArray);
+            console.log("Cookie Array is: ");
+            console.log(CookieData);
+            const OrderTotal = document.getElementById('totalOrder');
+            OrderTotal.textContent = "Order Total: $" + totalPrice; 
+            // Backup
+            // Put the data in here through javascript
+            // const numRows = 5; // Number of rows
+            // const numCols = 6; // Number of columns
 
-        <script>
-          const tableBody = document.getElementById('tableBody');
-          const myArray = JSON.parse(savedValue);
-          let totalPrice = 0;
-          const CookieData = [];
-          const dataArray = document.createElement('input');
-          dataArray.type = 'hidden';
-          dataArray.name = 'arrayOrder';
+              // const tableBody = document.getElementById('daTable');
 
-          for (let j = 0; j < myArray.length; j++) {
-            const row = document.createElement('tr');
-            const splittedArray = myArray[j];
-
-            const cell1 = document.createElement('td');
-            cell1.textContent = "Image here";
-            cell1.className = 'text-center';
-
-            const cell2 = document.createElement('td');
-            cell2.textContent = splittedArray['name'] + " " + splittedArray['highlight'];
-            cell2.className = 'text-center';
-
-            const cell3 = document.createElement('td');
-            cell3.textContent = splittedArray['price'] / splittedArray['quantity'];
-            cell3.className = 'text-center';
-
-            const cell4 = document.createElement('td');
-            cell4.textContent = splittedArray['quantity'];
-            cell4.className = 'text-center';
-
-            const cell5 = document.createElement('td');
-            cell5.textContent = splittedArray['price'];
-            cell5.className = 'text-center';
-
-            totalPrice += splittedArray['price'] + 5;
-
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-            row.appendChild(cell3);
-            row.appendChild(cell4);
-            row.appendChild(cell5);
-            tableBody.appendChild(row);
-
-            CookieData.push(splittedArray['cookieID']);
-            CookieData.push(splittedArray['quantity']);
-          }
-
-          dataArray.value = CookieData;
-          const divHidden = document.getElementById('divToAddHiddenData');
-          divHidden.appendChild(dataArray);
-
-          console.log("Cookie Array is: ");
-          console.log(CookieData);
-
-          const OrderTotal = document.getElementById('totalOrder');
-          OrderTotal.textContent = "Order Total: RM" + totalPrice;
-        </script>
+              // for (let i = 0; i < numRows; i++) {
+              //     const row = document.createElement('tr');
+              //     for (let j = 0; j < numCols; j++) {
+              //         const cell = document.createElement('td');
+              //         cell.textContent = `Row ${i + 1}, Column ${j + 1}`;
+              //         row.appendChild(cell);
+              //     }
+              //     tableBody.appendChild(row);
+              // }
+            </script>
+          </table>
+        </div>
       </div>
-    </div>
     </div>
 
   </form>
