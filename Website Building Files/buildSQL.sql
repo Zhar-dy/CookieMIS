@@ -84,35 +84,10 @@ CREATE TABLE Delivery(
     delivery_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     delivery_Status TEXT(100),
     delivery_Type VARCHAR(100),
-    delivery_Estimated_Time INT(200),
+    delivery_Estimated_Time varchar(200),
+    pickup_Date VARCHAR(100),
     order_ID INT(100),
     FOREIGN KEY(order_ID) REFERENCES Orders(order_ID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-CREATE TABLE Pickup(
-    delivery_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    pickup_Date VARCHAR(100),
-    FOREIGN KEY(delivery_ID) REFERENCES Delivery(delivery_ID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-
-);
-CREATE TABLE Deliver(
-    delivery_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    delivery_Date VARCHAR(100),
-    FOREIGN KEY(delivery_ID) REFERENCES Delivery(delivery_ID)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
-
-CREATE TABLE Testimonials(
-    testimony_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    user_ID INT(100),
-    rating INT(2),
-    feedback VARCHAR(200),
-    occcupation VARCHAR(200),
-    FOREIGN KEY(user_ID) REFERENCES users(user_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
