@@ -31,12 +31,12 @@ $query=mysqli_query($conn,$SQL);
 if($query){
     echo "Successfully added an Order";
 }
-$SQL= "SELECT * FROM orders WHERE order_Date = '$currentDate' AND user_ID = $userID";
+$SQL= "SELECT * FROM orders WHERE order_Date = '$currentDate' AND user_ID = $userID ORDER BY order_ID DESC";
 $query=mysqli_query($conn,$SQL);
 $data = mysqli_fetch_array($query);
-echo $data[0]; // This is the order ID
+//echo $data[0]; // This is the order ID
+print_r($data);
 $orderID = $data[0];
-echo 
 // Add the orders and quantity to database
 $arrayOrder = explode(',', $arrayOfOrders);
 echo "<br><br>". $arrayOfOrders."<br><br>";
@@ -63,7 +63,7 @@ if ($deliveryOption == "Pickup"){
     if($query){
         echo "Successfully added Pick Up<br>";
         echo 'Order successfully Placed!';
-        header('location: indexAddedOrder.php');
+        //header('location: indexAddedOrder.php');
     }else{
         echo "<br><br> An error occured";
     }
@@ -75,7 +75,7 @@ if ($deliveryOption == "Pickup"){
     if($query){
         echo "Successfully added delivery<br>";
         echo 'Order successfully Placed!';
-        header('location: indexAddedOrder.php');
+        //header('location: indexAddedOrder.php');
     }else{
         echo "<br><br> An error occured";
     }

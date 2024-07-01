@@ -133,9 +133,10 @@ fetchData().then(products => {
 function addToCart(key){
     if(listCarts[key] == null){
         // copy product from list to list cart
+        console.log("Current Key: "+ listCarts[key]);
         listCarts[key] = JSON.parse(JSON.stringify(product[key])); // Error. product is not defined
         listCarts[key].quantity = 1;
-
+        console.log("added "+ listCarts);
         // Ensure price is an integer
         listCarts[key].price = parseInt(listCarts[key].price);
     }
@@ -188,8 +189,14 @@ function changeQuantity(key, quantity){
 }
 function help() {
     // Convert the object to a JSON string
-    const cartListString = JSON.stringify(listCarts);
-
+    console.log("Data "+listCarts);
+    const nonNullCarts = listCarts.filter(obj => obj !== null);
+    // Custom replacer function to filter out empty values
+    const cartListString = JSON.stringify(nonNullCarts);
+    // cartListString.forEach(obj => {
+    //     console.log(`ID: ${obj.cookieID}, Name: ${obj.name}${obj.highlight}`);
+    // });
+    console.log("Json "+cartListString);
     // Save the string in sessionStorage
     sessionStorage.setItem('cartList', cartListString);
     
