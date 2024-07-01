@@ -164,7 +164,7 @@
               tableBody.appendChild(row);
               // Add a new element to the end of the array
               CookieData.push(splittedArray['cookieID']);
-              CookieData.push(splittedArray['price']);
+              CookieData.push(splittedArray['quantity']);
             }
             dataArray.value =CookieData;
             divHidden.appendChild(dataArray);

@@ -63,7 +63,7 @@ if ($deliveryOption == "Pickup"){
     if($query){
         echo "Successfully added Pick Up<br>";
         echo 'Order successfully Placed!';
-        //header('location: indexAddedOrder.php');
+        header('location: indexAddedOrder.php');
     }else{
         echo "<br><br> An error occured";
     }
@@ -75,7 +75,7 @@ if ($deliveryOption == "Pickup"){
     if($query){
         echo "Successfully added delivery<br>";
         echo 'Order successfully Placed!';
-        //header('location: indexAddedOrder.php');
+        header('location: indexAddedOrder.php');
     }else{
         echo "<br><br> An error occured";
     }
