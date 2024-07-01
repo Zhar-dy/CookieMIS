@@ -101,6 +101,19 @@ if(isset($_GET['delete'])){
           </form>
 
           </div>
+          <div class="col-md-6">
+          <h1 class="update_text">Update Picture</h1>
+          <div class="form-group">
+            <label for="picture">Picture:</label>
+            <input type="file" name="file" id="file">
+            <img src="../userPictures/<?php echo $_SESSION['picture']; ?>" width="130" height="130">
+          </div>
+          </form>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea type="text" id="address" name="address" class="form-control" placeholder="Enter your address" required></textarea>
+          </div>
+        </div>
         </div>
       </div>
     </div>
