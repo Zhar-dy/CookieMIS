@@ -29,9 +29,6 @@
                 }
                 ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="../contact.php">CONTACT US</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="#"><img src="../images/search-icon.png"></a>
                 </li>
                 <li class="nav-item active">
