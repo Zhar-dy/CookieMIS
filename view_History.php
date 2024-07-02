@@ -11,6 +11,11 @@ if (!isset($_SESSION['username'])) {
     <title>View Order History</title>
     <!-- Header Meta File -->
     <?php include './reusableCodes/headerMeta.php' ?>
+    <style>
+  .custom-checkbox-padding {
+    padding-left: 2rem; /* Adjust the value as needed */
+  }
+</style>
 </head>
 
 <body>
@@ -20,13 +25,15 @@ if (!isset($_SESSION['username'])) {
     <div class="history_container">
         <h1>Orders</h1>
         <h5>Sort by:</h5>
-        <select class="nice-select status-select" name='DeliOptions' id='DeliOptions'>
-            <option value="Pending" selected>Pending</option>
-            <option value="Ready">Ready</option>
-            <option value="Received">Received</option>
-            <option value="Shipped">Shipped</option>
-            <option value="Delivered">Delivered</option>
-        </select>
+        <div class="list-group">
+  <label class="list-group-item d-flex gap-2 align-items-center custom-checkbox-padding">
+    <input class="form-check-input me-2" type="checkbox" value="" checked>
+    <div>
+      Shipping
+      <small class="d-block text-muted">See which of your order that is under shipping!</small>
+    </div>
+  </label>
+</div>
         <div class="order-section">
             <h2>01-07-2024</h2> <!-- print the order date -->
             <div class="order">
