@@ -57,14 +57,17 @@ if (!isset($_SESSION['username'])) {
                     <div class="item">
                         <img src="images/cookies/chewy.png" alt="chewy cookie">
                         <div>Cookie of Chewy<br>RM 8</div>
+                        <div>Quantity: <br>3</div>
                     </div>
                     <div class="item">
-                        <img src="images/cookies/chewy.png" alt="chewy cookie">
-                        <div>Cookie of Chewy<br>RM 8</div>
+                        <img src="images/cookies/peanut.png" alt="peanut cookie">
+                        <div>Cookie of Peanut<br>RM 1</div>
+                        <div>Quantity: <br>10</div>
                     </div>
                     <div class="item">
                         <img src="images/cookies/jumbo.png" alt="Cookie of Creativity">
                         <div>Cookie of Creativity<br>RM 5</div>
+                        <div>Quantity: <br>5</div>
                     </div>
                 </div>
             </div>
@@ -104,18 +107,12 @@ if (!isset($_SESSION['username'])) {
                     <div class="item">
                         <img src="images/cookies/chewy.png" alt="chewy cookie">
                         <div>Cookie of Chewy<br>RM 8</div>
-                    </div>
-                    <div class="item">
-                        <img src="images/cookies/chewy.png" alt="chewy cookie">
-                        <div>Cookie of Chewy<br>RM 8</div>
-                    </div>
-                    <div class="item">
-                        <img src="images/cookies/chewy.png" alt="chewy cookie">
-                        <div>Cookie of Chewy<br>RM 8</div>
+                        <div>Quantity: <br>7</div>
                     </div>
                     <div class="item">
                         <img src="images/cookies/jumbo.png" alt="Cookie of Creativity">
                         <div>Cookie of Creativity<br>RM 5</div>
+                        <div>Quantity: <br>2</div>
                     </div>
                 </div>
             </div>
