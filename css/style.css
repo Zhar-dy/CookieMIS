@@ -1487,3 +1487,10 @@ header .shopping span {
 .status .delivered:after {
     background: #0a8770; /* Matching darker greenish-blue for the circle */
 }
+
+.img-history {
+    max-width: 56px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+}
