@@ -73,15 +73,15 @@ function getOrderDetailsStaff()
 	echo "";
 	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if ($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3) {
+		if($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3){
 			$count++;
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
-			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
+			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
 			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
-			//echo $arrayOfArrays[$i][0];
+					//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
@@ -184,13 +184,14 @@ function getOrderDetailsStaff()
 			echo "</form>"; //This is switch case bracket
 
 		}
+		
 	}
-	if ($count < 1) {
+	if ($count <1){
 		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
 		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
 	}
 
-	/*
+/*
 		0 id
 		1 name
 		2 desc
@@ -228,15 +229,15 @@ function getOrderHistoryStaff()
 	echo "";
 	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if ($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3) {
+		if($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3){
 			$count++;
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
-			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
+			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
 			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
-			//echo $arrayOfArrays[$i][0];
+					//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
@@ -244,7 +245,6 @@ function getOrderHistoryStaff()
 			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
-						<td><button type='send'>Order Info</button></td>
 						<td>";
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
@@ -302,13 +302,14 @@ function getOrderHistoryStaff()
 			echo "</form>"; //This is switch case bracket
 
 		}
+		
 	}
-	if ($count < 1) {
+	if ($count <1){
 		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
 		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
 	}
 
-	/*
+/*
 		0 id
 		1 name
 		2 desc
@@ -347,7 +348,8 @@ function getProducts()
 				echo "<a href=\"cart.php\">BUY NOW</a>
 				</div>
 				   </div>";
-			} else {
+			}
+			else{
 				echo "<a href=\"login/login.php\">BUY NOW</a>
 				</div>
 				   </div>";
@@ -375,164 +377,210 @@ function printStaff()
 
 	$sql = "SELECT * FROM users WHERE level_ID = 1";
 	$query = mysqli_query($conn, $sql);
+	// Get total rows of the data
+	$totalRows = mysqli_num_rows($query);
+	$arrayOfArrays = array();
+	// Store the arrays into an array
+	while ($row = mysqli_fetch_array($query)) {
+		$arrayOfArrays[] = $row;
+	}
+	//print_r($arrayOfArrays);
+	/*
+		0 id
+		1 username
+		2 name
+		3 password
+		4 gender  make if 1, then gender is male
+		5 address
+		6 email
+		7 phone
+		8 picture
+		9 level ID
+		*/
+	for ($i = 0; $i < $totalRows; $i++) {
+		global $staffArray;
+		array_push($staffArray, $arrayOfArrays[$i][0]); // Add 'apple' and 'raspberry'
+		// Result: ['orange', 'banana', 'apple', 'raspberry']
 
-	// Check if there are any rows returned
-	if (mysqli_num_rows($query) > 0) {
-		$arrayOfArrays = array();
-
-		// Store the rows into an array
-		while ($row = mysqli_fetch_array($query)) {
-			$arrayOfArrays[] = $row;
-		}
-
-		// Iterate over the array and print staff details
-		foreach ($arrayOfArrays as $staff) {
-			echo "<div class=\"trow\">
+		echo "<div class=\"trow\">
 				<div class=\"cell\">
-					" . $staff[1] . "
+					" . $arrayOfArrays[$i][1] . "
 				</div>
 				<div class=\"cell\">
-					" . $staff[2] . "
+					" . $arrayOfArrays[$i][2] . "
 				</div>";
-
-			if ($staff[4] == 1) {
-				echo "<div class=\"cell\">
+		if ($arrayOfArrays[$i][4] == 1) {
+			echo "<div class=\"cell\">
 					Male  
 				</div>";
-			} else if ($staff[4] == 2) {
-				echo "<div class=\"cell\">
+		} else if ($arrayOfArrays[$i][4] == 2) {
+			echo "<div class=\"cell\">
 					Female
 				</div>";
-			} else {
-				echo "<div class=\"cell\">
+		} else {
+			echo "<div class=\"cell\">
 					Non Binary  
 				</div>";
-			}
-
-			echo "	<div class=\"cell\">
-					" . $staff[5] . "
-				</div>
-				<div class=\"cell\">
-					" . $staff[6] . "
-				</div>
-				<div class=\"cell\">
-					" . $staff[7] . "
-				</div>
-				<div class=\"cell\">";
-
-			$current_page = basename($_SERVER['PHP_SELF'], ".php");
-
-			if ($current_page == "view_User") {
-				echo "<button type='submit' class='btn btn-secondary' name='view' value='" . $staff[0] . "'>
-					View Profile
-				  </button>";
-			} elseif ($current_page == "upd_User") {
-				echo "<button type='submit' class='btn btn-secondary' name='update' value='" . $staff[0] . "'>
-					Update Profile
-				  </button>
-				  <br>
-				  <button type='submit' class='btn btn-primary' name='delete' value='" . $staff[0] . "'>
-					Delete
-				  </button>";
-			}
-
-			echo "</div></div>";
 		}
+		echo "	<div class=\"cell\">
+					" . $arrayOfArrays[$i][5] . "
+				</div>
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][6] . "
+				</div>
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][7] . "
+				</div>
+      			<div class=\"cell\">";
 
-		// Free result set
-		mysqli_free_result($query);
-	} else {
-		// No rows found
-		echo "No staff data available.";
-	}
+	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
+	  //echo $arrayOfArrays[$i][0];
 
-	// Close connection
-	mysqli_close($conn);
+	  if ($current_page == "view_User") {
+		echo "<button type='submit' class='btn btn-secondary' name='view' value='".$arrayOfArrays[$i][0]."'>
+				View Profile
+			  </button>
+			  
+		"; // goes view_Detail_User.php
+	  } elseif ($current_page == "upd_User") {
+		echo "<button type='submit' class='btn btn-secondary' name='update' value='".$arrayOfArrays[$i][0]."'".$arrayOfArrays[$i][0]."'>
+				Update Profile
+			  </button>"; // goes "updateUser.php"
+		echo "<br><button type='submit' class='btn btn-primary' name='delete' value='".$arrayOfArrays[$i][0]."'".$arrayOfArrays[$i][0]."'>
+				Delete
+			  </button>";
+	  }
+
+echo "</div></div>";
+	}/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+		//var_dump($staffArray);
+		return ($staffArray);
 }
-
 function printUsers()
 {
-    // Include database connection settings
-    include('connectdb.php');
+	// Include database connection settings
+	include('connectdb.php');
 
-    $sql = "SELECT * FROM users WHERE level_ID = 2";
-    $query = mysqli_query($conn, $sql);
+	$sql = "SELECT * FROM users WHERE level_ID = 2";
+	$query = mysqli_query($conn, $sql);
+	// Get total rows of the data
+	$totalRows = mysqli_num_rows($query);
+	$arrayOfArrays = array();
+	// Store the arrays into an array
+	while ($row = mysqli_fetch_array($query)) {
+		$arrayOfArrays[] = $row;
+	}
+	/*
+		0 id
+		1 username
+		2 name
+		3 password
+		4 gender  make if 1, then gender is male
+		5 address
+		6 email
+		7 phone
+		8 picture
+		9 level ID
+		*/
+	for ($i = 0; $i < $totalRows; $i++) {
+		global $userArray;
+		array_push($userArray, $arrayOfArrays[$i][0]);
+		echo "<form action='updateUser.php' method='GET'><div class=\"trow\">
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][1] . "
+				</div>
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][2] . "
+				</div>";
+		if ($arrayOfArrays[$i][4] == 1) {
+			echo "<div class=\"cell\">
+					Male  
+				</div>";
+		} else if ($arrayOfArrays[$i][4] == 2) {
+			echo "<div class=\"cell\">
+					Female
+				</div>";
+		} else {
+			echo "<div class=\"cell\">
+					Non Binary  
+				</div>";
+		}
+		echo "<div class=\"cell\">
+					" . $arrayOfArrays[$i][5] . "
+				</div>
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][6] . "
+				</div>
+				<div class=\"cell\">
+					" . $arrayOfArrays[$i][7] . "
+				</div>
+      <div class=\"cell\">";
 
-    // Check if there are any rows returned
-    if (mysqli_num_rows($query) > 0) {
-        $arrayOfArrays = array();
-
-        // Store the rows into an array
-        while ($row = mysqli_fetch_array($query)) {
-            $arrayOfArrays[] = $row;
-        }
-
-        // Initialize userArray
-        $userArray = array();
-
-        // Iterate over the array and print user details
-        foreach ($arrayOfArrays as $user) {
-            echo "<form action='updateUser.php' method='GET'>
-                <div class=\"trow\">
-                    <div class=\"cell\">
-                        " . $user[1] . "
-                    </div>
-                    <div class=\"cell\">
-                        " . $user[2] . "
-                    </div>";
-
-            if ($user[4] == 1) {
-                echo "<div class=\"cell\">
-                        Male  
-                    </div>";
-            } else if ($user[4] == 2) {
-                echo "<div class=\"cell\">
-                        Female
-                    </div>";
-            } else {
-                echo "<div class=\"cell\">
-                        Non Binary  
-                    </div>";
-            }
-
-            echo "<div class=\"cell\">
-                        " . $user[5] . "
-                    </div>
-                    <div class=\"cell\">
-                        " . $user[6] . "
-                    </div>
-                    <div class=\"cell\">
-                        " . $user[7] . "
-                    </div>
-                    <div class=\"cell\">";
-
-            $current_page = basename($_SERVER['PHP_SELF'], ".php");
-
-            if ($current_page == "view_User") {
-                echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"" . $user[0] . "\">View Profile</button>";
-            } elseif ($current_page == "upd_User") {
-                echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='" . $user[0] . "'>Update Profile</button>
-                    <br>
-                    <button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='" . $user[0] . "'>Delete</button>";
-            }
-            echo "</div></div></form>";
-        }
-
-        // Free result set
-        mysqli_free_result($query);
-
-        // Close connection
-        mysqli_close($conn);
-
-        // Return userArray if needed
-        return $userArray;
-    } else {
-        // No rows found
-        echo "No users found.";
-        return null; // or handle this case as per your application's needs
-    }
+		$current_page = basename($_SERVER['PHP_SELF'], ".php");
+		
+		if ($current_page == "view_User") {
+			
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>"; // goes view_Detail_User.php
+		} elseif ($current_page == "upd_User") {
+			
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='".$arrayOfArrays[$i][0]."'>Update Profile</button>"; // goes "updateUser.php"
+			echo "<br><button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='".$arrayOfArrays[$i][0]."'>Delete</button>";
+		}
+		echo "</div></div>";
+	}
+	//var_dump($userArray);
+	/*
+		0 id
+		1 name
+		2 desc
+		3 highlight
+		4 available
+		5 stock
+		6 price
+		7 image
+		*/
+		return ($userArray);
 }
+function getProductsWithoutHTML()
+{
+	// Include database connection settings
+	include('connectdb.php');
 
+	$sql = "SELECT * FROM product";
+	$query = mysqli_query($conn, $sql);
+	
+	// Get total rows of the data
+	$totalRows = mysqli_num_rows($query);
+	$arrayOfArrays = array();
+	// Store the arrays into an array
+	while ($row = mysqli_fetch_array($query)) {
+		$arrayOfArrays[] = $row;
+		//echo $row[4]."<br>";
+	}
+	// First initialization fix
+	$i = 0;
+	$dataToPost = "";
+	$dataToPost = $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
+		. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
+		. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
+	// Set the rest of the data
+	for ($i = 1; $i < $totalRows; $i++) {
+		$dataToPost = $dataToPost . "+" . $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
+			. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
+			. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
+	}
+	//echo $dataToPost;
+	return $dataToPost;
+}
 function getProductsinJSON()
 {
 	// Include database connection settings
@@ -563,35 +611,24 @@ function updateProduct()
 	while ($row = mysqli_fetch_array($query)) {
 		$arrayOfArrays[] = $row;
 	}
-
-	// Output each product in a form
 	for ($i = 0; $i < $totalRows; $i++) {
 		echo "<div class=\"box\">
                 <div class=\"img-box\">
-                    <img src=\"../images/cookies/" . $arrayOfArrays[$i][7] . "\">
+				<img src=\"../images/cookies/" . $arrayOfArrays[$i][7] . "\">
                 </div>
                 <div class=\"detail-box\">
                     <h6>" . $arrayOfArrays[$i][1] . " <span>" . $arrayOfArrays[$i][3] . "</span></h6>
                     <p class=\"long_text\">" . $arrayOfArrays[$i][2] . "</p>
                     <h5>RM " . $arrayOfArrays[$i][6] . "</h5>";
-
-		// Check availability and display appropriate button
-
-		if ($arrayOfArrays[$i][4] === "1" && $arrayOfArrays[$i][5] >= 1) {
-			echo "<form action='updateStock.php' method='GET'>
-					<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
-				     Update Stock
-			         </button>
-                  </form>";
+		if ($arrayOfArrays[$i][4] === "Available" && $arrayOfArrays[$i][5] >= 1) {
+			echo "<a href=\"#\">Update Stock</a>
+                	</div>
+           			</div>";
 		} else {
-			echo "<form action='updateStock.php' method='GET'>
-					<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
-				     Not available/Refill Stock
-			         </button>
-                  </form>";
+			echo "<a href=\"#\" style=\"background-color:red\">Refill Stock</a>
+                	</div>
+           			</div>";
 		}
-
-		echo "</div></div>"; // Close detail-box and box divs
 	}
 }
 
