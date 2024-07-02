@@ -69,6 +69,7 @@ session_start();
                 <th>Customer Name</th>
                 <th>Order Date</th>
                 <th>Order Details</th>
+                <th>Order Info</th>
                 <th>Status</th>
 
             </tr>

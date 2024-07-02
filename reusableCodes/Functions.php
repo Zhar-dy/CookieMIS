@@ -245,6 +245,7 @@ function getOrderHistoryStaff()
 			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
+						<td><button type='send'>Order Info</button></td>
 						<td>";
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
@@ -625,7 +626,7 @@ function updateProduct()
                 	</div>
            			</div>";
 		} else {
-			echo "<a href=\"#\" style=\"background-color:red\">Refill Stock</a>
+			echo "<a href=\"#\" style=\"background-color:red\">Not available/Refill Stock</a>
                 	</div>
            			</div>";
 		}
