@@ -21,7 +21,7 @@ session_start();
   <!--,,-->
   <div class="product_section layout_padding">
     <div class="container">
-      <h1 class="about_text" style="text-align:center">View User Info</h1>
+      <h1 class="about_text" style="text-align:center">Manage Account</h1>
 
       <!--                 table start here            -->
       <h1 class="label" style="color:lightcoral">Staff: </h1>
