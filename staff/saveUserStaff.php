@@ -1,67 +1,64 @@
 <?php
-// Inialize session
+// Initialize session
 session_start();
 
 // Include database connection settings
 include('../reusableCodes/connectdb.php');
-$sql= "SELECT * FROM users WHERE user_ID = ".$_GET['userID'].";";
-$query = mysqli_query($conn, $sql);
-$tempArray = mysqli_fetch_array($query);
-echo $sql;
-if(isset($_GET['update'])){
-	/* capture values from HTML form */
-    echo $sql;
-	$tempusername = $_GET['name'];
-	$tempemail = $_GET['email'];
-	$tempphoneNum = $_GET['phone'];
-	$temppassword = $_GET['password'];
-	if(!empty($tempusername)){
-		$username = $tempusername;
-	}else{
-		$username = $tempArray[2];
-	}
-	if(!empty($tempemail)){
-		$email = $tempemail;
-	}else{
-		$email = $tempArray[6];
-	}
-	if(!empty($tempphoneNum)){
-		$phone= $tempphoneNum;
-	}else{
-		$phone=$tempArray[7];
-	}
-	if(!empty($temppassword)){
-		$password = $temppassword;
-        $password= md5($password);
-        $password= md5($password);
-	}else{
-		$password=$tempArray[1];
-	}
-	// $sql= "SELECT * FROM users WHERE username= '".$_SESSION['username']."' AND password= '".$_SESSION['password']."'";
-	// $query = mysqli_query($conn, $sql);
-	// $tempArray = mysqli_fetch_array($query);
-	$sql2 = "UPDATE users SET name = '".$username."', password = '".$password."', email = '".$email."', phone_Num = '".$phone."' WHERE user_ID = '".$tempArray[0]."';";
-	$query = mysqli_query($conn, $sql2);
-	if($query){
-		?>
-		<script type="text/javascript">
-			alert("Account is updated successfully!")
-		</script>
-		<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
+    // Capture values from HTML form
+    $userID = $_POST['userID'];
+    $tempusername = $_POST['name'];
+    $tempemail = $_POST['email'];
+    $tempphoneNum = $_POST['phone'];
+    $temppassword = $_POST['password'];
+    $tempaddress = $_POST['address'];
+
+    $sql = "SELECT * FROM users WHERE user_ID = $userID";
+    $query = mysqli_query($conn, $sql);
+    $tempArray = mysqli_fetch_array($query);
+
+    $username = !empty($tempusername) ? $tempusername : $tempArray[2];
+    $email = !empty($tempemail) ? $tempemail : $tempArray[6];
+    $address = !empty($tempaddress) ? $tempaddress : $tempArray[5];
+    $phone = !empty($tempphoneNum) ? $tempphoneNum : $tempArray[7];
+    $password = !empty($temppassword) ? md5(md5($temppassword)) : $tempArray[3];
+
+    $fileName = $_SESSION['picture'];
+    if (!empty($_FILES['file']['name'])) {
+        $uploadedFile = $_FILES['file'];
+        $fileLocation = $uploadedFile['tmp_name'];
+        $originalFileName = $uploadedFile['name'];
+        $fileExtension = strtolower(pathinfo($originalFileName, PATHINFO_EXTENSION));
+
+        $allowedExtensions = ['jpg', 'jpeg', 'png'];
+        if (in_array($fileExtension, $allowedExtensions)) {
+            $newLocation = "../userPictures/" . $tempArray[1] . "." . $fileExtension;
+            $fileName = $tempArray[1] . "." . $fileExtension;
+
+            if (move_uploaded_file($fileLocation, $newLocation)) {
+                echo "File successfully uploaded and saved as: $fileName";
+            } else {
+                echo "Error while saving the file.";
+            }
+        } else {
+            echo "Error: Invalid file extension. Allowed extensions are: " . implode(', ', $allowedExtensions);
+        }
+    }
+
+    $sql2 = "UPDATE users SET name = '$username', password = '$password', email = '$email', address = '$address', picture = '$fileName', phone_Num = '$phone' WHERE user_ID = '$userID'";
+    $query = mysqli_query($conn, $sql2);
+
+    if ($query) {
+        echo "<script>alert('Account is updated successfully!')</script>";
         echo "Successfully Updated account";
-	}else{
-		?>
-		<script type="text/javascript">
-			alert("An error occured!");
-		</script>
-		<?php
-        echo "Unuccessfully Updated account";
-		
-	}
-	echo "<br>Process finished";
-	header('Location: upd_User.php');
-	//echo("Level doesnt make sense");
-	//echo("<br> data fetched is".$d[5]);
+    } else {
+        echo "<script>alert('An error occurred!')</script>";
+        echo "Unsuccessfully Updated account";
+    }
+
+    echo "<br>Process finished";
+    header('Location: upd_User.php');
 }
 mysqli_close($conn);
 ?>

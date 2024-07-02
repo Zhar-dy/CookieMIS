@@ -30,23 +30,23 @@ session_start();
           <form method="POST" action="./reusableCodes/updateUser.php" enctype="multipart/form-data">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="<?php echo $_SESSION['name'] ?>">
+              <input type="text" class="form-control" id="name" name="name" value="<?php echo $_SESSION['name'] ?>">
             </div>
 
 
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $_SESSION["email"] ?>">
+              <input type="email" class="form-control" id="email" name="email" value="<?php echo $_SESSION["email"] ?>">
             </div>
 
             <div class="form-group">
               <label for="password">Password:</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone:</label>
-              <input type="tel" class="form-control" id="phone" name="phone" placeholder="<?php echo $_SESSION["phone_Num"] ?>">
+              <input type="tel" class="form-control" id="phone" name="phone" value="<?php echo $_SESSION["phone_Num"] ?>">
             </div>
 
             <p>Note: You will need to log in again after updating your account</p>
@@ -56,14 +56,14 @@ session_start();
           <h1 class="update_text">Update Picture</h1>
           <div class="form-group">
             <label for="picture">Picture:</label>
-            <input type="file" name="file" id="file">
+            <input type="file" class="form-control-file" id="file" name="file" required>
             <img src="userPictures/<?php echo $_SESSION['picture']; ?>" width="130" height="130">
           </div>
           <div class="form-group">
             <label for="address">Address:</label>
-            <textarea type="text" id="address" name="address" class="form-control" placeholder="<?php echo $_SESSION['address']; ?>" required></textarea>
+            <textarea id="address" name="address" class="form-control" required><?php echo  $_SESSION['address']; ?></textarea>
           </div>
-        </form>
+          </form>
         </div>
       </div>
     </div>

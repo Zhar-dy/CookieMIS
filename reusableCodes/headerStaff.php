@@ -21,17 +21,17 @@
           <a class="nav-link" href="#"><img src="../images/search-icon.png"></a>
         </li>
         <li class="nav-item dropdown active">
-          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
+          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USERS</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../staff/view_User.php">View</a>
-            <a class="dropdown-item" href="../staff/upd_User.php">Update</a>
+            <a class="dropdown-item" href="../staff/view_User.php">VIEW</a>
+            <a class="dropdown-item" href="../staff/upd_User.php">UPDATE</a>
           </div>
         </li>
         <li class="nav-item dropdown active">
-          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stock</a>
+          <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STOCK</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../staff/addProduct.php">Create</a>
-            <a class="dropdown-item" href="../staff/view_Product.php">View</a>
+            <a class="dropdown-item" href="../staff/addProduct.php">CREATE</a>
+            <a class="dropdown-item" href="../staff/view_Product.php">VIEW</a>
           </div>
         </li>
         <li class="nav-item dropdown active">

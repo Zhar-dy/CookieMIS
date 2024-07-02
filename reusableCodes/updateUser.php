@@ -27,13 +27,7 @@ if(isset($_POST['update'])){
 	}else{
 		$phone=$_SESSION['phone_Num'];
 	}
-	if(!empty($temppassword)){
-		$password = $temppassword;
-		md5($password);
-		md5($password);
-	}else{
-		$password=$_SESSION['password'];
-	}
+    $password = !empty($temppassword) ? md5(md5($temppassword)) : $tempArray[3];
 	if(!empty($tempaddress)){
 		$address= $tempaddress;
 	}else{
