@@ -73,15 +73,15 @@ function getOrderDetailsStaff()
 	echo "";
 	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3){
+		if ($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3) {
 			$count++;
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
-			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
+			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
 			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
-					//echo $arrayOfArrays[$i][0];
+			//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
@@ -184,14 +184,13 @@ function getOrderDetailsStaff()
 			echo "</form>"; //This is switch case bracket
 
 		}
-		
 	}
-	if ($count <1){
+	if ($count < 1) {
 		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
 		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
 	}
 
-/*
+	/*
 		0 id
 		1 name
 		2 desc
@@ -229,15 +228,15 @@ function getOrderHistoryStaff()
 	echo "";
 	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3){
+		if ($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3) {
 			$count++;
 			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
 			<tbody>
-			<input type='hidden' name='orderID' value='".$arrayOfArrays[$i][0]."'>
+			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
 			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
-					//echo $arrayOfArrays[$i][0];
+			//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
@@ -302,14 +301,13 @@ function getOrderHistoryStaff()
 			echo "</form>"; //This is switch case bracket
 
 		}
-		
 	}
-	if ($count <1){
+	if ($count < 1) {
 		//echo "<tr><td style='border:none'></td><td style='border:none'></td><td style='text-align:center;color:gray;'> No order yet...</td></tr>";
 		echo "<table style='text-align:center;color:gray;'><td> No order yet...</td></table>";
 	}
 
-/*
+	/*
 		0 id
 		1 name
 		2 desc
@@ -343,13 +341,12 @@ function getProducts()
                     <h6>" . $arrayOfArrays[$i][1] . " <span>" . $arrayOfArrays[$i][3] . "</span></h6>
                     <p class=\"long_text\">" . $arrayOfArrays[$i][2] . "</p>
                     <h5>RM " . $arrayOfArrays[$i][6] . "</h5>";
-		if ($arrayOfArrays[$i][4] === "Available" && $arrayOfArrays[$i][5] >= 1) {
+		if ($arrayOfArrays[$i][4] === "1" && $arrayOfArrays[$i][5] >= 1) {
 			if (isset($_SESSION['username'])) {
 				echo "<a href=\"cart.php\">BUY NOW</a>
 				</div>
 				   </div>";
-			}
-			else{
+			} else {
 				echo "<a href=\"login/login.php\">BUY NOW</a>
 				</div>
 				   </div>";
@@ -433,25 +430,25 @@ function printStaff()
 				</div>
       			<div class=\"cell\">";
 
-	  $current_page = basename($_SERVER['PHP_SELF'], ".php");
-	  //echo $arrayOfArrays[$i][0];
+		$current_page = basename($_SERVER['PHP_SELF'], ".php");
+		//echo $arrayOfArrays[$i][0];
 
-	  if ($current_page == "view_User") {
-		echo "<button type='submit' class='btn btn-secondary' name='view' value='".$arrayOfArrays[$i][0]."'>
+		if ($current_page == "view_User") {
+			echo "<button type='submit' class='btn btn-secondary' name='view' value='" . $arrayOfArrays[$i][0] . "'>
 				View Profile
 			  </button>
 			  
 		"; // goes view_Detail_User.php
-	  } elseif ($current_page == "upd_User") {
-		echo "<button type='submit' class='btn btn-secondary' name='update' value='".$arrayOfArrays[$i][0]."'".$arrayOfArrays[$i][0]."'>
+		} elseif ($current_page == "upd_User") {
+			echo "<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				Update Profile
 			  </button>"; // goes "updateUser.php"
-		echo "<br><button type='submit' class='btn btn-primary' name='delete' value='".$arrayOfArrays[$i][0]."'".$arrayOfArrays[$i][0]."'>
+			echo "<br><button type='submit' class='btn btn-primary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				Delete
 			  </button>";
-	  }
+		}
 
-echo "</div></div>";
+		echo "</div></div>";
 	}/*
 		0 id
 		1 name
@@ -462,8 +459,8 @@ echo "</div></div>";
 		6 price
 		7 image
 		*/
-		//var_dump($staffArray);
-		return ($staffArray);
+	//var_dump($staffArray);
+	return ($staffArray);
 }
 function printUsers()
 {
@@ -526,14 +523,14 @@ function printUsers()
       <div class=\"cell\">";
 
 		$current_page = basename($_SERVER['PHP_SELF'], ".php");
-		
+
 		if ($current_page == "view_User") {
-			
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"".$arrayOfArrays[$i][0]."\">View Profile</button>"; // goes view_Detail_User.php
+
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"" . $arrayOfArrays[$i][0] . "\">View Profile</button>"; // goes view_Detail_User.php
 		} elseif ($current_page == "upd_User") {
-			
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='".$arrayOfArrays[$i][0]."'>Update Profile</button>"; // goes "updateUser.php"
-			echo "<br><button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='".$arrayOfArrays[$i][0]."'>Delete</button>";
+
+			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='" . $arrayOfArrays[$i][0] . "'>Update Profile</button>"; // goes "updateUser.php"
+			echo "<br><button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='" . $arrayOfArrays[$i][0] . "'>Delete</button>";
 		}
 		echo "</div></div>";
 	}
@@ -548,7 +545,7 @@ function printUsers()
 		6 price
 		7 image
 		*/
-		return ($userArray);
+	return ($userArray);
 }
 function getProductsWithoutHTML()
 {
@@ -557,7 +554,7 @@ function getProductsWithoutHTML()
 
 	$sql = "SELECT * FROM product";
 	$query = mysqli_query($conn, $sql);
-	
+
 	// Get total rows of the data
 	$totalRows = mysqli_num_rows($query);
 	$arrayOfArrays = array();
@@ -571,12 +568,12 @@ function getProductsWithoutHTML()
 	$dataToPost = "";
 	$dataToPost = $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
 		. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
-		. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
+		. $arrayOfArrays[$i][7] . "|" . $arrayOfArrays[$i][0] . "";
 	// Set the rest of the data
 	for ($i = 1; $i < $totalRows; $i++) {
 		$dataToPost = $dataToPost . "+" . $arrayOfArrays[$i][1] . "|" . $arrayOfArrays[$i][3] . "|" . $arrayOfArrays[$i][2] . "|"
 			. $arrayOfArrays[$i][4] . "|" . $arrayOfArrays[$i][5] . "|" . $arrayOfArrays[$i][6] . "|"
-			. $arrayOfArrays[$i][7] . "|". $arrayOfArrays[$i][0] . "";
+			. $arrayOfArrays[$i][7] . "|" . $arrayOfArrays[$i][0] . "";
 	}
 	//echo $dataToPost;
 	return $dataToPost;
@@ -611,26 +608,39 @@ function updateProduct()
 	while ($row = mysqli_fetch_array($query)) {
 		$arrayOfArrays[] = $row;
 	}
+
+	// Output each product in a form
 	for ($i = 0; $i < $totalRows; $i++) {
 		echo "<div class=\"box\">
                 <div class=\"img-box\">
-				<img src=\"../images/cookies/" . $arrayOfArrays[$i][7] . "\">
+                    <img src=\"../images/cookies/" . $arrayOfArrays[$i][7] . "\">
                 </div>
                 <div class=\"detail-box\">
                     <h6>" . $arrayOfArrays[$i][1] . " <span>" . $arrayOfArrays[$i][3] . "</span></h6>
                     <p class=\"long_text\">" . $arrayOfArrays[$i][2] . "</p>
                     <h5>RM " . $arrayOfArrays[$i][6] . "</h5>";
-		if ($arrayOfArrays[$i][4] === "Available" && $arrayOfArrays[$i][5] >= 1) {
-			echo "<a href=\"#\">Update Stock</a>
-                	</div>
-           			</div>";
+
+		// Check availability and display appropriate button
+
+		if ($arrayOfArrays[$i][4] === "1" && $arrayOfArrays[$i][5] >= 1) {
+			echo "<form action='updateStock.php' method='GET'>
+					<button type='submit' class='btn btn-primary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Update Stock
+			         </button>
+                  </form>";
 		} else {
-			echo "<a href=\"#\" style=\"background-color:red\">Refill Stock</a>
-                	</div>
-           			</div>";
+			echo "<form action='updateStock.php' method='GET'>
+					<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Not available/Refill Stock
+			         </button>
+                  </form>";
 		}
+
+		echo "</div></div>"; // Close detail-box and box divs
 	}
 }
+
+
 
 // Sanitize the god damn inputs
 function sanitize($data)

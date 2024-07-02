@@ -93,7 +93,7 @@ function initApp(products){
     products.forEach((value, key) =>{
         let newDiv = document.createElement('div');
         newDiv.classList.add('box');
-        if(value.stock < 1){
+        if(value.available == 0){
             newDiv.innerHTML = `
             <div class="img-box">
                 <img src="images/cookies/${value.image}" alt="${value.name}">
@@ -102,7 +102,7 @@ function initApp(products){
                 <h6>${value.name} <span>${value.highlight}</span></h6>
                 <p class="long_text">${value.description}</p>
                 <h5>RM${value.price}</h5>
-                <a style="background-color:red">Sold Out!</a>
+                <a style="background-color:red">Not Available!</a>
             </div>`;
         }else{
             newDiv.innerHTML = `
