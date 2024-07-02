@@ -28,7 +28,7 @@
     <div class="order_container">
       <div class="headers">
         <h1>Order Confirmation</h1>
-          <div class="order-details">
+        <div class="order-details">
           <div class="order-total" id="totalOrder">Order Total: $3137.85</div>
           <button class="place-order-btn" type="send">Place Order</button>
         </div>
@@ -42,7 +42,7 @@
       </div>
       <div class="order_section info-box">
         <h2>Delivery Options:</h2>
-        <h2>Delivery Options:   (NOTE: RM 5 will be added in total for delivery option)</h2>
+        <h2>Delivery Options: (NOTE: RM 5 will be added in total for delivery option)</h2>
         <select class="nice-select status-select" name='DeliOptions' id='DeliOptions'>
           <option value="Pickup" selected>Pickup</option>
           <option value="Delivery">Delivery</option>
@@ -61,11 +61,13 @@
         <?php
         echo '<h2>' . $_SESSION["address"] . '</h2>';
         ?>
-        <!-- <input type="hidden" name="name" value="<?php //echo $_SESSION["address"] ?>"> -->
+        <!-- <input type="hidden" name="name" value="<?php //echo $_SESSION["address"] 
+                                                      ?>"> -->
       </div>
       <div class="order_section info-box">
-      <h2>Additional Instruction</h2>
-      <textarea id="moreInstruct" name="moreInstruct" class="form-control" placeholder="Insert Additional Instruction"></textarea>
+        <h2>Additional Instruction</h2>
+        <textarea id="moreInstruct" name="moreInstruct" class="form-control" placeholder="Insert Additional Instruction" maxlength="85"></textarea>
+        <p id="charCount">0 / 85 characters</p>
       </div>
       <div class="order_section" id="divToAddHiddenData">
         <div id="TestingText"></div>
@@ -84,63 +86,77 @@
             <!-- data will be inserted here -->
           </tbody>
         </table>
-          <script>
-            const tableBody = document.getElementById('tableBody');
-            const myArray = JSON.parse(savedValue);
-            let totalPrice = 0;
-            const CookieData = [];
-            const dataArray = document.createElement('input');
+        <script>
+          const tableBody = document.getElementById('tableBody');
+          const myArray = JSON.parse(savedValue);
+          let totalPrice = 0;
+          const CookieData = [];
+          const dataArray = document.createElement('input');
+          dataArray.type = 'hidden';
+          dataArray.name = 'arrayOrder';
+
+          for (let j = 0; j < myArray.length; j++) {
+            const row = document.createElement('tr');
+            const splittedArray = myArray[j];
+            const cell1 = document.createElement('td');
+            cell1.className = 'text-center';
+            const cell2 = document.createElement('td');
+            cell2.textContent = splittedArray['name'] + " " + splittedArray['highlight'];
+            cell2.className = 'text-center';
+            const cell3 = document.createElement('td');
+            cell3.textContent = splittedArray['price'] / splittedArray['quantity'];
+            cell3.className = 'text-center';
+            const cell4 = document.createElement('td');
+            cell4.textContent = splittedArray['quantity'];
+            cell4.className = 'text-center';
+            const cell5 = document.createElement('td');
+            cell5.textContent = splittedArray['price'];
+            cell5.className = 'text-center';
             dataArray.type = 'hidden';
             dataArray.name = 'arrayOrder';
-            
-            for (let j = 0; j < myArray.length; j++) {
-              const row = document.createElement('tr');
-              const splittedArray = myArray[j];
-              const cell1 = document.createElement('td');
-              cell1.className = 'text-center';
-              const cell2 = document.createElement('td');
-              cell2.textContent = splittedArray['name'] + " " + splittedArray['highlight'];
-              cell2.className = 'text-center';
-              const cell3 = document.createElement('td');
-              cell3.textContent = splittedArray['price'] / splittedArray['quantity'];
-              cell3.className = 'text-center';
-              const cell4 = document.createElement('td');
-              cell4.textContent = splittedArray['quantity'];
-              cell4.className = 'text-center';
-              const cell5 = document.createElement('td');
-              cell5.textContent = splittedArray['price'];
-              cell5.className = 'text-center';
-              dataArray.type = 'hidden';
-              dataArray.name = 'arrayOrder';
-              totalPrice += splittedArray['price'] + 5;
-              const imgElement = document.createElement('img');
-              imgElement.src = 'images/cookies/' + splittedArray['image']; // Set the image source
-              // Append the <img> element to the cell
-              cell1.appendChild(imgElement);
-              cell1.style.width ="5rem";
-              cell1.style.height ="5rem";
+            totalPrice += splittedArray['price'] + 5;
+            const imgElement = document.createElement('img');
+            imgElement.src = 'images/cookies/' + splittedArray['image']; // Set the image source
+            // Append the <img> element to the cell
+            cell1.appendChild(imgElement);
+            cell1.style.width = "5rem";
+            cell1.style.height = "5rem";
 
-              row.appendChild(cell1);
-              row.appendChild(cell2);
-              row.appendChild(cell3);
-              row.appendChild(cell4);
-              row.appendChild(cell5);
-              tableBody.appendChild(row);
-              CookieData.push(splittedArray['cookieID']);
-              CookieData.push(splittedArray['quantity']);
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+            row.appendChild(cell4);
+            row.appendChild(cell5);
+            tableBody.appendChild(row);
+            CookieData.push(splittedArray['cookieID']);
+            CookieData.push(splittedArray['quantity']);
+          }
+          dataArray.value = CookieData;
+          const divHidden = document.getElementById('divToAddHiddenData');
+          divHidden.appendChild(dataArray);
+          console.log("Cookie Array is: ");
+          console.log(CookieData);
+          const OrderTotal = document.getElementById('totalOrder');
+          OrderTotal.textContent = "Order Total: $" + totalPrice;
+          OrderTotal.textContent = "Order Total: RM" + totalPrice;
+          
+          //max character(for additional info) stuff
+          const textarea = document.getElementById('moreInstruct');
+          const charCount = document.getElementById('charCount');
+          const maxChars = 85;
+
+          textarea.addEventListener('input', () => {
+            let currentLength = textarea.value.length;
+            if (currentLength > maxChars) {
+              textarea.value = textarea.value.slice(0, maxChars);
+              currentLength = maxChars;
             }
-            dataArray.value =CookieData;
-            const divHidden = document.getElementById('divToAddHiddenData');
-            divHidden.appendChild(dataArray);
-            console.log("Cookie Array is: ");
-            console.log(CookieData);
-            const OrderTotal = document.getElementById('totalOrder');
-            OrderTotal.textContent = "Order Total: $" + totalPrice; 
-            OrderTotal.textContent = "Order Total: RM" + totalPrice;
-          </script>
+            charCount.textContent = `${currentLength} / ${maxChars} characters`;
+          });
+        </script>
 
-        </div>
       </div>
+    </div>
     </div>
 
   </form>
