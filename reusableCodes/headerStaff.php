@@ -42,7 +42,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../login/logout.php">LOG OUT</a>
+          <a class="nav-link" href="../login/logout.php" style="color: red;">LOG OUT</a>
         </li>
       </ul>
     </div>
