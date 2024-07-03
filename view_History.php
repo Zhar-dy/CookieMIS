@@ -24,14 +24,9 @@ if (!isset($_SESSION['username'])) {
 
     <div class="history_container">
         <h1>Orders</h1>
-        <h5>Sort by:</h5>
         <div class="list-group">
   <label class="list-group-item d-flex gap-2 align-items-center custom-checkbox-padding">
-    <input class="form-check-input me-2" type="checkbox" value="" checked>
-    <div>
-      Shipping
-      <small class="d-block text-muted">See which of your order that is under shipping!</small>
-    </div>
+    
   </label>
 </div>
 <?php include 'reusableCodes/Functions.php';
