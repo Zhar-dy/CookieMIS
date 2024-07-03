@@ -13,7 +13,7 @@ $orderID = $_GET['orderID'];
 
 <body>
     <!-- Header File -->
-    <?php include '../reusableCodes/header1in.php' ?>
+    <?php include '../reusableCodes/headerstaff.php' ?>
     <section class="product_section">
         <div class="container">
             <div class="container my-5 p-4 bg-white shadow rounded">

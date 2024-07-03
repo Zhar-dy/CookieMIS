@@ -31,14 +31,14 @@
           <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">STOCK</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../staff/addProduct.php">CREATE</a>
-            <a class="dropdown-item" href="../staff/view_Product.php">VIEW</a>
+            <a class="dropdown-item" href="../staff/view_Product.php">UPDATE</a>
           </div>
         </li>
         <li class="nav-item dropdown active">
           <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ORDER</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="view_Order.php">Current</a>
-            <a class="dropdown-item" href="view_History.php">History</a>
+            <a class="dropdown-item" href="view_Order.php">CURRENT</a>
+            <a class="dropdown-item" href="view_History.php">HISTORY</a>
           </div>
         </li>
         <li class="nav-item">

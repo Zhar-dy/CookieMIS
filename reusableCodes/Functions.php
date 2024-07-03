@@ -251,10 +251,9 @@ function getOrderHistoryStaff()
 	for ($i = 0; $i < $totalRows; $i++) {
 		if ($arrayOfArrays[$i][3] == 5 || $arrayOfArrays[$i][3] == 3) {
 			$count++;
-			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
+			echo "<form action='order_details.php' method='GET'>
 			<tbody>
 			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
-			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			//echo $arrayOfArrays[$i][0];
@@ -265,7 +264,7 @@ function getOrderHistoryStaff()
 			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
-						<td><button>Order Details</button></td>
+						<td><button>Order Info</button></td>
 						<td>";
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
