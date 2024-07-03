@@ -29,7 +29,7 @@
                 }
                 ?>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"><img src="../images/search-icon.png"></a>
+                  <a class="nav-link" href="https://search.brave.com/search?q=Give+me+a+good+cookie+recommendation&source=desktop&summary=1&summary_og=f43e47de5120d926b37c3b"><img src="../images/search-icon.png"></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="../login/login.php">SIGN IN</a>
