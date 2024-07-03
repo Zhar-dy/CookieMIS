@@ -158,9 +158,7 @@
     </div>
     </div>
 
-  </form>
-  <!-- Footer File -->
-  <?php include 'reusableCodes/footer.php' ?>
+        </form>
   <!-- <script src="js/app.js"></script> -->
 </body>
 
