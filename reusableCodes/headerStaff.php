@@ -4,7 +4,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="iconLogo"><a href="index.php"><img src="../images/logo.png"></a></div>
     <?php
-    echo '<div class="caller">Hello Staff ' . $_SESSION['username'] . '</div>';
+    echo '<div class="caller">Welcome Staff,<span style="color:#599ee9"> ' . $_SESSION['username'] . '</span></div>';
     ?>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

@@ -4,7 +4,7 @@
     <div class="iconLogo"><a href="index.php"><img src="images/logo.png"></a></div>
     <?php
         if (isset($_SESSION['username'])) {
-          echo '<div class="caller">Hello ' . $_SESSION['username'] . '</div>';
+          echo '<div class="caller">Welcome,<span style="color:#599ee9"> ' . $_SESSION['username'] . '</span></div>';
         } ?>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
