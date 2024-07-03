@@ -37,6 +37,8 @@
         <h2>Your Information</h2>
         <?php
         echo '<h2>' . $_SESSION['username'] . '</h2>';
+        
+        echo '<h2>(+60) ' . $_SESSION['phone_Num'] . '</h2>';
         ?>
         <input type="hidden" name="name" value="<?php echo $_SESSION['username'] ?>">
       </div>
