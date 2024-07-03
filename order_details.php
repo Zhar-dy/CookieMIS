@@ -1,5 +1,6 @@
 <?php
 session_start();
+$orderID = $_GET['orderID'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,22 +32,10 @@ session_start();
                             <th scope="col">Total Price</th>
                         </tr>
                     </thead>
+                    <?php include '../reusableCodes/Functions.php' ?>
                     <tbody>
-                        <tr>
-                            <td><img class="img-history" src="../images/cookies/jumbo.png"></td>
-                            <td>Cookie of Creativity</td>
-                            <td>5</td>
-                            <td>1</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td><img class="img-history" src="../images/cookies/chewy.png"></td>
-                            <td>Cookie of Chocolate</td>
-                            <td>8</td>
-                            <td>1</td>
-                            <td>8</td>
-                        </tr>
-                    </tbody>
+                        <?php getOrderDetails($orderID); ?>
+                        </tbody>
                 </table>
             </div>
         </div>
