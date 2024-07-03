@@ -169,7 +169,7 @@ function reloadCart(){
             listCart.appendChild(newDiv);
         }
     });
-    total.innerText = totalPrice;
+    total.innerText = "RM " + totalPrice;
     console.log("First input is: ", totalPrice);
     quantity.innerText = count;
 }
