@@ -221,25 +221,38 @@ function help() {
     //window.location.href = 'confirmOrder.php';
 }
 
-// function help() {
-//     const cartListString = JSON.stringify(listCarts);
+function help() {
+    // Check if the cart is empty
+    if (listCarts.length === 0 || listCarts.every(item => item === null)) {
+        alert("Your cart is empty! Please add items to your cart before placing an order.");
+        return;
+    }
 
-//     // Save the string in sessionStorage
-//     sessionStorage.setItem('cartList', cartListString);
+    // Convert the object to a JSON string
+    console.log("Data " + listCarts);
+    const nonNullCarts = listCarts.filter(obj => obj !== null);
+    // Custom replacer function to filter out empty values
+    const cartListString = JSON.stringify(nonNullCarts);
+    console.log("Json " + cartListString);
+    // Save the string in sessionStorage
+    sessionStorage.setItem('cartList', cartListString);
 
-//     fetch('confirmOrder.php', {
-//         method: 'POST',
-//         body: JSON.stringify({ data: cartListString }),
-//     })
-//     .then(response => response.text())
-//     .then(result => {
-//         // Handle the response from PHP (if needed)
-//         console.log(result);
+    fetch('ReusableCodes/processOrders.php', {
+        method: 'POST',
+        body: JSON.stringify({ data: listCarts }),
+    })
+    .then(response => response.text())
+    .then(result => {
+        // Handle the response from PHP (if needed)
+        console.log(result);
 
-//         // Redirect to another page (after processing the response)
-//         window.location.href = 'confirmOrder.php';
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// }
+        // Redirect to another page (after processing the response)
+        window.location.href = 'confirmOrder.php';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
+    // Redirect to another page
+    //window.location.href = 'confirmOrder.php';
+}
