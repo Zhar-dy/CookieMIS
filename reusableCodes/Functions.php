@@ -68,7 +68,8 @@ function getOrderDetailsStaff($orderStatus)
 		1 Date
 		2 Details
 		3 Status
-		4 User ID		
+		total_Price
+		5 User ID		
 		*/
 		echo "
 		<table>
@@ -94,13 +95,12 @@ function getOrderDetailsStaff($orderStatus)
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			//echo $arrayOfArrays[$i][0];
-			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
+			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][5] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
 			//var_dump($userArray);
 			//echo "<br><br>";
-
-			echo "		<td>" . $userArray[2] . "</td> <!--  Gets Customer Name -->
+						echo "		<td>" . $userArray[2] . "</td> <!--  Gets Customer Name -->
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
 						<form action='order_details.php' method='GET'>
