@@ -29,6 +29,7 @@
         <h1>Order Confirmation</h1>
         <div class="order-details">
           <div class="order-total" id="totalOrder">Order Total: $3137.85</div>
+          <input type="hidden" id="priceTotal" name="priceTotal">
           <button class="place-order-btn" type="send">Place Order</button>
         </div>
       </div>
@@ -66,7 +67,7 @@
       <div class="order_section info-box">
         <h2>Additional Instruction</h2>
         <textarea id="moreInstruct" name="moreInstruct" class="form-control" placeholder="Insert Additional Instruction" maxlength="85"></textarea>
-        <p id="charCount">0 / 85 characters</p>
+        <p id="charCount">0 / 125 characters</p>
       </div>
       <div class="order_section" id="divToAddHiddenData">
         <div id="TestingText"></div>
@@ -138,11 +139,13 @@
           const OrderTotal = document.getElementById('totalOrder');
           OrderTotal.textContent = "Order Total: $" + totalPrice;
           OrderTotal.textContent = "Order Total: RM" + totalPrice;
+          const priceTotalInput = document.getElementById("priceTotal");
+          priceTotalInput.value = totalPrice;
           
           //max character(for additional info) stuff
           const textarea = document.getElementById('moreInstruct');
           const charCount = document.getElementById('charCount');
-          const maxChars = 85;
+          const maxChars = 125;
 
           textarea.addEventListener('input', () => {
             let currentLength = textarea.value.length;
@@ -159,7 +162,18 @@
     </div>
 
         </form>
-  <!-- <script src="js/app.js"></script> -->
+<!-- Javascript files-->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/plugin.js"></script>
+<!-- sidebar -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+<!-- javascript -->
+<script src="js/owl.carousel.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
 
 </html>

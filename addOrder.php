@@ -9,6 +9,7 @@ $datep = $_POST['datep'];
 $timep = $_POST['timep'];
 $AddInstructions = $_POST['moreInstruct'];
 $arrayOfOrders = $_POST['arrayOrder'];
+$priceTotal=$_POST['priceTotal'];
 echo "User ID: ". $userID;
 echo "<br>";
 echo "name: ". $name;
@@ -25,8 +26,11 @@ echo "Data in Array: ". $arrayOfOrders;
 //print_r($arrayOfOrders);
 echo "<br>";
 // Place the Order with the Additional Instruction first
-$SQL= "INSERT INTO `orders`(`order_Date`, `order_Details`, `order_Status`, `user_ID`) 
-       VALUES ('$currentDate','$AddInstructions',1,'$userID')";
+if ($deliveryOption != "Pickup"){
+    $priceTotal =  $priceTotal + 5;
+}
+$SQL= "INSERT INTO `orders`(`order_Date`, `order_Details`, `order_Status`, `total_Price`, `user_ID`) 
+       VALUES ('$currentDate','$AddInstructions',1,$priceTotal,'$userID')";
 $query=mysqli_query($conn,$SQL);
 if($query){
     echo "Successfully added an Order";
