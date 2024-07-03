@@ -67,7 +67,7 @@
 
             <div class="form-group">
               <label for="file">Profile Picture:</label>
-              <input type="file" id="file" name="file" class="form-control">
+              <input type="file" id="file" name="file" class="form-control" required>
             </div>
 
             <input type="hidden" name="level" value="2" />
