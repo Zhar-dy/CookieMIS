@@ -124,7 +124,44 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </div>
         </div>
-
+        <!--  Data Example
+        <div class="order-section">
+            <h2>[Date]</h2> 
+            <div class="order">
+                <div class="order-header">
+                    <div>
+                        <a class="bigTxt">Order ID: [Order ID]</a>
+                    </div>
+                </div>
+                <div class="order-details">
+                    <div>
+                        <h5>Order Status: </h5>
+                        <div class="status"><span class="[status]">[Status]</span></div>
+                    </div>
+                    <div>
+                        <h5>Total cost: </h5>
+                        <div class="h5"> RM [Total Price]</div>
+                    </div>
+                    <div>
+                        <h5>Pickup Date: </h5>
+                        <div class="h5"> [Pick Up Date]</div>
+                    </div>
+                    <div>
+                        <h5>Details: </h5>
+                        <div class="smallTXT"> [Order Instructions]</div>
+                    </div>
+                </div>
+                <div class="order-items">
+                    <div class="item">
+                        <img src="images/cookies/[Cookie Image]" alt="chewy cookie">
+                        <div>[Cookie Name][Cookie Highlight]<br>RM [Cookie Price]</div>
+                        <div>Quantity: <br>[Quantity]</div>
+                    </div>
+                        -- Add more through loop --
+                </div>
+            </div>
+        </div>
+        -->
 
     </div>
 

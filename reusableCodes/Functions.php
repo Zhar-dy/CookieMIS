@@ -75,10 +75,9 @@ function getOrderDetailsStaff()
 	for ($i = 0; $i < $totalRows; $i++) {
 		if ($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3) {
 			$count++;
-			echo "<form action='../reusableCodes/updateStatus.php' method='GET'>
+			// Need to find a way to make the sebd button can send you to different places.
+			echo "
 			<tbody>
-			<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
-			<input type='hidden' name='location' value='$i'>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			//echo $arrayOfArrays[$i][0];
@@ -89,11 +88,18 @@ function getOrderDetailsStaff()
 			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
-						<td><button type='send'>Order Info</button></td>
+						<form action='order_details.php' method='POST'>
+						<td><button type='send' name='submit' value=1>Order Info</button></td>
+						<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
+						</form>
+						<form action='../reusableCodes/updateStatus.php' method='GET'>
+						<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
+						<input type='hidden' name='location' value='$i'>
 						<td>";
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
 					echo "
+						
 							<select class=\"status-select\" name='status[]' id ='status[]'>
 								<option value=\"1\" selected>Pending</option>
 								<option value=\"2\">Ready</option>
