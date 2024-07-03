@@ -42,7 +42,7 @@
       </div>
       <div class="order_section info-box">
         <h2>Recieve Options:</h2>
-        <h2 style="color: gray;">*NOTE: RM 5 will be added in total for delivery option</h2>
+        <h2 style="color: gray;font-size: 13px;">*NOTE: RM 5 will be added in total for delivery option</h2>
         <select class="nice-select status-select" name='DeliOptions' id='DeliOptions'>
           <option value="Pickup" selected>Pickup</option>
           <option value="Delivery">Delivery</option>
