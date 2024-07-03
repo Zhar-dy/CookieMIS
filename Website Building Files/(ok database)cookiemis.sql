@@ -95,26 +95,26 @@ INSERT INTO `orderdetails` (`detail_ID`, `order_ID`, `product_ID`, `quantity`) V
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
-  `order_ID` int(20) NOT NULL,
-  `order_Date` varchar(100) DEFAULT NULL,
-  `order_Details` varchar(200) DEFAULT NULL,
-  `order_Status` tinyint(1) DEFAULT NULL,
-  `user_ID` int(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+CREATE TABLE Orders(
+    order_ID INT(20) NOT NULL ,
+    order_Date VARCHAR(100),
+    order_Details VARCHAR(200),
+    order_Status BOOLEAN,
+    total_Price int(20),
+    user_ID INT(100)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_ID`, `order_Date`, `order_Details`, `order_Status`, `user_ID`) VALUES
-(1, '1-1-2024', 'big cookies plsssss', 1, 1),
-(2, '2-1-2024', 'extra chocolate (leave it at the porch)', 1, 1),
-(3, '5-1-2024', 'No almond', 2, 1),
-(4, '02-07-2024', 'nothing', 3, 2),
-(5, '03-07-2024', 'good', 5, 2),
-(6, '03-07-2024', 'test', 1, 2),
-(7, '03-07-2024', '', 1, 2);
+INSERT INTO `orders` (`order_ID`, `order_Date`, `order_Details`, `order_Status`, `user_ID`,`total_Price`) VALUES
+(1, '1-1-2024', 'big cookies plsssss', 1, 1, 1),
+(2, '2-1-2024', 'extra chocolate (leave it at the porch)', 1, 1, 1),
+(3, '5-1-2024', 'No almond', 2, 1, 1),
+(4, '02-07-2024', 'nothing', 3, 2, 1),
+(5, '03-07-2024', 'good', 5, 2, 1),
+(6, '03-07-2024', 'test', 1, 2, 1),
+(7, '03-07-2024', '', 1, 2, 1);
 
 -- --------------------------------------------------------
 

@@ -97,13 +97,13 @@ function getOrderDetailsStaff($orderStatus)
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
-			var_dump($userArray);
-			echo "<br><br>";
+			//var_dump($userArray);
+			//echo "<br><br>";
 
 			echo "		<td>" . $userArray[2] . "</td> <!--  Gets Customer Name -->
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
-						<form action='order_details.php' method='POST'>
+						<form action='order_details.php' method='GET'>
 						<td><button type='send' name='submit' value=1>Order Info</button></td>
 						<input type='hidden' name='orderID' value='" . $arrayOfArrays[$i][0] . "'>
 						</form>
@@ -661,9 +661,6 @@ function updateProduct()
 		echo "</div></div>"; // Close detail-box and box divs
 	}
 }
-
-
-
 // Sanitize the god damn inputs
 function sanitize($data)
 {
@@ -811,5 +808,46 @@ function orderHistory(){
 				echo'</div>
 			</div>
 		</div>';
+	}
+}
+function getOrderDetails($orderID){
+	// Include database connection settings
+	include('connectdb.php');
+	// Get the order ID and the order details
+	$sql = "SELECT 
+	orderdetails.quantity,
+	product.product_Name,
+	product.product_Highlight,
+	product.product_Price,
+	product.picture,
+	orders.total_Price
+	FROM orders 
+	INNER JOIN orderdetails ON orders.order_ID=orderdetails.order_ID
+	INNER JOIN product ON orderdetails.product_ID=product.product_ID 
+	WHERE orders.order_ID = {$orderID}";
+	/*
+	0)quantity
+	1)product_Name
+	2)product_Highlight
+	3)product_Price
+	4)picture
+	5)total_Price
+	*/
+	$query = mysqli_query($conn, $sql);
+	// Get total rows of the data
+	$totalRows = mysqli_num_rows($query);
+	$arrayOfArrays = array();
+	// Store the arrays into an array
+	while ($row = mysqli_fetch_array($query)) {
+		$arrayOfArrays[] = $row;
+	}
+	for ($i = 0; $i < $totalRows; $i++) { 
+		echo '<tr>
+								<td><img class="img-history" src="../images/cookies/'.$arrayOfArrays[$i][4].'"></td>
+								<td>'.$arrayOfArrays[$i][1].$arrayOfArrays[$i][2].'</td>
+								<td>'.$arrayOfArrays[$i][3].'</td>
+								<td>'.$arrayOfArrays[$i][0].'</td>
+								<td>'.$arrayOfArrays[$i][5].'</td>
+							</tr>';
 	}
 }
