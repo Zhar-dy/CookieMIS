@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_array($query)) {
 		echo ")<br>";
 	}
 	*/
-function getOrderDetailsStaff($orderStatus)
+function getOrderDetailsStaff()
 {
 	// Include database connection settings
 	include('connectdb.php');
@@ -70,37 +70,22 @@ function getOrderDetailsStaff($orderStatus)
 		3 Status
 		4 User ID		
 		*/
-		echo "
-		<table>
-		<thead>
-			<tr>
-				<th>Order ID</th>
-				<th>Customer Name</th>
-				<th>Order Date</th>
-				<th>Order Details</th>
-				<th>Order Info</th>
-				<th>Status</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-		<tbody>";
+	echo "";
 	$count = 0;
 	for ($i = 0; $i < $totalRows; $i++) {
-		if ($arrayOfArrays[$i][3] == $orderStatus) {
+		if ($arrayOfArrays[$i][3] != 5 && $arrayOfArrays[$i][3] != 3) {
 			$count++;
 			// Need to find a way to make the sebd button can send you to different places.
 			echo "
-			
+			<tbody>
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			//echo $arrayOfArrays[$i][0];
 			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
-			var_dump($userArray);
-			echo "<br><br>";
 
-			echo "		<td>" . $userArray[2] . "</td> <!--  Gets Customer Name -->
+			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
 						<form action='order_details.php' method='POST'>
@@ -265,7 +250,6 @@ function getOrderHistoryStaff()
 			echo "		<td>" . $userArray[2] . "</td>
 						<td>" . $arrayOfArrays[$i][1] . "</td>
 						<td>" . $arrayOfArrays[$i][2] . "</td>
-						<td><button>Order Details</button></td>
 						<td>";
 			switch ($arrayOfArrays[$i][3]) {
 				case 1:
@@ -694,122 +678,4 @@ function cleanInput($data)
 	$data = preg_replace($search, $replace, $data);
 
 	return $data;
-}
-function orderHistory(){
-	// Include database connection settings
-	include('connectdb.php');
-	// Get all information needed
-	$sql = "SELECT 
-	orders.order_ID,
-	orders.order_Date,
-	orders.order_Details,
-	orders.order_Status,
-	orders.total_Price,
-	delivery.pickup_Date 
-	FROM orders 
-	INNER JOIN delivery ON orders.order_ID = delivery.order_ID
-	WHERE orders.user_ID =  {$_SESSION['user_ID']}
-	ORDER BY orders.order_ID DESC";
-	$query = mysqli_query($conn, $sql);
-	// Get total order of the user
-	$totalRows = mysqli_num_rows($query);
-	$arrayOfArrays = array();
-	// Store the arrays into an array
-	while ($row = mysqli_fetch_array($query)) {
-		$arrayOfArrays[] = $row;
-	}
-	/*
-	
-  0)order_ID
-  1)order_Date
-  2)order_Details
-  3)order_Status
-  4)total_Price
-  5)pickup_Date
-		'.$arrayOfArrays[$i][1].'
-	*/
-	for ($i = 0; $i < $totalRows; $i++) { // Loop for every Order ID
-										  // NOTE: need to categorize things respectively
-		echo '<div class="order-section">
-            <h2>'.$arrayOfArrays[$i][1].'</h2> 
-            <div class="order">
-                <div class="order-header">
-                    <div>
-                        <a class="bigTxt">Order ID: '.$arrayOfArrays[$i][0].'</a>
-                    </div>
-                </div>
-                <div class="order-details">
-                    <div>
-                        <h5>Order Status: </h5>';
-		switch ($arrayOfArrays[$i][3]) {
-			case 1:
-				echo '<div class="status"><span class="pending">Pending</span></div>';
-				break;
-			case 2:
-				echo '<div class="status"><span class="ready">Ready</span></div>';
-				break;
-			case 3:
-				echo '<div class="status"><span class="received">Received</span></div>';
-				break;
-			case 4:
-				echo '<div class="status"><span class="shipped">Shipped</span></div>';
-				break;
-			case 5:
-				echo '<div class="status"><span class="delivered">Delivered</span></div>';
-				break;
-			default:
-				echo '<div class="status"><span class="pending">Unknown</span></div>';
-				break;
-		}       
-        echo		'</div>
-                    <div>
-                        <h5>Total cost: </h5>
-                        <div class="h5"> RM '.$arrayOfArrays[$i][4].'</div>
-                    </div>
-                    <div>
-                        <h5>Pickup Date: </h5>
-                        <div class="h5"> '.$arrayOfArrays[$i][5].'</div>
-                    </div>
-                    <div>
-                        <h5>Details: </h5>
-                        <div class="smallTXT"> '.$arrayOfArrays[$i][2].'</div>
-                    </div>
-                </div>
-                <div class="order-items">';
-	// Get otder Details and product details
-	$sql2 = "SELECT 
-	orderdetails.quantity,
-	product.product_Name,
-	product.product_Highlight,
-	product.product_Price,
-	product.picture
-	FROM orderdetails 
-	INNER JOIN product ON product.product_ID = orderdetails.product_ID 
-	WHERE order_ID = {$arrayOfArrays[$i][0]}";
- 	$query2 = mysqli_query($conn, $sql2);
- 	// Get total rows of the data
- 	$totalRows2 = mysqli_num_rows($query2);
- 	$arrayOfArrays2 = array();
- 	// Store the arrays into an array
- 	while ($row2 = mysqli_fetch_array($query2)) {
-		 $arrayOfArrays2[] = $row2;
- 	}
-	/*
-	0)quantity	
-	1)product_Name	
-	2)product_Highlight
-	3)product_Price	
-	4)picture
-	*/
-	 for ($j = 0; $j < $totalRows2; $j++) { 
-               echo'<div class="item">
-                        <img src="images/cookies/'.$arrayOfArrays2[$j][4].'" alt="chewy cookie">
-                        <div>'.$arrayOfArrays2[$j][1].' '.$arrayOfArrays2[$j][2].'<br>RM '.$arrayOfArrays2[$j][3].'</div>
-                        <div>Quantity: <br>'.$arrayOfArrays2[$j][0].'</div>
-                    </div>';
-				}
-				echo'</div>
-			</div>
-		</div>';
-	}
 }

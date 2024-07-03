@@ -56,17 +56,16 @@ CREATE TABLE Orders(
     order_Date VARCHAR(100),
     order_Details VARCHAR(200),
     order_Status BOOLEAN,
+    total_Price int(20),
     user_ID INT(100),
     FOREIGN KEY(user_ID) REFERENCES users(user_ID)
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
-INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
- VALUES (NULL, '1-1-2024', 'big cookies plsssss', 1 , 1);
-INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
- VALUES (NULL, '2-1-2024', 'extra chocolate (leave it at the porch)', 1 , 1);
-INSERT INTO `orders` (`order_ID`,`order_Date`, `order_Details`, `order_Status`, `user_ID`)
- VALUES (NULL, '5-1-2024', 'No almond', 1 , 1);
+INSERT INTO `orders`(`order_ID`, `order_Date`, `order_Details`, `order_Status`, `total_Price`, `user_ID`)
+ VALUES (NULL, '1-1-2024', 'big cookies plsssss', 1, 1 , 1),
+ (NULL, '2-1-2024', 'extra chocolate (leave it at the porch)', 1, 1 , 1),
+ (NULL, '5-1-2024', 'No almond', 1 , 1, 1);
 
 CREATE TABLE OrderDetails(
     detail_ID INT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,

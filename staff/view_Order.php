@@ -30,6 +30,7 @@ session_start();
         }
         th {
             background-color: #f2f2f2;
+            width: 550vh;
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
@@ -61,19 +62,6 @@ session_start();
 <body>
 <!-- view section -->
 <h1>Customer Orders</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Customer Name</th>
-                <th>Order Date</th>
-                <th>Order Details</th>
-                <th>Order Info</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
         <!-- <tbody>
             <tr>
                 <td>1</td>
@@ -92,8 +80,15 @@ session_start();
                 <td><button>Update</button></td>
             </tr>
         </tbody> -->
-        <?php getOrderDetailsStaff(); ?>
-    </table>
+        <?php getOrderDetailsStaff(1); ?>
+        <br>
+        <br>
+        <?php getOrderDetailsStaff(2); ?>
+        <br>
+        <br>
+        <?php getOrderDetailsStaff(4); ?>
+        <br>
+        <br>
   <!-- view end -->
 
 </body>
