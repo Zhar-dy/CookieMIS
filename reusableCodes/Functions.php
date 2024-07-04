@@ -461,12 +461,9 @@ function printStaff()
 			  
 		"; // goes view_Detail_User.php
 		} elseif ($current_page == "upd_User") {
-			echo "<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+			echo "<button type='submit' class='btn btn-primary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				Update Profile
 			  </button>"; // goes "updateUser.php"
-			echo "<br><button type='submit' class='btn btn-primary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
-				Delete
-			  </button>";
 		}
 
 		echo "</div></div>";
@@ -551,7 +548,6 @@ function printUsers()
 		} elseif ($current_page == "upd_User") {
 
 			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='" . $arrayOfArrays[$i][0] . "'>Update Profile</button>"; // goes "updateUser.php"
-			echo "<br><button type=\"submit\" class=\"btn btn-primary\" name=\"delete\" value='" . $arrayOfArrays[$i][0] . "'>Delete</button>";
 		}
 		echo "</div></div>";
 	}
