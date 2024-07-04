@@ -19,6 +19,37 @@ $orderID = $_GET['orderID'];
             <div class="container my-5 p-4 bg-white shadow rounded">
                 <header class="mb-4 d-flex justify-content-between align-items-center">
                     <h1 class="text-center">Order History</h1>
+                    <!-- Echo Receive Type: and then the delivery_Type values -->
+                    <div>
+                        <span style="font-size: 24px;">Receive Type:</span>
+                        <?php
+                        // Include database connection settings
+                        include('../reusableCodes/connectdb.php');
+
+                        $sql = "SELECT * FROM delivery";
+                        $query = mysqli_query($conn, $sql);
+
+                        // Check if the query was successful
+                        if (!$query) {
+                            die('Error: ' . mysqli_error($conn));
+                        }
+
+                        // Get total rows of the data
+                        $totalRows = mysqli_num_rows($query);
+                        $arrayOfArrays = array();
+
+                        // Store the arrays into an array
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            $arrayOfArrays[] = $row;
+                        }
+
+                        // Print the delivery_Type values
+                        foreach ($arrayOfArrays as $row) {
+                            echo "<a style=\"font-size: 24px;\">" . $row['delivery_Type'] . "</a>";
+                        }
+                        ?>
+                    </div>
+
                     <a href="view_Order.php" class="btn btn-primary">Return</a>
                 </header>
                 <table class="table">
