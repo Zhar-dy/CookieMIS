@@ -257,7 +257,7 @@ function getOrderHistoryStaff()
 				<tr>
 					<td>" . $arrayOfArrays[$i][0] . "</td>";
 			//echo $arrayOfArrays[$i][0];
-			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][4] . "'";
+			$sql2 = "SELECT * FROM users WHERE user_ID ='" . $arrayOfArrays[$i][5] . "'";
 			$query = mysqli_query($conn, $sql2);
 			$userArray = mysqli_fetch_array($query);
 

@@ -18,7 +18,7 @@
           <a class="nav-link" href="about.php">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://search.brave.com/search?q=Give+me+a+good+cookie+recommendation&source=desktop&summary=1&summary_og=f43e47de5120d926b37c3b"><img src="../images/search-icon.png"></a>
+          <a class="nav-link" href="https://search.brave.com/search?q=List+out+10+random+delicious+cookies+i+should+try+today&source=llmSuggest&summary=1&summary_og=95a8fc5e1b5ce91f54581a"><img src="../images/search-icon.png"></a>
         </li>
         <li class="nav-item dropdown active">
           <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USERS</a>
