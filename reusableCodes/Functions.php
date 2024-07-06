@@ -644,11 +644,21 @@ function updateProduct()
 					<button type='submit' class='btn btn-primary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				     Update Stock
 			         </button>
+                  </form>
+				  <form action='deleteStock.php' method='GET'>
+					<button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Delete Stock
+			         </button>
                   </form>";
 		} else {
 			echo "<form action='updateStock.php' method='GET'>
 					<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				     Not available/Refill Stock
+			         </button>
+                  </form>
+				  <form action='deleteStock.php' method='GET'>
+					<button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Delete Stock
 			         </button>
                   </form>";
 		}
