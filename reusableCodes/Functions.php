@@ -463,6 +463,9 @@ function printStaff()
 		} elseif ($current_page == "upd_User") {
 			echo "<button type='submit' class='btn btn-primary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				Update Profile
+			  </button><br>
+			  <button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				Delete Profile
 			  </button>"; // goes "updateUser.php"
 		}
 
@@ -547,7 +550,11 @@ function printUsers()
 			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"view\" value=\"" . $arrayOfArrays[$i][0] . "\">View Profile</button>"; // goes view_Detail_User.php
 		} elseif ($current_page == "upd_User") {
 
-			echo "<button type=\"submit\" class=\"btn btn-secondary\" name=\"update\" value='" . $arrayOfArrays[$i][0] . "'>Update Profile</button>"; // goes "updateUser.php"
+			echo "<button type=\"submit\" class=\"btn btn-primary\" name=\"update\" value='" . $arrayOfArrays[$i][0] . "'>Update Profile</button>
+			<button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				Delete Profile
+			  </button>"; // goes "updateUser.php"
+			
 		}
 		echo "</div></div>";
 	}
@@ -644,11 +651,21 @@ function updateProduct()
 					<button type='submit' class='btn btn-primary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				     Update Stock
 			         </button>
+                  </form>
+				  <form action='deleteStock.php' method='GET'>
+					<button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Delete Stock
+			         </button>
                   </form>";
 		} else {
 			echo "<form action='updateStock.php' method='GET'>
 					<button type='submit' class='btn btn-secondary' name='update' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
 				     Not available/Refill Stock
+			         </button>
+                  </form>
+				  <form action='deleteStock.php' method='GET'>
+					<button type='submit' class='btn btn-secondary' name='delete' value='" . $arrayOfArrays[$i][0] . "'" . $arrayOfArrays[$i][0] . "'>
+				     Delete Stock
 			         </button>
                   </form>";
 		}
