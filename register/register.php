@@ -62,7 +62,7 @@
 
             <div class="form-group">
               <label for="phone">Phone Number:</label>
-              <input type="tel" id="phone" name="phonenum" class="form-control" placeholder="Enter your phone number" required>
+              <input type="number" id="phone" name="phonenum" class="form-control" placeholder="Enter your phone number" required>
             </div>
 
             <div class="form-group">

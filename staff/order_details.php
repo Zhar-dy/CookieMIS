@@ -25,8 +25,8 @@ $orderID = $_GET['orderID'];
                         <?php
                         // Include database connection settings
                         include('../reusableCodes/connectdb.php');
-
-                        $sql = "SELECT * FROM delivery";
+                        $orderID2 = $_GET['orderID'];
+                        $sql = "SELECT * FROM delivery WHERE order_ID = $orderID2";
                         $query = mysqli_query($conn, $sql);
 
                         // Check if the query was successful
@@ -43,10 +43,9 @@ $orderID = $_GET['orderID'];
                             $arrayOfArrays[] = $row;
                         }
 
-                        // Print the delivery_Type values
-                        foreach ($arrayOfArrays as $row) {
-                            echo "<a style=\"font-size: 24px;\">" . $row['delivery_Type'] . "</a>";
-                        }
+
+                        echo "<a style=\"font-size: 24px;\">" . $arrayOfArrays[0]['delivery_Type']. "</a>";
+                        
                         ?>
                     </div>
 
