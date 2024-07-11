@@ -94,8 +94,8 @@ if (isset($_GET['update'])) {
         </div>
     </div>
 
-    <!-- Include footer -->
-    <?php include '../reusableCodes/footer1in.php';?>
+        <!-- Include footer -->
+        <?php include '../reusableCodes/footer1in.php';?>
 
 </body>
 

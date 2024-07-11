@@ -95,7 +95,6 @@ if (isset($_GET['update'])) {
         </div>
     </div>
 
-    <!-- Footer File -->
-    <?php include '../reusableCodes/footer1in.php'; ?>
+
 </body>
 </html>

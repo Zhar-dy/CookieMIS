@@ -69,8 +69,7 @@ session_start();
     </div>
   </div>
   <!-- upd profile section end -->
-  <!-- Footer File -->
-  <?php include 'reusableCodes/footer.php' ?>
+
 </body>
 
 </html>
