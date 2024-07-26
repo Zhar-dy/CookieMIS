@@ -28,22 +28,3 @@ CookieMIS is a web and mobile application designed to manage cookie sales, cooki
 
 ### Login Page
 ![Login](https://github.com/Zhar-dy/CookieMIS/assets/170181767/6d28bf33-28ca-4dc2-a38e-e8a7802f13f0)
-
-
-# Pages yang belum siap:
-- View Account (User)
-- View Order (User)
-- Feedback (User)
-- Contact Us (User)
-- Report Page (staff)
-- Order History (Staff)
-
-# UPDATES:
-- Update User (Staff)
-    -Buang Update kat drop down menu, tambah button update kat page view staff
-- REMOVE Our Product page (staff)
-- Update Order (Staff)
-    - Buang Update kat drop down menu. 
-    - Tambah History kat drop down menu
-- Update View User (Staff)
-    - Change password field to button
